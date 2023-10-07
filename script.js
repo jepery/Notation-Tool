@@ -165,7 +165,75 @@ NoDocument.onclick = function () {
     document.body.removeChild(inputElementAuthoCenterFail);
   };
 
+  CountyEsablishPass.onclick = function () {
+    let ProvideInfo = document.getElementById("ProvideInfo");
 
+    EstablishContact.style.display = 'none';
+    ProvideInfo.style.display = 'block';
+  };
+
+  ProvideInfoPass.onclick = function () {
+    let IsMortgageRecorded = document.getElementById("IsMortgageRecorded");
+
+    ProvideInfo.style.display = 'none';
+    IsMortgageRecorded.style.display = 'block';
+  };
+
+  RecordedYes.onclick = function () {
+    let RecordedMortgageYes = document.getElementById("RecordedMortgageYes");
+
+    IsMortgageRecorded.style.display = 'none';
+    RecordedMortgageYes.style.display = 'block';
+  };
+
+  RecordedNo.onclick = function () {
+    let RecordedMortgageNo = document.getElementById("RecordedMortgageNo");
+
+    IsMortgageRecorded.style.display = 'none';
+    RecordedMortgageNo.style.display = 'block';
+  };
+
+  ProvideInfoFail.onclick = function () {
+    let PhoneSearch = document.getElementById("PhoneSearch");
+
+    ProvideInfo.style.display = 'none';
+    PhoneSearch.style.display = 'block';
+  };
+
+  CountyEsablishFail.onclick = function (){
+    let SecondAttempt = document.getElementById("SecondAttempt");
+
+    EstablishContact.style.display = 'none';
+    SecondAttempt.style.display = 'block';
+  };
+
+  SecondPass.onclick = function (){
+    let NoAnswer = document.getElementById("NoAnswer");
+
+    SecondAttempt.style.display = 'none';
+    NoAnswer.style.display = 'block';
+  };
+
+  SecondFail.onclick = function () {
+    let VoiceMail = document.getElementById("VoiceMail");
+
+    SecondAttempt.style.display = 'none';
+    VoiceMail.style.display = 'block';
+  };
+
+  VoicePass.onclick = function () {
+    let LeaveVoice = document.getElementById("LeaveVoice");
+
+    VoiceMail.style.display = 'none';
+    LeaveVoice.style.display = 'block';
+  };
+
+  VoiceFail.onclick = function () {
+    let LeaveVoiceFail = document.getElementById("LeaveVoiceFail");
+
+    VoiceMail.style.display = 'none';
+    LeaveVoiceFail.style.display = 'block';
+  };
 
 
 
