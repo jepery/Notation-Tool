@@ -96,144 +96,295 @@ RecInfo.onclick = function () {
 };
 
 NoDocument.onclick = function () {
-    let inputElementNoDocument = document.createElement("input");
-    inputElementNoDocument.type = "text";
-    inputElementNoDocument.value =
-      "Searched the " +
-      CountyName.value +
-      " website for Recorded Mortgage. Unable to locate document.";
-    document.body.appendChild(inputElementNoDocument);
-    inputElementNoDocument.select();
-    document.execCommand("copy");
-    document.body.removeChild(inputElementNoDocument);
-  };
+  let inputElementNoDocument = document.createElement("input");
+  inputElementNoDocument.type = "text";
+  inputElementNoDocument.value =
+    "Searched the " +
+    CountyName.value +
+    " website for Recorded Mortgage. Unable to locate document.";
+  document.body.appendChild(inputElementNoDocument);
+  inputElementNoDocument.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementNoDocument);
+};
 
-  NotSearchable.onclick = function () {
-    let inputElementNotSearchable = document.createElement("input");
-    inputElementNotSearchable.type = "text";
-    inputElementNotSearchable.value =
-      "Searched the " +
-      CountyName.value +
-      " website for Recorded Mortgage. The county website is not searchable.";
-    document.body.appendChild(inputElementNotSearchable);
-    inputElementNotSearchable.select();
-    document.execCommand("copy");
-    document.body.removeChild(inputElementNotSearchable);
-  };
+NotSearchable.onclick = function () {
+  let inputElementNotSearchable = document.createElement("input");
+  inputElementNotSearchable.type = "text";
+  inputElementNotSearchable.value =
+    "Searched the " +
+    CountyName.value +
+    " website for Recorded Mortgage. The county website is not searchable.";
+  document.body.appendChild(inputElementNotSearchable);
+  inputElementNotSearchable.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementNotSearchable);
+};
 
-  DataTreePass.onclick = function () {
-    let inputElementDataTreePass = document.createElement("input");
-    inputElementDataTreePass.type = "text";
-    inputElementDataTreePass.value =
-      "Searched DataTree website for Recorded Mortgage. Located a copy of the document.";
-    document.body.appendChild(inputElementDataTreePass);
-    inputElementDataTreePass.select();
-    document.execCommand("copy");
-    document.body.removeChild(inputElementDataTreePass);
-  };
+DataTreePass.onclick = function () {
+  let inputElementDataTreePass = document.createElement("input");
+  inputElementDataTreePass.type = "text";
+  inputElementDataTreePass.value =
+    "Searched DataTree website for Recorded Mortgage. Located a copy of the document.";
+  document.body.appendChild(inputElementDataTreePass);
+  inputElementDataTreePass.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementDataTreePass);
+};
 
-  DataTreeFail.onclick = function () {
-    let inputElementDataTreeFail = document.createElement("input");
-    inputElementDataTreeFail.type = "text";
-    inputElementDataTreeFail.value =
-      "Searched DataTree for the Recorded Mortgage. No record found.";
-    document.body.appendChild(inputElementDataTreeFail);
-    inputElementDataTreeFail.select();
-    document.execCommand("copy");
-    document.body.removeChild(inputElementDataTreeFail);
-  };
+DataTreeFail.onclick = function () {
+  let inputElementDataTreeFail = document.createElement("input");
+  inputElementDataTreeFail.type = "text";
+  inputElementDataTreeFail.value =
+    "Searched DataTree for the Recorded Mortgage. No record found.";
+  document.body.appendChild(inputElementDataTreeFail);
+  inputElementDataTreeFail.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementDataTreeFail);
+};
 
-  AuthoCenterPass.onclick = function () {
-    let inputElementAuthoCenterPass = document.createElement("input");
-    inputElementAuthoCenterPass.type = "text";
-    inputElementAuthoCenterPass.value =
-      "Searched AuthoCenter for the Recorded Mortgage. Located copy";
-    document.body.appendChild(inputElementAuthoCenterPass);
-    inputElementAuthoCenterPass.select();
-    document.execCommand("copy");
-    document.body.removeChild(inputElementAuthoCenterPass);
-  };
+AuthoCenterPass.onclick = function () {
+  let inputElementAuthoCenterPass = document.createElement("input");
+  inputElementAuthoCenterPass.type = "text";
+  inputElementAuthoCenterPass.value =
+    "Searched AuthoCenter for the Recorded Mortgage. Located copy";
+  document.body.appendChild(inputElementAuthoCenterPass);
+  inputElementAuthoCenterPass.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementAuthoCenterPass);
+};
 
-  AuthoCenterFail.onclick = function () {
-    let inputElementAuthoCenterFail = document.createElement("input");
-    inputElementAuthoCenterFail.type = "text";
-    inputElementAuthoCenterFail.value =
-      "Searched the AuthoCenter website for the Recorded Mortgage. No record found.";
-    document.body.appendChild(inputElementAuthoCenterFail);
-    inputElementAuthoCenterFail.select();
-    document.execCommand("copy");
-    document.body.removeChild(inputElementAuthoCenterFail);
-  };
+AuthoCenterFail.onclick = function () {
+  let inputElementAuthoCenterFail = document.createElement("input");
+  inputElementAuthoCenterFail.type = "text";
+  inputElementAuthoCenterFail.value =
+    "Searched the AuthoCenter website for the Recorded Mortgage. No record found.";
+  document.body.appendChild(inputElementAuthoCenterFail);
+  inputElementAuthoCenterFail.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementAuthoCenterFail);
+};
 
-  CountyEsablishPass.onclick = function () {
-    let ProvideInfo = document.getElementById("ProvideInfo");
+CallCountyTrigger.onclick = function () {
+  let CallCountyDiv = document.getElementById("CallCountyDiv");
 
-    EstablishContact.style.display = 'none';
-    ProvideInfo.style.display = 'block';
-  };
+  MspDiv.style.display = "none";
+  IcmpDiv.style.display = "none";
+  CountySearchDiv.style.display = "none";
+  AuthoCenterDiv.style.display = "none";
+  DataTreeDiv.style.display = "none";
+  CallCountyButtonTrigger.style.display = "none";
+  CountySearchDivButton.style.display = 'none';
+  CountyCallText.style.display = 'block';
+  CallCountyDiv.style.display = "block";
+};
 
-  ProvideInfoPass.onclick = function () {
-    let IsMortgageRecorded = document.getElementById("IsMortgageRecorded");
+CountyEsablishPass.onclick = function () {
+  let ProvideInfo = document.getElementById("ProvideInfo");
 
-    ProvideInfo.style.display = 'none';
-    IsMortgageRecorded.style.display = 'block';
-  };
+  EstablishContact.style.display = "none";
+  ProvideInfo.style.display = "block";
+};
 
-  RecordedYes.onclick = function () {
-    let RecordedMortgageYes = document.getElementById("RecordedMortgageYes");
+ProvideInfoPass.onclick = function () {
+  let IsMortgageRecorded = document.getElementById("IsMortgageRecorded");
 
-    IsMortgageRecorded.style.display = 'none';
-    RecordedMortgageYes.style.display = 'block';
-  };
+  ProvideInfo.style.display = "none";
+  IsMortgageRecorded.style.display = "block";
+};
 
-  RecordedNo.onclick = function () {
-    let RecordedMortgageNo = document.getElementById("RecordedMortgageNo");
+RecordedYes.onclick = function () {
+  let RecordedMortgageYes = document.getElementById("RecordedMortgageYes");
 
-    IsMortgageRecorded.style.display = 'none';
-    RecordedMortgageNo.style.display = 'block';
-  };
+  IsMortgageRecorded.style.display = "none";
+  RecordedMortgageYes.style.display = "block";
+};
 
-  ProvideInfoFail.onclick = function () {
-    let PhoneSearch = document.getElementById("PhoneSearch");
+RecordedNo.onclick = function () {
+  let RecordedMortgageNo = document.getElementById("RecordedMortgageNo");
 
-    ProvideInfo.style.display = 'none';
-    PhoneSearch.style.display = 'block';
-  };
+  IsMortgageRecorded.style.display = "none";
+  RecordedMortgageNo.style.display = "block";
+};
 
-  CountyEsablishFail.onclick = function (){
-    let SecondAttempt = document.getElementById("SecondAttempt");
+ProvideInfoFail.onclick = function () {
+  let PhoneSearch = document.getElementById("PhoneSearch");
 
-    EstablishContact.style.display = 'none';
-    SecondAttempt.style.display = 'block';
-  };
+  ProvideInfo.style.display = "none";
+  PhoneSearch.style.display = "block";
+};
 
-  SecondPass.onclick = function (){
-    let NoAnswer = document.getElementById("NoAnswer");
+CountyEsablishFail.onclick = function () {
+  let SecondAttempt = document.getElementById("SecondAttempt");
 
-    SecondAttempt.style.display = 'none';
-    NoAnswer.style.display = 'block';
-  };
+  EstablishContact.style.display = "none";
+  SecondAttempt.style.display = "block";
+};
 
-  SecondFail.onclick = function () {
-    let VoiceMail = document.getElementById("VoiceMail");
+SecondPass.onclick = function () {
+  let NoAnswer = document.getElementById("NoAnswer");
 
-    SecondAttempt.style.display = 'none';
-    VoiceMail.style.display = 'block';
-  };
+  SecondAttempt.style.display = "none";
+  NoAnswer.style.display = "block";
+};
 
-  VoicePass.onclick = function () {
-    let LeaveVoice = document.getElementById("LeaveVoice");
+SecondFail.onclick = function () {
+  let VoiceMail = document.getElementById("VoiceMail");
 
-    VoiceMail.style.display = 'none';
-    LeaveVoice.style.display = 'block';
-  };
+  SecondAttempt.style.display = "none";
+  VoiceMail.style.display = "block";
+};
 
-  VoiceFail.onclick = function () {
-    let LeaveVoiceFail = document.getElementById("LeaveVoiceFail");
+VoicePass.onclick = function () {
+  let LeaveVoice = document.getElementById("LeaveVoice");
 
-    VoiceMail.style.display = 'none';
-    LeaveVoiceFail.style.display = 'block';
-  };
+  VoiceMail.style.display = "none";
+  LeaveVoice.style.display = "block";
+};
+
+VoiceFail.onclick = function () {
+  let LeaveVoiceFail = document.getElementById("LeaveVoiceFail");
+
+  VoiceMail.style.display = "none";
+  LeaveVoiceFail.style.display = "block";
+};
+
+// ************************************************************************ Notes on Call County ******************************************************* //
+
+NoPhoneSearch.onclick = function () {
+  let inputElementNoPhoneSearch = document.createElement("input");
+  inputElementNoPhoneSearch.type = "text";
+  inputElementNoPhoneSearch.value =
+    "Called " +
+    CountyName.value +
+    " at " +
+    PhoneNumberCall.value +
+    " to request recording information and copy fee for Recorded Mortgage. Spoke to " +
+    NameCall.value +
+    ". County does not do phone search.";
+  document.body.appendChild(inputElementNoPhoneSearch);
+  inputElementNoPhoneSearch.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementNoPhoneSearch);
+};
+
+ResearchNeeded.onclick = function () {
+  let inputElementResearchNeeded = document.createElement("input");
+  inputElementResearchNeeded.type = "text";
+  inputElementResearchNeeded.value =
+    "Unable to verify recording status of Recorded Mortgage at the county.";
+  document.body.appendChild(inputElementResearchNeeded);
+  inputElementResearchNeeded.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementResearchNeeded);
+};
+
+CallNoAnswer.onclick = function () {
+  let inputElementCallNoAnswer = document.createElement("input");
+  inputElementCallNoAnswer.type = "text";
+  inputElementCallNoAnswer.value =
+    "Called " +
+    CountyName.value +
+    " at " +
+    PhoneNumberCall.value +
+    " to request recording information and copy fee for Recorded Mortgage. No one answers the call."
+  document.body.appendChild(inputElementCallNoAnswer);
+  inputElementCallNoAnswer.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementCallNoAnswer);
+};
+
+ResearchNeededNoAnswer.onclick = function () {
+  let inputElementResearchNeededNoAnswer = document.createElement("input");
+  inputElementResearchNeededNoAnswer.type = "text";
+  inputElementResearchNeededNoAnswer.value =
+    "Unable to verify recording status of Recorded Mortgage at the county.";
+  document.body.appendChild(inputElementResearchNeededNoAnswer);
+  inputElementResearchNeededNoAnswer.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementResearchNeededNoAnswer);
+};
+
+LeaveVoiceMail.onclick = function () {
+  let inputElementLeaveVoiceMail = document.createElement("input");
+  inputElementLeaveVoiceMail.type = "text";
+  inputElementLeaveVoiceMail.value =
+    "Called " +
+    CountyName.value +
+    " at " +
+    PhoneNumberCall.value +
+    " to request recording information and copy fee for Recorded Mortgage. Left Message. Provided name and address of the borrower."
+  document.body.appendChild(inputElementLeaveVoiceMail);
+  inputElementLeaveVoiceMail.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementLeaveVoiceMail);
+};
+
+LeaveVoiceMailFail.onclick = function () {
+  let inputElementLeaveVoiceMailFail = document.createElement("input");
+  inputElementLeaveVoiceMailFail.type = "text";
+  inputElementLeaveVoiceMailFail.value =
+    "Called " +
+    CountyName.value +
+    " at " +
+    PhoneNumberCall.value +
+    " to request recording information and copy fee for Recorded Mortgage, but no one answers the call and mailbox is full."
+  document.body.appendChild(inputElementLeaveVoiceMailFail);
+  inputElementLeaveVoiceMailFail.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementLeaveVoiceMailFail);
+};
+
+MortgageYes.onclick = function () {
+  let inputElementMortgageYes = document.createElement("input");
+  inputElementMortgageYes.type = "text";
+  inputElementMortgageYes.value =
+    "Called " +
+    CountyName.value +
+    " at " +
+    PhoneNumberCall.value + ". "+ 
+    NameCall.value + " said that the Mortgage is recorded."
+  document.body.appendChild(inputElementMortgageYes);
+  inputElementMortgageYes.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementMortgageYes);
+};
+
+MortgageYesVerified.onclick = function () {
+  let inputElementMortgageYesVerified = document.createElement("input");
+  inputElementMortgageYesVerified.type = "text";
+  inputElementMortgageYesVerified.value =
+    "Verified Mortgage has been recorded at the county. Date: " +
+    RecordingDate.value + 
+    " Insmt#: " + 
+    InstrumentNumber.value +
+    " BK/PG: " + 
+    BookAndPage.value
+  document.body.appendChild(inputElementMortgageYesVerified);
+  inputElementMortgageYesVerified.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementMortgageYesVerified);
+};
+
+MortgageNo.onclick = function () {
+  let inputElementMortgageNo = document.createElement("input");
+  inputElementMortgageNo.type = "text";
+  inputElementMortgageNo.value =
+    "Called " +
+    CountyName.value +
+    " at " +
+    PhoneNumberCall.value + ". "+ 
+    NameCall.value + " said that the Mortgage is not recorded."
+  document.body.appendChild(inputElementMortgageNo);
+  inputElementMortgageNo.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementMortgageNo);
+};
+
+
+
+
+
 
 
 
