@@ -1,3 +1,8 @@
+$('a[data-toggle="tooltip"]').tooltip({
+  animated: 'fade',
+  placement: 'bottom',
+});
+
 const floatingInputLoanNumber = document.getElementById(
   "floatingInputLoanNumber"
 );
