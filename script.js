@@ -1,7 +1,7 @@
-$('a[data-toggle="tooltip"]').tooltip({
-  animated: 'fade',
-  placement: 'bottom',
-});
+// $('a[data-toggle="tooltip"]').tooltip({
+//   animated: 'fade',
+//   placement: 'bottom',
+// });
 
 const floatingInputLoanNumber = document.getElementById(
   "floatingInputLoanNumber"
@@ -47,6 +47,8 @@ MspPass.onclick = function () {
 };
 
 IcmpPass.onclick = function () {
+
+  
   let inputElementIcmpPass = document.createElement("input");
   inputElementIcmpPass.type = "text";
   inputElementIcmpPass.value =
@@ -55,6 +57,8 @@ IcmpPass.onclick = function () {
   inputElementIcmpPass.select();
   document.execCommand("copy");
   document.body.removeChild(inputElementIcmpPass);
+
+  
 };
 
 IcmpFail.onclick = function () {
