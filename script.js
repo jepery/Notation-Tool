@@ -393,7 +393,11 @@ MortgageNo.onclick = function () {
 
 // ********************************************************************* Fix Functions ************************************************************************ ////
 
+DocumentPass.onclick=function() {
+  let DocumentPassReviewDiv = document.getElementById("DocumentPassReviewDiv");
 
+  DocumentPassReviewDiv.style.display = 'block';
+};
 
 
 
