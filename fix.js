@@ -341,6 +341,10 @@ MspPassFix.onclick = function () {
   };
   
   MortgageNoFix.onclick = function () {
+    let NotofRecord = document.getElementById("NotofRecord");
+
+    NotofRecord.style.display = 'block';
+
     let inputElementMortgageNoFix = document.createElement("input");
     inputElementMortgageNoFix.type = "text";
     inputElementMortgageNoFix.value =
@@ -353,4 +357,34 @@ MspPassFix.onclick = function () {
     inputElementMortgageNoFix.select();
     document.execCommand("copy");
     document.body.removeChild(inputElementMortgageNoFix);
+  };
+
+  MortgageNotOfRecorded.onclick = function () {
+    let Exhausted = document.getElementById("Exhausted");
+
+    Exhausted.style.display = 'block';
+
+    let inputElementMortgageNotOfRecorded = document.createElement("input");
+    inputElementMortgageNotOfRecorded.type = "text";
+    inputElementMortgageNotOfRecorded.value =
+      "Re-recorded Mortgage is not of record at the county."
+    document.body.appendChild(inputElementMortgageNotOfRecorded);
+    inputElementMortgageNotOfRecorded.select();
+    document.execCommand("copy");
+    document.body.removeChild(inputElementMortgageNotOfRecorded);
+  };
+
+  ExhaustedResources.onclick = function () {
+    let Override = document.getElementById("Override");
+
+    Override.style.display = 'block';
+
+    let inputElementExhaustedResources = document.createElement("input");
+    inputElementExhaustedResources.type = "text";
+    inputElementExhaustedResources.value =
+      "Not Curable. County Clerk verified that there is no Re-recorded Mortgage."
+    document.body.appendChild(inputElementExhaustedResources);
+    inputElementExhaustedResources.select();
+    document.execCommand("copy");
+    document.body.removeChild(inputElementExhaustedResources);
   };
