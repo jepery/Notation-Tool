@@ -18,7 +18,7 @@ btnLoanNumber.onclick = function () {
 firstQ.onclick = function () {
   let inputElementQN = document.createElement("input");
   inputElementQN.type = "text";
-  inputElementQN.value = "780_" + floatingInputLoanNumber.value + "_03000_1";
+  inputElementQN.value = "708_" + floatingInputLoanNumber.value + "_03000_1";
   document.body.appendChild(inputElementQN);
   inputElementQN.select();
   document.execCommand("copy");

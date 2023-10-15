@@ -30,7 +30,7 @@ DocumentPassReview.onclick = function () {
     let inputElementOpenDocumentFix = document.createElement("input");
     inputElementOpenDocumentFix.type = "text";
     inputElementOpenDocumentFix.value =
-      "Located missing Recorded Mortgage; verified " + FixDataListDescription.value + "; will open a Mortgage/DOT: " + FixDataListIssue.value + " and continue to work the new FIX deficiencys."
+      "Located missing Recorded Mortgage; verified " + FixDataListIssue.value + "; will open a Mortgage/DOT: " + FixDataListDescription.value + " and continue to work the new FIX deficiencys."
     document.body.appendChild(inputElementOpenDocumentFix);
     inputElementOpenDocumentFix.select();
     document.execCommand("copy");
