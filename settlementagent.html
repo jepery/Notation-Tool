@@ -20,11 +20,65 @@
     <section>
       <div class="p-3">
         <div>
-          <p>Settlement Agent: <span class="fw-bold fs-5" id="settlement-agent"></span></p>
+          <p>
+            Settlement Agent:
+            <span class="fw-bold fs-5" id="settlement-agent"></span>
+          </p>
         </div>
         <div>
-          <p>Contact Number: <span class="fw-bold fs-5" id="settlementagent-number"></span></p>
+          <p>
+            Contact Number:
+            <span class="fw-bold fs-5" id="settlementagent-number"></span>
+          </p>
         </div>
+
+        <div class="mt-3">
+          <label class="form-label">Name of External Party:</label>
+          <input type="text" class="form-control" id="NameSA" />
+        </div>
+        <div class="mt-3">
+          <label class="form-label">Email Address:</label>
+          <input type="text" class="form-control" id="SettlementAgentEmail" />
+        </div>
+        <div class="mt-3">
+          <label class="form-label">Fax Number:</label>
+          <input type="text" class="form-control" id="SettlementAgentFax" />
+        </div>
+        <div class="mt-3">
+          <label class="form-label">File Number/Order Number:</label>
+          <input type="text" class="form-control" id="FileNumberSA" />
+        </div>
+        <div class="mt-3">
+          <label class="form-label">Closing Date:</label>
+          <input type="text" class="form-control" id="ClosingDateSA" />
+        </div>
+        <div class="mt-3">
+          <label class="form-label">Borrowers Name:</label>
+          <input type="text" class="form-control" id="BorrowersNameSA" />
+        </div>
+        <div class="mt-3">
+          <label class="form-label">Borrowers Property Address:</label>
+          <input type="text" class="form-control" id="BorrowersAddressSA" />
+        </div>
+
+        <!-- Establish -->
+        <div class="establish mt-3" id="EstablishContactSA">
+            <p><small>Where you able to establish contact?</small></p>
+            <button
+              type="button"
+              class="btn btn-success"
+              id="SAEsablishPass"
+            >
+              Yes
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              id="SAEsablishFail"
+            >
+              No
+            </button>
+          </div>
       </div>
     </section>
   </body>
