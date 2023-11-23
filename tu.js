@@ -10,8 +10,9 @@ document.getElementById('tu-number').textContent = TitleUnderwriterNumber;
 
 TUEmail.onclick = function sendMail() {
 
-    var link = "mailto=" + document.getElementById('TUnderwriterEmail').value + "&subject=Hi" ;
+    var partyEmail = document.getElementById("TUnderwriterEmail").value;
+    var BorrowersName = document.getElementById("BorrowersNameTU").value;
 
-    window.location.href = link;
+    window.location.href = "mailto:"+partyEmail+"?subject=Request for TPOL?body=Hi"+BorrowersName+",";
 
-};
+}
