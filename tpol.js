@@ -84,3 +84,65 @@ IcmpPassTPOL.onclick = function () {
     window.location.href = "settlementagent.html";
 
   };
+
+  SameSA.onclick = function () {
+
+    let inputElementSameSA = document.createElement("input");
+    inputElementSameSA.type = "text";
+    inputElementSameSA.value =
+      "Skipped Calling SA, " + SettlementAgent.value + " was also the Title Company for this loan.";
+    document.body.appendChild(inputElementSameSA);
+    inputElementSameSA.select();
+    document.execCommand("copy");
+    document.body.removeChild(inputElementSameSA);
+  };
+
+  NotInBusinessSA.onclick = function () {
+
+    let inputElementNotInBusinessSA = document.createElement("input");
+    inputElementNotInBusinessSA.type = "text";
+    inputElementNotInBusinessSA.value =
+      SettlementAgent.value + " is already closed according to OpenCorporates, SOS and web search. Will proceed to next contact.";
+    document.body.appendChild(inputElementNotInBusinessSA);
+    inputElementNotInBusinessSA.select();
+    document.execCommand("copy");
+    document.body.removeChild(inputElementNotInBusinessSA);
+  };
+
+  SameTC.onclick = function () {
+
+    let inputElementSameTC = document.createElement("input");
+    inputElementSameTC.type = "text";
+    inputElementSameTC.value =
+      "Skipped Calling TC, " + TitleCompany.value + " was also the Title Underwriter for this loan.";
+    document.body.appendChild(inputElementSameTC);
+    inputElementSameTC.select();
+    document.execCommand("copy");
+    document.body.removeChild(inputElementSameTC);
+  };
+
+  NotInBusinessTC.onclick = function () {
+
+    let inputElementNotInBusinessTC = document.createElement("input");
+    inputElementNotInBusinessTC.type = "text";
+    inputElementNotInBusinessTC.value =
+      TitleCompany.value + " is already closed according to OpenCorporates, SOS and web search. Will proceed to next contact.";
+    document.body.appendChild(inputElementNotInBusinessTC);
+    inputElementNotInBusinessTC.select();
+    document.execCommand("copy");
+    document.body.removeChild(inputElementNotInBusinessTC);
+  };
+
+  // Title Underwriter
+
+  ProceedTU.onclick = function () {
+
+    let TitleUnderWriterValue = TitleUnderwriter.value;
+    let TitleUnderWriterNumbervalue = TitleUnderwriterNumber.value;
+
+    localStorage.setItem('tu-agent', TitleUnderWriterValue);
+    localStorage.setItem('tu-number', TitleUnderWriterNumbervalue);
+
+    window.location.href = "titleunderwriter.html";
+
+  };
