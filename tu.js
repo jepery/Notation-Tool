@@ -9,7 +9,7 @@ document.getElementById("tu-number").textContent = TitleUnderwriterNumber;
 // email
 
 TUEmail.onclick = function sendMail() {
-    const customer = document.getElementById('customer').value;
+    const customer = document.getElementById('BorrowersNameTU').value;
       const propertyAddress = document.getElementById('BorrowersAddressTU').value;
       const closingDate = document.getElementById('ClosingDateTU').value;
       const loanAmount = document.getElementById('LoanAmountTU').value;
