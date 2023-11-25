@@ -9,18 +9,24 @@ document.getElementById("tu-number").textContent = TitleUnderwriterNumber;
 // email
 
 TUEmail.onclick = function sendMail() {
-    const emailAddress = document.getElementById('TUnderwriterEmail').value;
+    const customer = document.getElementById('customer').value;
+      const propertyAddress = document.getElementById('BorrowersAddressTU').value;
+      const closingDate = document.getElementById('ClosingDateTU').value;
+      const loanAmount = document.getElementById('LoanAmountTU').value;
+      const fileNumber = document.getElementById('FileNumberTU').value;
+      const emailAddress = document.getElementById('TUnderwriterEmail').value;
 
-    const subject = encodeURIComponent("Loan Policy Request - Property at 448 Ocean Avenue");
-    const body = encodeURIComponent(`Dear Sue,
+      // Construct the email message
+      const subject = encodeURIComponent("Loan Policy Request - Property at " + propertyAddress);
+      const body = encodeURIComponent(`Dear Sue,
 
 During an internal review for the property listed below, Wells Fargo found that the Loan Policy should have been issued but we have not received a copy. Would you please assist us?
 
-Customer: Robert Ruscil
-Property Address: 448 Ocean Avenue Long Beach, NJ 07740
-Closing Date: 01/27/1999
-Loan Amount: $50,000
-File Number: TA-072326
+Customer: <strong>${customer}</strong>
+Property Address: ${propertyAddress}
+Closing Date: ${closingDate}
+Loan Amount: ${loanAmount}
+File Number: ${fileNumber}
 
 What we are requesting from you:
 
