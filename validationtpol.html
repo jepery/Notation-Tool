@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TPOL Validation</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div>
+        <h1 class="text-center mt-3">Title Policy Validation</h1>
+    </div>
+    <div class="p-3">
+
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Show Checklist
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="CheckallPagesLegible" />
+                            <label class="form-check-label" for="CheckallPagesLegible">
+                                Document must contain all pages and be legible.
+                            </label>
+                        </div>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="CheckAllPagesPresent" />
+                            <label class="form-check-label" for="CheckAllPagesPresent">
+                                Schedule A, B, and Conditions & Stipulations or comparabale information must be present.
+                            </label>
+                        </div>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="CheckSignature" />
+                            <label class="form-check-label" for="CheckSignature">
+                                Policy must contain a signature or countersignature.
+                            </label>
+                        </div>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="CheckAmount" />
+                            <label class="form-check-label" for="CheckAmount">
+                                Title Policy must specify amount of insurance/liability/coverage.
+                            </label>
+                        </div>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="CheckPartyName" />
+                            <label class="form-check-label" for="CheckPartyName">
+                                Policy must list name of insured party.
+                            </label>
+                        </div>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="CheckPolicyNumber" />
+                            <label class="form-check-label" for="CheckPolicyNumber">
+                                Policy must contain a consistent reference number on all pages unless incorporated by a
+                                page count.<br>
+                                <strong>Example:</strong> Policy number, File number, Order number, etc.
+                            </label>
+                        </div>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="CheckDate" />
+                            <label class="form-check-label" for="CheckDate">
+                                Date of Policy must be on or after the Note date on the MSP, MAS/NOT1 screen.
+                            </label>
+                        </div>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="CheckPolicyAmount" />
+                            <label class="form-check-label" for="CheckPolicyAmount">
+                                Amount of insurance must be equal to or greater than the original Mortgage amount on the
+                                MSP, MAS1/NOT1 screen.
+                            </label>
+                        </div>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="CheckMortgagorName" />
+                            <label class="form-check-label" for="CheckMortgagorName">
+                                Mortgagor name(s) must match name(s) on the MSP, MAS1/ADD2 screen.
+                            </label>
+                        </div>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="CheckLegal" />
+                            <label class="form-check-label" for="CheckLegal">
+                                Legal Description must be present.<br>
+                                <strong>Note:</strong> Block and Lot listed solely is not acceptable.
+                            </label>
+                        </div>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="CheckPropertyShortForm" />
+                            <label class="form-check-label" for="CheckPropertyShortForm">
+                                Short Form Policy <strong>ONLY</strong><br>
+                                Property address, excluding ZIP Code, must match the property on the MSP MAS1/ADD2
+                                screen.
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-3">
+            <button type="button" class="btn btn-success" id="DocumentPassTPOL">
+                Pass / Satisfy
+            </button>
+            <button type="button" class="btn btn-secondary" id="MinorIssue">
+                Minor Issues
+            </button>
+            <button type="button" class="btn btn-danger" id="OpenFixTPOL">
+                Open Fix
+            </button>
+        </div>
+
+        <!-- Pass and Satisfy No error found in the document -->
+
+        <div class="mt-3 collapse" id="ValidationTPOLpass">
+            <p class="fw-bold fs-6">Document passed review and no error(s) found.</p>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1Located"
+                    value="option1" checked>
+                <label class="form-check-label" for="inlineRadio1Located">Located</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2Received"
+                    value="option2">
+                <label class="form-check-label" for="inlineRadio2Received">Received</label>
+            </div>
+            <div class="mt-3" id="TPOLlocatedPass">
+                <p class="fw-bold fs-6">Research - Analyst - Completed</p>
+                <button type="button" class="btn btn-success" id="DocumentPassTPOLLocated">
+                    Activity Note
+                </button>
+
+                <p class="fw-bold fs-6 mt-3 collapse" id="RecIntSent1">Next Step: <br>REC - Internal - Sent <br><br>End of Process</p>
+            </div>
+            <div class="mt-3 collapse" id="TPOLreceivedPass">
+                <p class="fw-bold fs-6">Research - Analyst - Completed</p>
+                <button type="button" class="btn btn-success" id="DocumentPassTPOLReceived">
+                    Activity Note
+                </button>
+
+                <p class="fw-bold fs-6 mt-3 collapse" id="RecIntSent2">Next Step: <br>REC - Internal - Sent <br><br>End of Process</p>
+
+            </div>
+        </div>
+
+        <!-- Minor issue validating on the documents -->
+
+        <div class="mt-3 collapse" id="MinorValidationPass">
+            <p class="fw-bold fs-6">Validate minor issues found in the document.</p>
+            <input class="form-control" list="datalistOptions1" id="TPOLminorValidateIssue" placeholder="Where do you found the issue?">
+            <datalist id="datalistOptions1">
+                <option value="Mortgagor Name">
+                <option value="Co-Mortgagor Name">
+                <option value="Property Address">
+                <option value="Policy Date">
+                <option value="Amount of Insured">    
+            </datalist>
+            <input class="form-control mt-3" list="datalistOptions2" id="TPOLminorValidateDoc" placeholder="Choose specific document">
+            <datalist id="datalistOptions2">
+                <option value="Recorded Mortgage">
+                <option value="Name Affidavit">
+            </datalist>
+            <input class="form-control form-control-sm mt-3" type="text" placeholder="please put the document ID here ...." id="TPOLminorValidateDocID">
+
+            <p class="fw-bold fs-6 mt-3">Comment - Internal - Pass/Completed</p>
+
+            <div class="mt-3">
+                <button type="button" class="btn btn-success" id="DocumentMinor">
+                    Activity Note
+                </button>
+            </div>
+
+            <p class="fw-bold fs-6 mt-3 collapse" id="MinorSatisfy">Proceed on Pass / Satisfy part of this tool.</p>
+        </div>
+
+        <!-- Opeing Fix deficiency -->
+
+        <div class="mt-3 collapse" id="OpenFixPolicy">
+            <p class="fw-bold fs-6">How many Fix do you need to open?</p>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptionsOne" id="inlineRadio1FixOne"
+                    value="option1" checked>
+                <label class="form-check-label" for="inlineRadio1FixOne">One</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2FixTwo"
+                    value="option2">
+                <label class="form-check-label" for="inlineRadio2FixTwo">Two</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2FixThree"
+                    value="option3">
+                <label class="form-check-label" for="inlineRadio2FixThree">Three</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2FixFour" 
+                    value="option4" disabled>
+                <label class="form-check-label" for="inlineRadio2FixFour">Four</label>
+            </div>
+
+            <div id="OpenFixOption1">
+            <p class="fw-bold fs-6 mt-3">Issue:</p>
+            <input class="form-control" list="datalistOptions3" id="TPOLOpenFixOneIssue">
+            <datalist id="datalistOptions3">
+                <option value="Addendum missing(Short Form only)">
+                <option value="Alta 7 Endorsement missing">
+                <option value="Schedule A Missing">
+                <option value="Schedule B Missing">
+                <option value="Legal Description is Missing">
+                <option value="Policy does not have jacket and does not have a countersignature">
+                <option value="Pages missing from the policy">
+                <option value="Schedule A Mortgagor name reference is missing">
+                <option value="Schedule A Mortgagor name reference does not match the Mortage">
+                <option value="Schedule A Co-Mortgagor name reference is missing">
+                <option value="Schedule A Co-Mortgagor name reference does not match the Mortage">
+                <option value="Schedule A Mortgage date reference is missing">
+                <option value="Schedule A Mortgage date reference does not match the mortgage">
+                <option value="Schedule A Mortgage loan amount reference is missing/incorrect">
+                <option value="Insurance amount is less than the amount of the note">
+                <option value="Mortgagor name incorrect(short form)">
+                <option value="Co-Mortgagor name incorrect(short form)">
+                <option value="Lender name missing or incorrect">
+                <option value="Property address missing or incorrect">
+                <option value="Policy number missing">
+                <option value="Document is illegible or damaged">
+            </datalist>
+
+            <p class="fw-bold fs-6 mt-3">Description:</p>
+            <input class="form-control" list="datalistOptions4" id="TPOLOpenFixOneDescription">
+            <datalist id="datalistOptions4">
+                <option value="Addendum is Missing from Short Form Policy">
+                <option value="Alta 7 Endorsement is Missing">
+                <option value="Schedule A Missing">
+                <option value="Schedule B Missing">
+                <option value="Legal Description is Missing">
+                <option value="Counter Signature Missing or Requires Correction">
+                <option value="Document is missing Page(s)">
+                <option value="Effective Date Missing or Requires Correction">
+                <option value="Schedule A Mortgagor/Co-Mortgagor Name Requires Correction">
+                <option value="Date of Mortgage Requires Correction">
+                <option value="Loan Amount Requires Correction">
+                <option value="Amount of Insurance Requires Correction">
+                <option value="Mortgagor/Co-Mortgagor Name Requires Correction">
+                <option value="Name of Insured Requires Correction">
+                <option value="Property Address Requires Correction">
+                <option value="Policy Number Missing or Requires Correction">
+                <option value="Illegible">
+            </datalist>
+
+            <div class="mt-3">
+                <p class="fw-bold fs-6 mt-3">Research - Analyst - Complete</p>
+                <button type="button" class="btn btn-success" id="DocumentMinor">
+                    Activity Note
+                </button>
+            </div>
+
+            </div>
+
+            <div class="collapse" id="OpenFixOption2">
+            <p class="fw-bold fs-6 mt-3">Issue:</p>
+            <input class="form-control" list="datalistOptions3" id="TPOLOpenFixTwoIssue1">
+            <input class="form-control mt-2" list="datalistOptions3" id="TPOLOpenFixOTwoIssue2">
+
+            <p class="fw-bold fs-6 mt-3">Description:</p>
+            <input class="form-control" list="datalistOptions4" id="TPOLOpenFixTwoDescription1">
+            <input class="form-control mt-2" list="datalistOptions4" id="TPOLOpenFixOTwoDescription2">
+            </div>
+            
+            <div class="collapse" id="OpenFixOption3">
+            <p class="fw-bold fs-6 mt-3">Issue:</p>
+            <input class="form-control" list="datalistOptions5" id="TPOLOpenFixThreeIssue1">
+            <datalist id="datalistOptions5">
+                <option value="Adndum mssng">
+                <option value="Alta7 Endrsmnt mssng">
+                <option value="Schdl A Mssng">
+                <option value="Schdl B Mssng">
+                <option value="Lgl Dscrptn Mssng">
+                <option value="No jacket TPOL & no countersign">
+                <option value="Pgs mssng from TPOL">
+                <option value="Schdle A Borr name missing">
+                <option value="Schdle A Borr name doesnt match MTG">
+                <option value="Schdle A Co-Borr name mssng">
+                <option value="Schdle A Co-Borr name doesnt match MTG">
+                <option value="Schdle A MTG date missing">
+                <option value="Schdle A MTG date doesnt match MTG">
+                <option value="Schdle A MTG loan amnt is mssng">
+                <option value="Schdle A MTG loan amnt is incrct">
+                <option value="Insurance amnt is less than the amnt of the note">
+                <option value="Borr name incorrect">
+                <option value="Co-Borr name incorrect">
+                <option value="Lender name mssng or incrct">
+                <option value="Property address mssng or incrct">
+                <option value="TPOL num mssng">
+                <option value="Doc illegible or damaged">
+            </datalist>
+            <input class="form-control mt-2" list="datalistOptions5" id="TPOLOpenFixThreeIssue2">
+            <input class="form-control mt-2" list="datalistOptions5" id="TPOLOpenFixThreeIssue3">
+            
+
+            <p class="fw-bold fs-6 mt-3">Description:</p>
+            <input class="form-control" list="datalistOptions4" id="TPOLOpenFixThreeDescription1">
+            <input class="form-control mt-2" list="datalistOptions4" id="TPOLOpenFixThreeDescription2">
+            <input class="form-control mt-2" list="datalistOptions4" id="TPOLOpenFixThreeDescription3">
+            </div>
+        </div>
+
+
+</body>
+<script src="validationtpol.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+</html>
