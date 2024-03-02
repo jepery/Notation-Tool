@@ -107,6 +107,75 @@ IcmpPassTPOL.onclick = function () {
     document.body.removeChild(inputElementGNMATPOL);
   };
 
+
+
+  SAEstablishPass.onclick = function (){
+
+    SACallPass.style.display = "block";
+    EstablishContactSAno.style.display = "none";
+    SACallPass1.style.display = "block";
+    SAVoicemailPass1.style.display = "none";
+    SAVoicemailFail1.style.display = "none";
+  };
+
+  exampleRadiosSA1.onclick = function (){
+
+    EstablishContactSAno.style.display = "none";
+    SACallPass1.style.display = "block";
+    SACallPass2.style.display = "none";
+    SACallPass3.style.display = "none";
+    SACallPass4.style.display = "none";
+  };
+
+  exampleRadiosSA2.onclick = function (){
+
+    EstablishContactSAno.style.display = "none";
+    SACallPass1.style.display = "none";
+    SACallPass2.style.display = "block";
+    SACallPass3.style.display = "none";
+    SACallPass4.style.display = "none";
+  };
+
+  exampleRadiosSA3.onclick = function (){
+
+    EstablishContactSAno.style.display = "none";
+    SACallPass1.style.display = "none";
+    SACallPass2.style.display = "none";
+    SACallPass3.style.display = "block";
+    SACallPass4.style.display = "none";
+  };
+
+  exampleRadiosSA4.onclick = function (){
+
+    EstablishContactSAno.style.display = "none";
+    SACallPass1.style.display = "none";
+    SACallPass2.style.display = "none";
+    SACallPass3.style.display = "none";
+    SACallPass4.style.display = "block";
+  };
+
+  SAEstablishFail.onclick = function (){
+
+    EstablishContactSAno.style.display = "block";
+    SACallPass.style.display = "none";
+    SACallPass1.style.display = "none";
+  };
+
+  SAVoicemailPass.onclick = function (){
+
+    SAVoicemailPass1.style.display = "block";
+    EstablishContactSAno.style.display = "none";
+    SAVoicemailFail1.style.display = "none";
+  };
+
+  SAVoicemailFail.onclick = function (){
+
+    SAVoicemailFail1.style.display = "block";
+    SAVoicemailPass1.style.display = "none";
+    EstablishContactSAno.style.display = "none";
+  };
+  
+
   let SettlementAgent = document.getElementById('SettlementAgent');
   let SettlementAgentNumber = document.getElementById('SettlementAgentNumber');
 
