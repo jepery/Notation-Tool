@@ -30,76 +30,112 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="CheckallPagesLegible" />
                             <label class="form-check-label" for="CheckallPagesLegible">
-                                Document must contain all pages and be legible.
+                                Document must be executed (signed) and notarized.
                             </label>
                         </div>
                         <div class="form-check mt-2">
                             <input class="form-check-input" type="checkbox" value="" id="CheckAllPagesPresent" />
                             <label class="form-check-label" for="CheckAllPagesPresent">
-                                Schedule A, B, and Conditions & Stipulations or comparabale information must be present.
+                                Document must be recorded in the correct jurisdiction.
                             </label>
                         </div>
                         <div class="form-check mt-2">
                             <input class="form-check-input" type="checkbox" value="" id="CheckSignature" />
                             <label class="form-check-label" for="CheckSignature">
-                                Policy must contain a signature or countersignature.
+                                Document must contain all pages and be legible.
                             </label>
                         </div>
                         <div class="form-check mt-2">
                             <input class="form-check-input" type="checkbox" value="" id="CheckAmount" />
                             <label class="form-check-label" for="CheckAmount">
-                                Title Policy must specify amount of insurance/liability/coverage.
+                                Document must contain the Legal Description.
                             </label>
                         </div>
-                        <div class="form-check mt-2">
+                        <div class="form-check mt-2 mb-2">
                             <input class="form-check-input" type="checkbox" value="" id="CheckPartyName" />
                             <label class="form-check-label" for="CheckPartyName">
-                                Policy must list name of insured party.
+                                Document must contain all applicable Riders.
                             </label>
+                        </div>
+
+                        <div>
+                            <p class="fw-bold fs-5">
+                                Non-GNMA guidelines only:
+                            </p>
                         </div>
                         <div class="form-check mt-2">
                             <input class="form-check-input" type="checkbox" value="" id="CheckPolicyNumber" />
                             <label class="form-check-label" for="CheckPolicyNumber">
-                                Policy must contain a consistent reference number on all pages unless incorporated by a
-                                page count.<br>
-                                <strong>Example:</strong> Policy number, File number, Order number, etc.
+                                Mortgage date must be on or after the Note date on the MSP, MAS1/NOT1 screen.
                             </label>
                         </div>
                         <div class="form-check mt-2">
                             <input class="form-check-input" type="checkbox" value="" id="CheckDate" />
                             <label class="form-check-label" for="CheckDate">
-                                Date of Policy must be on or after the Note date on the MSP, MAS/NOT1 screen.
+                                Borrower name(s) must match names on the MSP, MAS1/ADD2 screen.<br>
+
+                                <strong>Note:</strong> <i>Additional names on the Mortgage are acceptable, but all borrower names in MSP must be listed on the Mortgage.</i><br>
+                                <strong>Note:</strong> <i>Middle names/initials can be ignored unless the middle name/initial does not agree with MSP.</i>
                             </label>
                         </div>
                         <div class="form-check mt-2">
                             <input class="form-check-input" type="checkbox" value="" id="CheckPolicyAmount" />
                             <label class="form-check-label" for="CheckPolicyAmount">
-                                Amount of insurance must be equal to or greater than the original Mortgage amount on the
-                                MSP, MAS1/NOT1 screen.
+                                Property address, excluding ZIP code, must match the property address on the MSP, MAS1/ADD2 screen.
                             </label>
                         </div>
                         <div class="form-check mt-2">
                             <input class="form-check-input" type="checkbox" value="" id="CheckMortgagorName" />
                             <label class="form-check-label" for="CheckMortgagorName">
-                                Mortgagor name(s) must match name(s) on the MSP, MAS1/ADD2 screen.
+                                If a Legal Description is present, the absence of an address is acceptable; however, any address values that are present must match MSP.
+                            </label>
+                        </div>
+                        <div class="form-check mt-2 mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="CheckLegal" />
+                            <label class="form-check-label" for="CheckLegal">
+                                Loan amount must match the original Mortgage amount on the MSP, MAS1/NOT1 screen.
+                            </label>
+                        </div>
+
+                        <div>
+                            <p class="fw-bold fs-5">
+                                GNMA guidelines only:
+                            </p>
+                        </div>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="CheckPolicyNumber" />
+                            <label class="form-check-label" for="CheckPolicyNumber">
+                                Mortgage date must be on or after the Note date.
+                            </label>
+                        </div>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="CheckDate" />
+                            <label class="form-check-label" for="CheckDate">
+                                Borrower name(s) must match names on the Note.<br>
+
+                                <strong>Note:</strong> <i>Additional names on the Mortgage are acceptable, but all borrower names on the Note must be listed on the Mortgage.</i><br>
+                                <strong>Note:</strong> <i>Middle names/initials can be ignored unless middle name/initial does not agree with the Note.</i>
+                            </label>
+                        </div>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="CheckPolicyAmount" />
+                            <label class="form-check-label" for="CheckPolicyAmount">
+                                Property address, excluding ZIP code, must match the property address on the Note.
+                            </label>
+                        </div>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="CheckMortgagorName" />
+                            <label class="form-check-label" for="CheckMortgagorName">
+                                If a Legal Description is present, the absence of an address is acceptable; however, any address values that are present must match Note.
                             </label>
                         </div>
                         <div class="form-check mt-2">
                             <input class="form-check-input" type="checkbox" value="" id="CheckLegal" />
                             <label class="form-check-label" for="CheckLegal">
-                                Legal Description must be present.<br>
-                                <strong>Note:</strong> Block and Lot listed solely is not acceptable.
+                                Loan amount must match the original Mortgage amount on the Note.
                             </label>
                         </div>
-                        <div class="form-check mt-2">
-                            <input class="form-check-input" type="checkbox" value="" id="CheckPropertyShortForm" />
-                            <label class="form-check-label" for="CheckPropertyShortForm">
-                                Short Form Policy <strong>ONLY</strong><br>
-                                Property address, excluding ZIP Code, must match the property on the MSP MAS1/ADD2
-                                screen.
-                            </label>
-                        </div>
-
+                        
                     </div>
                 </div>
             </div>
@@ -131,6 +167,13 @@
                     value="option2">
                 <label class="form-check-label" for="inlineRadio2Received">Received</label>
             </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3Cited"
+                    value="option3">
+                <label class="form-check-label" for="inlineRadio3Cited">Cited</label>
+            </div>
+
             <div class="mt-3" id="TPOLlocatedPass">
                 <p class="fw-bold fs-6">Research - Analyst - Completed</p>
                 <button type="button" class="btn btn-success" id="DocumentPassTPOLLocated">
@@ -149,6 +192,55 @@
                 <p class="fw-bold fs-6 mt-3 collapse" id="RecIntSent2">Next Step: <br>REC - Internal - Sent <br><br>End
                     of Process</p>
 
+            </div>
+
+            <div class="mt-3 collapse" id="TPOLCitedPass">
+                <p class="fw-bold fs-6">Research - Analyst - Completed</p>
+
+                <p class="fw-bold fs-6 mt-3">Cited Issue:</p>
+                <input class="form-control" list="datalistOptions4" id="GNMAMortgageDescription">
+                <datalist id="datalistOptions4">
+                    <option value="Notary Acknowledgement Missing">
+                    <option value="Notary Signature Missing">
+                    <option value="Missing">
+                    <option value="Date is incorrect">
+                    <option value="Mortgage Date Incorrect">
+                    <option value="Modification Amount Requires Correction">
+                    <option value="Notary Expiration Date Missing/Illegible">
+                    <option value="Notary Section Contains Blanks">
+                    <option value="Notary State/County Missing or Incorrect">
+                    <option value="Notary Acknowledgement Missing">
+                    <option value="Notary Stamp/Seal Illegible">
+                    <option value="Notary Stamp/Seal Missing">
+                    <option value="Notary Signature Missing">
+                    <option value="Notary or Witness Section Requires Correction">
+                    <option value="Rider(s) Missing">
+                    <option value="Rider Incomplete">
+                    <option value="Rider Requires Corrections">
+                    <option value="Notary to Rider Expiration Date Missing/Illegible">
+                    <option value="Notary to Rider Contains Blanks">
+                    <option value="Notary to Rider State/County Missing or Incorrect">
+                    <option value="Notary acknowledgement to the Rider Missing">
+                    <option value="Notary to the Rider Signature Missing">
+                    <option value="Document is Missing Page(s)">
+                    <option value="Loan Amount Requires Correction">
+                    <option value="Legal Description Missing">
+                    <option value="Date of Mortgage Requires Correction">
+                    <option value="Property Address Requires Correction">
+                    <option value="Mortgagor Name Requires Correction">
+                    <option value="Missing Signature">
+                    <option value="Document Recorded in Wrong County">
+                    <option value="Recording Information Missing/Incorrect">
+                    <option value="Illegible">
+                    <option value="Missing">
+                </datalist>
+
+                <button type="button" class="mt-3 btn btn-success" id="DocumentPassTPOLCited">
+                    Activity Note
+                </button>
+
+                <p class="fw-bold fs-6 mt-3 collapse" id="RecIntSent3">Next Step: <br>REC - Internal - Sent <br><br>End
+                    of Process</p>
             </div>
         </div>
 

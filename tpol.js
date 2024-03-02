@@ -41,7 +41,9 @@ MspPassTPOL.onclick = function () {
 IcmpPassTPOL.onclick = function () {
 
     icmpTPOLpass.style.display = "block";
+    GNMAValidation.style.display = "block";
     icmpTPOLfail.style.display = "none";
+    ValdationInstruction.style.display = "none";
 
     let inputElementIcmpPass = document.createElement("input");
     inputElementIcmpPass.type = "text";
@@ -59,6 +61,9 @@ IcmpPassTPOL.onclick = function () {
 
     icmpTPOLfail.style.display = "block";
     icmpTPOLpass.style.display = "none";
+    GNMAValidation.style.display = "none";
+    GNMANotes.style.display = "none";
+    ValdationInstruction.style.display = "none";
 
     let inputElementIcmpPass = document.createElement("input");
     inputElementIcmpPass.type = "text";
@@ -70,20 +75,52 @@ IcmpPassTPOL.onclick = function () {
     document.body.removeChild(inputElementIcmpPass);
   };
 
+  GNMAYes.onclick = function () {
+
+    icmpTPOLpass.style.display = "none";
+    GNMAValidation.style.display = "none";
+    GNMANotes.style.display = "block";
+    ValdationInstruction.style.display = "none";
+
+  };
+
+  GNMANo.onclick = function () {
+
+    icmpTPOLpass.style.display = "none";
+    GNMAValidation.style.display = "none";
+    GNMANotes.style.display = "none";
+    ValdationInstruction.style.display = "block";
+
+  };
+
+  GNMAActivityNotes.onclick = function (){
+
+    ValdationInstruction.style.display = "block";
+
+    let inputElementGNMATPOL = document.createElement("input");
+    inputElementGNMATPOL.type = "text";
+    inputElementGNMATPOL.value =
+      "Validating Title Policy with Recorded Mortgage per GNMA validation." + GNMAMortgage.value;
+    document.body.appendChild(inputElementGNMATPOL);
+    inputElementGNMATPOL.select();
+    document.execCommand("copy");
+    document.body.removeChild(inputElementGNMATPOL);
+  };
+
   let SettlementAgent = document.getElementById('SettlementAgent');
   let SettlementAgentNumber = document.getElementById('SettlementAgentNumber');
 
-  ProceedSA.onclick = function () {
+  // ProceedSA.onclick = function () {
 
-    let SettlementAgentValue = SettlementAgent.value;
-    let SettlementAgentNumbervalue = SettlementAgentNumber.value;
+  //   let SettlementAgentValue = SettlementAgent.value;
+  //   let SettlementAgentNumbervalue = SettlementAgentNumber.value;
 
-    localStorage.setItem('settlement-agent', SettlementAgentValue);
-    localStorage.setItem('settlementagent-number', SettlementAgentNumbervalue);
+  //   localStorage.setItem('settlement-agent', SettlementAgentValue);
+  //   localStorage.setItem('settlementagent-number', SettlementAgentNumbervalue);
 
-    window.location.href = "settlementagent.html";
+  //   window.location.href = "settlementagent.html";
 
-  };
+  // };
 
   SameSA.onclick = function () {
 
@@ -135,14 +172,14 @@ IcmpPassTPOL.onclick = function () {
 
   // Title Underwriter
 
-  ProceedTU.onclick = function () {
+  // ProceedTU.onclick = function () {
 
-    let TitleUnderWriterValue = TitleUnderwriter.value;
-    let TitleUnderWriterNumbervalue = TitleUnderwriterNumber.value;
+  //   let TitleUnderWriterValue = TitleUnderwriter.value;
+  //   let TitleUnderWriterNumbervalue = TitleUnderwriterNumber.value;
 
-    localStorage.setItem('tu-agent', TitleUnderWriterValue);
-    localStorage.setItem('tu-number', TitleUnderWriterNumbervalue);
+  //   localStorage.setItem('tu-agent', TitleUnderWriterValue);
+  //   localStorage.setItem('tu-number', TitleUnderWriterNumbervalue);
 
-    window.location.href = "titleunderwriter.html";
+  //   window.location.href = "titleunderwriter.html";
 
-  };
+  // };

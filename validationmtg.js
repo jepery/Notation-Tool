@@ -11,12 +11,21 @@ inlineRadio2Received.onclick = function (){
   
   TPOLreceivedPass.style.display = "block";
   TPOLlocatedPass.style.display = "none";
+  TPOLCitedPass.style.display = "none";
 };
 
 inlineRadio1Located.onclick = function (){
   
   TPOLreceivedPass.style.display = "none";
   TPOLlocatedPass.style.display = "block";
+  TPOLCitedPass.style.display = "none";
+};
+
+inlineRadio3Cited.onclick = function (){
+
+  TPOLreceivedPass.style.display = "none";
+  TPOLlocatedPass.style.display = "none";
+  TPOLCitedPass.style.display = "block";
 };
 
 DocumentPassTPOLLocated.onclick = function () {
@@ -41,6 +50,19 @@ DocumentPassTPOLReceived.onclick = function () {
   inputElementDocumentPassTPOLReceived.select();
   document.execCommand("copy");
   document.body.removeChild(inputElementDocumentPassTPOLReceived);
+
+  RecIntSent2.style.display = "block"
+};
+
+DocumentPassTPOLCited.onclick = function () {
+  let inputElementDocumentPassTPOLCited = document.createElement("input");
+  inputElementDocumentPassTPOLCited.type = "text";
+  inputElementDocumentPassTPOLCited.value =
+    "Fixed Mortgage/DOT: " + GNMAMortgageDescription.value + ", document resolves issue cited."
+  document.body.appendChild(inputElementDocumentPassTPOLCited);
+  inputElementDocumentPassTPOLCited.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementDocumentPassTPOLCited);
 
   RecIntSent2.style.display = "block"
 };

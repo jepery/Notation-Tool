@@ -48,7 +48,10 @@ MspPass.onclick = function () {
 
 IcmpPass.onclick = function () {
 
-  
+  icmpMTGpass.style.display = "block";
+  icmpMTGfail.style.display = "none";
+  GNMAValidation.style.display = "block";
+
   let inputElementIcmpPass = document.createElement("input");
   inputElementIcmpPass.type = "text";
   inputElementIcmpPass.value =
@@ -62,6 +65,11 @@ IcmpPass.onclick = function () {
 };
 
 IcmpFail.onclick = function () {
+
+  icmpMTGpass.style.display = "none";
+  icmpMTGfail.style.display = "block";
+  ValdationInstruction.style.display = "none";
+
   let inputElementIcmpPass = document.createElement("input");
   inputElementIcmpPass.type = "text";
   inputElementIcmpPass.value =
@@ -70,6 +78,38 @@ IcmpFail.onclick = function () {
   inputElementIcmpPass.select();
   document.execCommand("copy");
   document.body.removeChild(inputElementIcmpPass);
+};
+
+GNMAYes.onclick = function () {
+
+  icmpMTGpass.style.display = "none";
+  GNMAValidation.style.display = "none";
+  GNMANotes.style.display = "block";
+  ValdationInstruction.style.display = "none";
+
+};
+
+GNMANo.onclick = function () {
+
+  icmpMTGpass.style.display = "none";
+  GNMAValidation.style.display = "none";
+  GNMANotes.style.display = "none";
+  ValdationInstruction.style.display = "block";
+
+};
+
+GNMAActivityNotes.onclick = function (){
+
+  ValdationInstruction.style.display = "block";
+
+  let inputElementGNMAMTG = document.createElement("input");
+  inputElementGNMAMTG.type = "text";
+  inputElementGNMAMTG.value =
+    "Validating Recorded Mortgage with Note per GNMA validation." + GNMANote.value;
+  document.body.appendChild(inputElementGNMAMTG);
+  inputElementGNMAMTG.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementGNMAMTG);
 };
 
 DocumentRetrieved.onclick = function () {

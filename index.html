@@ -79,18 +79,51 @@
         </div>
         <div class="mt-3" id="IcmpDiv">
           <p>ICMP Search</p>
+          <p class="fw-bold fs-6 collapse" id="icmpMTGpass">
+            Research - File-net - Pass/Completed
+          </p>
+          <p class="fw-bold fs-6 collapse" id="icmpMTGfail">
+            Research - File-net - Fail
+          </p>
           <button type="button" class="btn btn-success" data-toggle="tooltip" title="Research - File-net - Pass/Completed" id="IcmpPass">
             Pass
           </button>
           <button type="button" class="btn btn-danger" data-toggle="tooltip" title="Research - File-net - Fail" id="IcmpFail">
             Fail
           </button>
-          <button type="button" class="collapse btn btn-warning" data-toggle="tooltip" title="Comment - Internal - Other" id="IcmpClearCopy">
-            Clear Copy
-          </button>
-          <button type="button" class="collapse btn btn-secondary" data-toggle="tooltip" title="Comment - Internal - Other" id="IcmpVallidate">
-            Validation
-          </button>
+
+          <div class="mt-3 collapse" id="GNMAValidation">
+
+            <p class="">Are you working on a GNMA Loan?</p>
+            <button type="button" class="btn btn-success"
+              id="GNMAYes">
+              Yes
+            </button>
+    
+            <button type="button" class="btn btn-danger"
+              id="GNMANo">
+              No
+            </button>
+          </div>
+
+          <div class="mt-3 collapse" id="GNMANotes">
+
+            <p class="fw-bold fs-6">Research - File-net - Passed/Completed</p>
+            <div class="mt-3">
+              <label class="form-label">Note DocID:</label>
+              <input type="text" class="form-control" id="GNMANote" />
+            </div>
+            <button type="button" class="mt-3 btn btn-success"
+              id="GNMAActivityNotes">
+              Activity Note
+            </button>
+          </div>
+    
+          <div class="mt-3 collapse" id="ValdationInstruction">
+            <p class="fw-bold fs-6">- Go to Validation section of the Tool</p>
+          </div>
+
+
         </div>
         <div class="mt-3" id="CountySearchDiv">
           <p>County Search</p> </div>
