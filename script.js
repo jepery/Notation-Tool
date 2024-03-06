@@ -36,6 +36,25 @@ secondE.onclick = function () {
 };
 
 MspPass.onclick = function () {
+
+  mspPassNoteMTG.style.display = "block";
+  mspFailNoteMTG.style.display = "none";
+
+  let inputElementMspPass = document.createElement("input");
+  inputElementMspPass.type = "text";
+  inputElementMspPass.value =
+    "Searched servicing system. Loan is active, Man Code: " + MspManCode.value;
+  document.body.appendChild(inputElementMspPass);
+  inputElementMspPass.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementMspPass);
+};
+
+MspFail.onclick = function () {
+
+  mspPassNoteMTG.style.display = "none";
+  mspFailNoteMTG.style.display = "block";
+
   let inputElementMspPass = document.createElement("input");
   inputElementMspPass.type = "text";
   inputElementMspPass.value =

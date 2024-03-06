@@ -237,10 +237,42 @@ SAVoicemailPass.onclick = function () {
   SAVoicemailFail1.style.display = "none";
 };
 
+SAVoicemailYes.onclick = function (){
+
+  let inputElementSAVoicemailYes = document.createElement("input");
+  inputElementSAVoicemailYes.type = "text";
+  inputElementSAVoicemailYes.value =
+    "Called " +
+    SettlementAgent.value +
+    " at " +
+    SettlementAgentNumber.value +
+    " to request for the copy of the TPOL. Left voicemail, Borrowers name and Property address.";
+  document.body.appendChild(inputElementSAVoicemailYes);
+  inputElementSAVoicemailYes.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementSAVoicemailYes);
+};
+
 SAVoicemailFail.onclick = function () {
   SAVoicemailFail1.style.display = "block";
   SAVoicemailPass1.style.display = "none";
   EstablishContactSAno.style.display = "none";
+};
+
+SAVoicemailNo.onclick = function (){
+
+  let inputElementSAVoicemailNo = document.createElement("input");
+  inputElementSAVoicemailNo.type = "text";
+  inputElementSAVoicemailNo.value =
+    "Called " +
+    SettlementAgent.value +
+    " at " +
+    SettlementAgentNumber.value +
+    " to request for the copy of the TPOL. No one answers the call, will call again tomorrow.";
+  document.body.appendChild(inputElementSAVoicemailNo);
+  inputElementSAVoicemailNo.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementSAVoicemailNo);
 };
 
 SACallPassInstructedtoEmail1.onclick = function sendMail() {
@@ -257,7 +289,7 @@ SACallPassInstructedtoEmail1.onclick = function sendMail() {
 
 During an internal review for the property listed below, Wells Fargo found that the Loan Policy should have been issued but we have not received a copy. Would you please assist us?
 
-Customer: **${customer}**
+Customer: ${customer}
 Property Address: ${propertyAddress}
 Closing Date: ${closingDate}
 Loan Amount: ${loanAmount}
