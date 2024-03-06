@@ -1,5 +1,5 @@
 btnLoanNumberTPOL.onclick = function () {
-floatingInputLoanNumberTPOL.select();
+  floatingInputLoanNumberTPOL.select();
 
   document.execCommand("Copy");
 };
@@ -7,7 +7,8 @@ floatingInputLoanNumberTPOL.select();
 tpolQN.onclick = function () {
   let inputElementQN = document.createElement("input");
   inputElementQN.type = "text";
-  inputElementQN.value = "708_" + floatingInputLoanNumberTPOL.value + "_23310_1";
+  inputElementQN.value =
+    "708_" + floatingInputLoanNumberTPOL.value + "_23310_1";
   document.body.appendChild(inputElementQN);
   inputElementQN.select();
   document.execCommand("copy");
@@ -17,7 +18,8 @@ tpolQN.onclick = function () {
 tpolEU.onclick = function () {
   let inputElementEU = document.createElement("input");
   inputElementEU.type = "text";
-  inputElementEU.value = "936_" + floatingInputLoanNumberTPOL.value + "_23310_1";
+  inputElementEU.value =
+    "936_" + floatingInputLoanNumberTPOL.value + "_23310_1";
   document.body.appendChild(inputElementEU);
   inputElementEU.select();
   document.execCommand("copy");
@@ -25,13 +27,13 @@ tpolEU.onclick = function () {
 };
 
 MspPassTPOL.onclick = function () {
-
   mspPassNoteTPOL.style.display = "block";
 
   let inputElementMspPass = document.createElement("input");
   inputElementMspPass.type = "text";
   inputElementMspPass.value =
-    "Searched servicing system. Loan is active, Man Code: " + MspManCodeTPOL.value;
+    "Searched servicing system. Loan is active, Man Code: " +
+    MspManCodeTPOL.value;
   document.body.appendChild(inputElementMspPass);
   inputElementMspPass.select();
   document.execCommand("copy");
@@ -39,216 +41,319 @@ MspPassTPOL.onclick = function () {
 };
 
 IcmpPassTPOL.onclick = function () {
+  icmpTPOLpass.style.display = "block";
+  GNMAValidation.style.display = "block";
+  icmpTPOLfail.style.display = "none";
+  ValdationInstruction.style.display = "none";
 
-    icmpTPOLpass.style.display = "block";
-    GNMAValidation.style.display = "block";
-    icmpTPOLfail.style.display = "none";
-    ValdationInstruction.style.display = "none";
+  let inputElementIcmpPass = document.createElement("input");
+  inputElementIcmpPass.type = "text";
+  inputElementIcmpPass.value = "Title Policy is located in the imaging system.";
+  document.body.appendChild(inputElementIcmpPass);
+  inputElementIcmpPass.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementIcmpPass);
+};
 
-    let inputElementIcmpPass = document.createElement("input");
-    inputElementIcmpPass.type = "text";
-    inputElementIcmpPass.value =
-      "Title Policy is located in the imaging system.";
-    document.body.appendChild(inputElementIcmpPass);
-    inputElementIcmpPass.select();
-    document.execCommand("copy");
-    document.body.removeChild(inputElementIcmpPass);
-  
-    
-  };
-  
-  IcmpFailTPOL.onclick = function () {
+IcmpFailTPOL.onclick = function () {
+  icmpTPOLfail.style.display = "block";
+  icmpTPOLpass.style.display = "none";
+  GNMAValidation.style.display = "none";
+  GNMANotes.style.display = "none";
+  ValdationInstruction.style.display = "none";
 
-    icmpTPOLfail.style.display = "block";
-    icmpTPOLpass.style.display = "none";
-    GNMAValidation.style.display = "none";
-    GNMANotes.style.display = "none";
-    ValdationInstruction.style.display = "none";
+  let inputElementIcmpPass = document.createElement("input");
+  inputElementIcmpPass.type = "text";
+  inputElementIcmpPass.value =
+    "Researched imaging system; no Title Policy found.";
+  document.body.appendChild(inputElementIcmpPass);
+  inputElementIcmpPass.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementIcmpPass);
+};
 
-    let inputElementIcmpPass = document.createElement("input");
-    inputElementIcmpPass.type = "text";
-    inputElementIcmpPass.value =
-      "Researched imaging system; no Title Policy found.";
-    document.body.appendChild(inputElementIcmpPass);
-    inputElementIcmpPass.select();
-    document.execCommand("copy");
-    document.body.removeChild(inputElementIcmpPass);
-  };
+GNMAYes.onclick = function () {
+  icmpTPOLpass.style.display = "none";
+  GNMAValidation.style.display = "none";
+  GNMANotes.style.display = "block";
+  ValdationInstruction.style.display = "none";
+};
 
-  GNMAYes.onclick = function () {
+GNMANo.onclick = function () {
+  icmpTPOLpass.style.display = "none";
+  GNMAValidation.style.display = "none";
+  GNMANotes.style.display = "none";
+  ValdationInstruction.style.display = "block";
+};
 
-    icmpTPOLpass.style.display = "none";
-    GNMAValidation.style.display = "none";
-    GNMANotes.style.display = "block";
-    ValdationInstruction.style.display = "none";
+GNMAActivityNotes.onclick = function () {
+  ValdationInstruction.style.display = "block";
 
-  };
+  let inputElementGNMATPOL = document.createElement("input");
+  inputElementGNMATPOL.type = "text";
+  inputElementGNMATPOL.value =
+    "Validating Title Policy with Recorded Mortgage per GNMA validation." +
+    GNMAMortgage.value;
+  document.body.appendChild(inputElementGNMATPOL);
+  inputElementGNMATPOL.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementGNMATPOL);
+};
 
-  GNMANo.onclick = function () {
+SAEstablishPass.onclick = function () {
+  SACallPass.style.display = "block";
+  EstablishContactSAno.style.display = "none";
+  SACallPass1.style.display = "block";
+  SAVoicemailPass1.style.display = "none";
+  SAVoicemailFail1.style.display = "none";
+};
 
-    icmpTPOLpass.style.display = "none";
-    GNMAValidation.style.display = "none";
-    GNMANotes.style.display = "none";
-    ValdationInstruction.style.display = "block";
+exampleRadiosSA1.onclick = function () {
+  EstablishContactSAno.style.display = "none";
+  SACallPass1.style.display = "block";
+  SACallPass2.style.display = "none";
+  SACallPass3.style.display = "none";
+  SACallPass4.style.display = "none";
+};
 
-  };
+SACallPassProvided.onclick = function () {
+  let inputElementSACallPassProvided = document.createElement("input");
+  inputElementSACallPassProvided.type = "text";
+  inputElementSACallPassProvided.value =
+    "Called " +
+    SettlementAgent.value +
+    " at " +
+    SettlementAgentNumber.value +
+    " to request for the copy of the TPOL. Spoke to " +
+    NameSA.value +
+    " was told that they will give the copy of the TPOL today, left email address.";
+  document.body.appendChild(inputElementSACallPassProvided);
+  inputElementSACallPassProvided.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementSACallPassProvided);
+};
 
-  GNMAActivityNotes.onclick = function (){
+exampleRadiosSA2.onclick = function () {
+  EstablishContactSAno.style.display = "none";
+  SACallPass1.style.display = "none";
+  SACallPass2.style.display = "block";
+  SACallPass3.style.display = "none";
+  SACallPass4.style.display = "none";
+};
 
-    ValdationInstruction.style.display = "block";
+SACallPassUnable.onclick = function () {
+  let inputElementSACallPassUnable = document.createElement("input");
+  inputElementSACallPassUnable.type = "text";
+  inputElementSACallPassUnable.value =
+    "Called " +
+    SettlementAgent.value +
+    " at " +
+    SettlementAgentNumber.value +
+    " to request for the copy of the TPOL. Spoke to " +
+    NameSA.value +
+    " was told that they are unable to provide the copy of the TPOL. Will proceed to the next contact.";
+  document.body.appendChild(inputElementSACallPassUnable);
+  inputElementSACallPassUnable.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementSACallPassUnable);
+};
 
-    let inputElementGNMATPOL = document.createElement("input");
-    inputElementGNMATPOL.type = "text";
-    inputElementGNMATPOL.value =
-      "Validating Title Policy with Recorded Mortgage per GNMA validation." + GNMAMortgage.value;
-    document.body.appendChild(inputElementGNMATPOL);
-    inputElementGNMATPOL.select();
-    document.execCommand("copy");
-    document.body.removeChild(inputElementGNMATPOL);
-  };
+exampleRadiosSA3.onclick = function () {
+  EstablishContactSAno.style.display = "none";
+  SACallPass1.style.display = "none";
+  SACallPass2.style.display = "none";
+  SACallPass3.style.display = "block";
+  SACallPass4.style.display = "none";
+};
 
+SACallPassInstructedtoEmail.onclick = function () {
+  let inputElementSACallEmail = document.createElement("input");
+  inputElementSACallEmail.type = "text";
+  inputElementSACallEmail.value =
+    "Called " +
+    SettlementAgent.value +
+    " at " +
+    SettlementAgentNumber.value +
+    " to request for the copy of the TPOL. Spoke to " +
+    NameSA.value +
+    " was instructed to send an email request to " +
+    SettlementAgentEmail.value;
+  document.body.appendChild(inputElementSACallEmail);
+  inputElementSACallEmail.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementSACallEmail);
+};
 
+SACallPassEmailSent.onclick = function () {
+  let inputElementSACallEmailSent = document.createElement("input");
+  inputElementSACallEmailSent.type = "text";
+  inputElementSACallEmailSent.value =
+    "Emailed " +
+    SettlementAgent.value +
+    " at " +
+    SettlementAgentEmail.value +
+    " to request for the copy of the TPOL.";
+  document.body.appendChild(inputElementSACallEmailSent);
+  inputElementSACallEmailSent.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementSACallEmailSent);
+};
 
-  SAEstablishPass.onclick = function (){
+exampleRadiosSA4.onclick = function () {
+  EstablishContactSAno.style.display = "none";
+  SACallPass1.style.display = "none";
+  SACallPass2.style.display = "none";
+  SACallPass3.style.display = "none";
+  SACallPass4.style.display = "block";
+};
 
-    SACallPass.style.display = "block";
-    EstablishContactSAno.style.display = "none";
-    SACallPass1.style.display = "block";
-    SAVoicemailPass1.style.display = "none";
-    SAVoicemailFail1.style.display = "none";
-  };
+SACallPassOther.onclick = function () {
+  let inputElementSACallPassOther = document.createElement("input");
+  inputElementSACallPassOther.type = "text";
+  inputElementSACallPassOther.value =
+    "Called " +
+    SettlementAgent.value +
+    " at " +
+    SettlementAgentNumber.value +
+    " to request for the copy of the TPOL. Spoke to " +
+    NameSA.value +
+    " was told that " +
+    SACallOtherTextArea.value;
+  document.body.appendChild(inputElementSACallPassOther);
+  inputElementSACallPassOther.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementSACallPassOther);
+};
 
-  exampleRadiosSA1.onclick = function (){
+SAEstablishFail.onclick = function () {
+  EstablishContactSAno.style.display = "block";
+  SACallPass.style.display = "none";
+  SACallPass1.style.display = "none";
+};
 
-    EstablishContactSAno.style.display = "none";
-    SACallPass1.style.display = "block";
-    SACallPass2.style.display = "none";
-    SACallPass3.style.display = "none";
-    SACallPass4.style.display = "none";
-  };
+SAVoicemailPass.onclick = function () {
+  SAVoicemailPass1.style.display = "block";
+  EstablishContactSAno.style.display = "none";
+  SAVoicemailFail1.style.display = "none";
+};
 
-  exampleRadiosSA2.onclick = function (){
+SAVoicemailFail.onclick = function () {
+  SAVoicemailFail1.style.display = "block";
+  SAVoicemailPass1.style.display = "none";
+  EstablishContactSAno.style.display = "none";
+};
 
-    EstablishContactSAno.style.display = "none";
-    SACallPass1.style.display = "none";
-    SACallPass2.style.display = "block";
-    SACallPass3.style.display = "none";
-    SACallPass4.style.display = "none";
-  };
+SACallPassInstructedtoEmail1.onclick = function sendMail() {
+  const customer = document.getElementById("BorrowersNameSA").value;
+  const propertyAddress = document.getElementById("BorrowersAddressSA").value;
+  const closingDate = document.getElementById("ClosingDateSA").value;
+  const loanAmount = document.getElementById("LoanAmountSA").value;
+  const fileNumber = document.getElementById("FileNumberSA").value;
+  const emailAddress = document.getElementById("SettlementAgentEmail").value;
 
-  exampleRadiosSA3.onclick = function (){
+  // Construct the email message
+  const subject = encodeURIComponent("Loan Document Request");
+  const body = encodeURIComponent(`Dear Sue,
 
-    EstablishContactSAno.style.display = "none";
-    SACallPass1.style.display = "none";
-    SACallPass2.style.display = "none";
-    SACallPass3.style.display = "block";
-    SACallPass4.style.display = "none";
-  };
+During an internal review for the property listed below, Wells Fargo found that the Loan Policy should have been issued but we have not received a copy. Would you please assist us?
 
-  exampleRadiosSA4.onclick = function (){
+Customer: <strong>${customer}</strong>
+Property Address: ${propertyAddress}
+Closing Date: ${closingDate}
+Loan Amount: ${loanAmount}
+File Number: ${fileNumber}
 
-    EstablishContactSAno.style.display = "none";
-    SACallPass1.style.display = "none";
-    SACallPass2.style.display = "none";
-    SACallPass3.style.display = "none";
-    SACallPass4.style.display = "block";
-  };
+What we are requesting from you:
 
-  SAEstablishFail.onclick = function (){
+· Reply with a copy of the Lender's Title Policy
 
-    EstablishContactSAno.style.display = "block";
-    SACallPass.style.display = "none";
-    SACallPass1.style.display = "none";
-  };
+Thank you for your assistance with resolving this matter. 
 
-  SAVoicemailPass.onclick = function (){
+Sincerely,
+`);
 
-    SAVoicemailPass1.style.display = "block";
-    EstablishContactSAno.style.display = "none";
-    SAVoicemailFail1.style.display = "none";
-  };
+  // Construct the mailto link
+  const mailtoLink = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
 
-  SAVoicemailFail.onclick = function (){
+  // Open the default email client with the pre-filled subject and body
+  window.location.href = mailtoLink;
+};
 
-    SAVoicemailFail1.style.display = "block";
-    SAVoicemailPass1.style.display = "none";
-    EstablishContactSAno.style.display = "none";
-  };
-  
+let SettlementAgent = document.getElementById("SettlementAgent");
+let SettlementAgentNumber = document.getElementById("SettlementAgentNumber");
 
-  let SettlementAgent = document.getElementById('SettlementAgent');
-  let SettlementAgentNumber = document.getElementById('SettlementAgentNumber');
+// ProceedSA.onclick = function () {
 
-  // ProceedSA.onclick = function () {
+//   let SettlementAgentValue = SettlementAgent.value;
+//   let SettlementAgentNumbervalue = SettlementAgentNumber.value;
 
-  //   let SettlementAgentValue = SettlementAgent.value;
-  //   let SettlementAgentNumbervalue = SettlementAgentNumber.value;
+//   localStorage.setItem('settlement-agent', SettlementAgentValue);
+//   localStorage.setItem('settlementagent-number', SettlementAgentNumbervalue);
 
-  //   localStorage.setItem('settlement-agent', SettlementAgentValue);
-  //   localStorage.setItem('settlementagent-number', SettlementAgentNumbervalue);
+//   window.location.href = "settlementagent.html";
 
-  //   window.location.href = "settlementagent.html";
+// };
 
-  // };
+SameSA.onclick = function () {
+  let inputElementSameSA = document.createElement("input");
+  inputElementSameSA.type = "text";
+  inputElementSameSA.value =
+    "Skipped Calling SA, " +
+    SettlementAgent.value +
+    " was also the Title Company for this loan.";
+  document.body.appendChild(inputElementSameSA);
+  inputElementSameSA.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementSameSA);
+};
 
-  SameSA.onclick = function () {
+NotInBusinessSA.onclick = function () {
+  let inputElementNotInBusinessSA = document.createElement("input");
+  inputElementNotInBusinessSA.type = "text";
+  inputElementNotInBusinessSA.value =
+    SettlementAgent.value +
+    " is already closed according to OpenCorporates, SOS and web search. Will proceed to next contact.";
+  document.body.appendChild(inputElementNotInBusinessSA);
+  inputElementNotInBusinessSA.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementNotInBusinessSA);
+};
 
-    let inputElementSameSA = document.createElement("input");
-    inputElementSameSA.type = "text";
-    inputElementSameSA.value =
-      "Skipped Calling SA, " + SettlementAgent.value + " was also the Title Company for this loan.";
-    document.body.appendChild(inputElementSameSA);
-    inputElementSameSA.select();
-    document.execCommand("copy");
-    document.body.removeChild(inputElementSameSA);
-  };
+SameTC.onclick = function () {
+  let inputElementSameTC = document.createElement("input");
+  inputElementSameTC.type = "text";
+  inputElementSameTC.value =
+    "Skipped Calling TC, " +
+    TitleCompany.value +
+    " was also the Title Underwriter for this loan.";
+  document.body.appendChild(inputElementSameTC);
+  inputElementSameTC.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementSameTC);
+};
 
-  NotInBusinessSA.onclick = function () {
+NotInBusinessTC.onclick = function () {
+  let inputElementNotInBusinessTC = document.createElement("input");
+  inputElementNotInBusinessTC.type = "text";
+  inputElementNotInBusinessTC.value =
+    TitleCompany.value +
+    " is already closed according to OpenCorporates, SOS and web search. Will proceed to next contact.";
+  document.body.appendChild(inputElementNotInBusinessTC);
+  inputElementNotInBusinessTC.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementNotInBusinessTC);
+};
 
-    let inputElementNotInBusinessSA = document.createElement("input");
-    inputElementNotInBusinessSA.type = "text";
-    inputElementNotInBusinessSA.value =
-      SettlementAgent.value + " is already closed according to OpenCorporates, SOS and web search. Will proceed to next contact.";
-    document.body.appendChild(inputElementNotInBusinessSA);
-    inputElementNotInBusinessSA.select();
-    document.execCommand("copy");
-    document.body.removeChild(inputElementNotInBusinessSA);
-  };
+// Title Underwriter
 
-  SameTC.onclick = function () {
+// ProceedTU.onclick = function () {
 
-    let inputElementSameTC = document.createElement("input");
-    inputElementSameTC.type = "text";
-    inputElementSameTC.value =
-      "Skipped Calling TC, " + TitleCompany.value + " was also the Title Underwriter for this loan.";
-    document.body.appendChild(inputElementSameTC);
-    inputElementSameTC.select();
-    document.execCommand("copy");
-    document.body.removeChild(inputElementSameTC);
-  };
+//   let TitleUnderWriterValue = TitleUnderwriter.value;
+//   let TitleUnderWriterNumbervalue = TitleUnderwriterNumber.value;
 
-  NotInBusinessTC.onclick = function () {
+//   localStorage.setItem('tu-agent', TitleUnderWriterValue);
+//   localStorage.setItem('tu-number', TitleUnderWriterNumbervalue);
 
-    let inputElementNotInBusinessTC = document.createElement("input");
-    inputElementNotInBusinessTC.type = "text";
-    inputElementNotInBusinessTC.value =
-      TitleCompany.value + " is already closed according to OpenCorporates, SOS and web search. Will proceed to next contact.";
-    document.body.appendChild(inputElementNotInBusinessTC);
-    inputElementNotInBusinessTC.select();
-    document.execCommand("copy");
-    document.body.removeChild(inputElementNotInBusinessTC);
-  };
+//   window.location.href = "titleunderwriter.html";
 
-  // Title Underwriter
-
-  // ProceedTU.onclick = function () {
-
-  //   let TitleUnderWriterValue = TitleUnderwriter.value;
-  //   let TitleUnderWriterNumbervalue = TitleUnderwriterNumber.value;
-
-  //   localStorage.setItem('tu-agent', TitleUnderWriterValue);
-  //   localStorage.setItem('tu-number', TitleUnderWriterNumbervalue);
-
-  //   window.location.href = "titleunderwriter.html";
-
-  // };
+// };

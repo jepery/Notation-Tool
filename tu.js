@@ -17,7 +17,7 @@ TUEmail.onclick = function sendMail() {
       const emailAddress = document.getElementById('TUnderwriterEmail').value;
 
       // Construct the email message
-      const subject = encodeURIComponent("Loan Policy Request - Property at " + propertyAddress);
+      const subject = encodeURIComponent("Loan Document Request");
       const body = encodeURIComponent(`Dear Sue,
 
 During an internal review for the property listed below, Wells Fargo found that the Loan Policy should have been issued but we have not received a copy. Would you please assist us?
@@ -30,9 +30,9 @@ File Number: ${fileNumber}
 
 What we are requesting from you:
 
-· Reply with a copy of the recorded Lender's Title Policy
+· Reply with a copy of the Lender's Title Policy
 
-Thank you for your assistance with resolving this matter. If you have any questions, feel free to reply to this email or call me at 866-743-1112 ext: 53060, Monday through Friday 8:00 A.M. to 5:00 P.M. Central time.
+Thank you for your assistance with resolving this matter. 
 
 Sincerely,
 `);

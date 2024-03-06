@@ -113,6 +113,9 @@ GNMAActivityNotes.onclick = function (){
 };
 
 DocumentRetrieved.onclick = function () {
+
+  GNMAValidationCounty.style.display = "block";
+
   let inputElementDocRetrieve = document.createElement("input");
   inputElementDocRetrieve.type = "text";
   inputElementDocRetrieve.value =
@@ -170,7 +173,42 @@ NotSearchable.onclick = function () {
   document.body.removeChild(inputElementNotSearchable);
 };
 
+GNMAYesCounty.onclick = function () {
+
+  icmpMTGpass.style.display = "none";
+  GNMAValidationCounty.style.display = "none";
+  GNMANotesCounty.style.display = "block";
+  ValdationInstructionCounty.style.display = "none";
+
+};
+
+GNMANoCounty.onclick = function () {
+
+  icmpMTGpass.style.display = "none";
+  GNMAValidationCounty.style.display = "none";
+  GNMANotesCounty.style.display = "none";
+  ValdationInstructionCounty.style.display = "block";
+
+};
+
+GNMAActivityNotesCounty.onclick = function (){
+
+  ValdationInstructionCounty.style.display = "block";
+
+  let inputElementGNMAMTG = document.createElement("input");
+  inputElementGNMAMTG.type = "text";
+  inputElementGNMAMTG.value =
+    "Validating Recorded Mortgage with Note per GNMA validation." + GNMANoteCounty.value;
+  document.body.appendChild(inputElementGNMAMTG);
+  inputElementGNMAMTG.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementGNMAMTG);
+};
+
 DataTreePass.onclick = function () {
+
+  GNMAValidationDataTree.style.display = "block";
+
   let inputElementDataTreePass = document.createElement("input");
   inputElementDataTreePass.type = "text";
   inputElementDataTreePass.value =
@@ -192,7 +230,42 @@ DataTreeFail.onclick = function () {
   document.body.removeChild(inputElementDataTreeFail);
 };
 
+GNMAYesDataTree.onclick = function () {
+
+  icmpMTGpass.style.display = "none";
+  GNMAValidationDataTree.style.display = "none";
+  GNMANotesDataTree.style.display = "block";
+  ValdationInstructionDataTree.style.display = "none";
+
+};
+
+GNMANoDataTree.onclick = function () {
+
+  icmpMTGpass.style.display = "none";
+  GNMAValidationDataTree.style.display = "none";
+  GNMANotesDataTree.style.display = "none";
+  ValdationInstructionDataTree.style.display = "block";
+
+};
+
+GNMAActivityNotesDataTree.onclick = function (){
+
+  ValdationInstructionDataTree.style.display = "block";
+
+  let inputElementGNMAMTG = document.createElement("input");
+  inputElementGNMAMTG.type = "text";
+  inputElementGNMAMTG.value =
+    "Validating Recorded Mortgage with Note per GNMA validation." + GNMANoteDataTree.value;
+  document.body.appendChild(inputElementGNMAMTG);
+  inputElementGNMAMTG.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementGNMAMTG);
+};
+
 AuthoCenterPass.onclick = function () {
+
+  GNMAValidationOcta.style.display = "block";
+
   let inputElementAuthoCenterPass = document.createElement("input");
   inputElementAuthoCenterPass.type = "text";
   inputElementAuthoCenterPass.value =
@@ -212,6 +285,38 @@ AuthoCenterFail.onclick = function () {
   inputElementAuthoCenterFail.select();
   document.execCommand("copy");
   document.body.removeChild(inputElementAuthoCenterFail);
+};
+
+GNMAYesOcta.onclick = function () {
+
+  icmpMTGpass.style.display = "none";
+  GNMAValidationOcta.style.display = "none";
+  GNMANotesOcta.style.display = "block";
+  ValdationInstructionOcta.style.display = "none";
+
+};
+
+GNMANoOcta.onclick = function () {
+
+  icmpMTGpass.style.display = "none";
+  GNMAValidationOcta.style.display = "none";
+  GNMANotesOcta.style.display = "none";
+  ValdationInstructionOcta.style.display = "block";
+
+};
+
+GNMAActivityNotesOcta.onclick = function (){
+
+  ValdationInstructionOcta.style.display = "block";
+
+  let inputElementGNMAMTG = document.createElement("input");
+  inputElementGNMAMTG.type = "text";
+  inputElementGNMAMTG.value =
+    "Validating Recorded Mortgage with Note per GNMA validation." + GNMANoteOcta.value;
+  document.body.appendChild(inputElementGNMAMTG);
+  inputElementGNMAMTG.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementGNMAMTG);
 };
 
 CallCountyTrigger.onclick = function () {
