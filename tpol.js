@@ -257,7 +257,7 @@ SACallPassInstructedtoEmail1.onclick = function sendMail() {
 
 During an internal review for the property listed below, Wells Fargo found that the Loan Policy should have been issued but we have not received a copy. Would you please assist us?
 
-Customer: <strong>${customer}</strong>
+Customer: **${customer}**
 Property Address: ${propertyAddress}
 Closing Date: ${closingDate}
 Loan Amount: ${loanAmount}
