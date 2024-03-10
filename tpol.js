@@ -237,7 +237,7 @@ SAVoicemailPass.onclick = function () {
   SAVoicemailFail1.style.display = "none";
 };
 
-SAVoicemailYes.onclick = function (){
+SAVoicemailYes1.onclick = function (){
 
   let inputElementSAVoicemailYes = document.createElement("input");
   inputElementSAVoicemailYes.type = "text";
