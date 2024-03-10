@@ -378,14 +378,52 @@ NotInBusinessTC.onclick = function () {
 
 // Title Underwriter
 
-// ProceedTU.onclick = function () {
+inlineRadio1FirstAmerican.onclick = function () {
 
-//   let TitleUnderWriterValue = TitleUnderwriter.value;
-//   let TitleUnderWriterNumbervalue = TitleUnderwriterNumber.value;
+  FirstAmericanDiv.style.display = "block";
+  OldDiv.style.display = "none";
+  StewartDiv.style.display = "none";
+  FidelityDiv.style.display = "none";
+  TUOtherDiv.style.display = "none";
 
-//   localStorage.setItem('tu-agent', TitleUnderWriterValue);
-//   localStorage.setItem('tu-number', TitleUnderWriterNumbervalue);
+};
 
-//   window.location.href = "titleunderwriter.html";
+inlineRadio2OldRepublic.onclick = function () {
 
-// };
+  FirstAmericanDiv.style.display = "none";
+  OldDiv.style.display = "block";
+  StewartDiv.style.display = "none";
+  FidelityDiv.style.display = "none";
+  TUOtherDiv.style.display = "none";
+
+};
+
+inlineRadio3StewartTitle.onclick = function () {
+
+  FirstAmericanDiv.style.display = "none";
+  OldDiv.style.display = "none";
+  StewartDiv.style.display = "block";
+  FidelityDiv.style.display = "none";
+  TUOtherDiv.style.display = "none";
+
+};
+
+inlineRadio4Fidelity.onclick = function () {
+
+  FirstAmericanDiv.style.display = "none";
+  OldDiv.style.display = "none";
+  StewartDiv.style.display = "none";
+  FidelityDiv.style.display = "block";
+  TUOtherDiv.style.display = "none";
+
+};
+
+inlineRadio4OthersTU.onclick = function () {
+
+  FirstAmericanDiv.style.display = "none";
+  OldDiv.style.display = "none";
+  StewartDiv.style.display = "none";
+  FidelityDiv.style.display = "none";
+  TUOtherDiv.style.display = "block";
+
+};

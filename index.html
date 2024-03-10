@@ -83,6 +83,75 @@
             Fail
           </button>
         </div>
+
+        <div class="mt-3 collapse" id="MspPullUp">
+          <p class="fw-bold fs-6">Can you pull up the Loan number in MSP?</p>
+          <button type="button" class="btn btn-success" id="MspPullYes">
+            Yes
+          </button>
+          <button type="button" class="btn btn-danger" id="MspPullNo">
+            No
+          </button>
+        </div>
+
+        <div class="mt-3 collapse" id="MspPullUpYes">
+          <p class="fw-bold fs-6">Is the Loan Service Transferred?</p>
+          <button type="button" class="btn btn-success" id="MspServiceYes">
+            Yes
+          </button>
+          <button type="button" class="btn btn-danger" id="MspServiceNo">
+            No
+          </button>
+        </div>
+
+        <div class="mt-3 collapse" id="MspPullUpNo">
+          <p class="fs-6"><i>For those loans that does not pull up in MSP, regardless of the status in ARROW. Please use the following notation.</i></p>
+
+          <p class="fw-bold fs-6">Research - Data/System - Fail</p>
+          <button type="button" class="btn btn-danger" id="MspPullUpNo1">
+            Activity Note
+          </button>
+
+          <div class="mt-3" id="MspPullUpNotCurable">
+            <p class="fs-6"><i>Not Curable. Loan is not valid in MSP.</i></p>
+  
+            <p class="fw-bold fs-6">Research - Document - Exhausted Resources</p>
+            <button type="button" class="btn btn-danger" id="MspPullUpNo2">
+              Activity Note
+            </button>
+
+            <p class="fs-6 mt-3">• Update the deficiency status to <strong>Override</strong>. <br>
+              •	Update the Follow Up Analyst ID to <strong>LSOEXHST</strong>.</p>
+  
+          </div>
+
+        </div>
+
+        <div class="mt-3 collapse" id="MspTransferNo">
+          <p class="fs-6"><i>For those loans that CAN be pulled up in MSP with  zero balance and NOT service transferred, please use the notation below.</i></p>
+
+          <p class="fw-bold fs-6">Research - Data/System - Fail</p>
+          <button type="button" class="btn btn-danger" id="MspTransferNo1">
+            Activity Note
+          </button>
+
+          <div class="mt-3" id="MspTransferNoNotCurable">
+            <p class="fs-6"><i>Not Curable. Loan was paid in full and was not service transferred.</i></p>
+  
+            <p class="fw-bold fs-6">Research - Document - Exhausted Resources</p>
+            <button type="button" class="btn btn-danger" id="MspPullUpNo2">
+              Activity Note
+            </button>
+
+            <p class="fs-6 mt-3">• Update the deficiency status to <strong>Override</strong>. <br>
+              •	Update the Follow Up Analyst ID to <strong>LSOEXHST</strong>.</p>
+  
+          </div>
+
+        </div>
+
+        <div id="AfterMSP">
+
         <div class="mt-3" id="IcmpDiv">
           <p>ICMP Search</p>
           <p class="fw-bold fs-6 collapse" id="icmpMTGpass">
@@ -170,14 +239,15 @@
             </div>
           </div>
         </div>
-          <!-- <div class="mt-3">
-            <select class="form-select"  id="CountySelect">
-              <option selected>Choose outcome of search</option>
-              <option value="1" id="DocumentRetrieved">Retrieved image of document.</option>
-              <option value="2" id="RecordingInfo">Retrieved detailed recording information.</option>
-              <option value="3" id="NotSearchable">The county website is not searchable.</option>
-              <option value="4" id="NoDocument">Unable to locate document.</option>
-            </select> -->
+
+        <div class="collapse" id="CountyTextDocument">
+          <p class="fw-bold fs-6 mt-3">Research - County/City - Pass/Completed</p>
+        </div>
+
+        <div class="collapse" id="CountyTextNoDocument">
+          <p class="fw-bold fs-6 mt-3">Research - County/City - Fail</p>
+        </div>
+      
         <div class="mt-3" id="CountySearchDivButton">
           <div class="btn-group-justified mt-3" role="group">
             <button
@@ -238,6 +308,15 @@
 
         <div class="mt-3" id="DataTreeDiv">
           <p>DataTree Search</p>
+
+          <div class="collapse" id="DataTreeTextDocument">
+            <p class="fw-bold fs-6 mt-3">Research - Web - Pass/Completed</p>
+          </div>
+
+          <div class="collapse" id="DataTreeTextNoDocument">
+            <p class="fw-bold fs-6 mt-3">Research - Web - Fail</p>
+          </div>
+
           <button type="button" class="btn btn-success" data-toggle="tooltip" title="Research - Web - Pass/Completed" id="DataTreePass">
             Pass
           </button>
@@ -279,6 +358,15 @@
 
         <div class="mt-3" id="AuthoCenterDiv">
           <p>AuthoCenter Search</p>
+
+          <div class="collapse" id="OctaTextDocument">
+            <p class="fw-bold fs-6 mt-3">Research - Web - Pass/Completed</p>
+          </div>
+
+          <div class="collapse" id="OctaTextNoDocument">
+            <p class="fw-bold fs-6 mt-3">Research - Web - Fail</p>
+          </div>
+
           <button type="button" class="btn btn-success" data-toggle="tooltip" title="Research - Web - Pass/Completed" id="AuthoCenterPass">
             Pass
           </button>
@@ -498,6 +586,7 @@
           </div>
         </div>
       
+      </div>  
     </section>
   </body>
 

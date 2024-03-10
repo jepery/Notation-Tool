@@ -37,6 +37,11 @@ secondE.onclick = function () {
 
 MspPass.onclick = function () {
 
+  AfterMSP.style.display = "block";
+  MspPullUp.style.display = "none";
+  MspPullUpYes.style.display = "none";
+  MspTransferNo.style.display = "none";
+  MspPullUpNo.style.display = "none";
   mspPassNoteMTG.style.display = "block";
   mspFailNoteMTG.style.display = "none";
 
@@ -52,18 +57,40 @@ MspPass.onclick = function () {
 
 MspFail.onclick = function () {
 
+  AfterMSP.style.display = "none";
+  MspPullUp.style.display = "block";
+  MspPullUpYes.style.display = "none";
+  MspTransferNo.style.display = "none";
+  MspPullUpNo.style.display = "none";
   mspPassNoteMTG.style.display = "none";
   mspFailNoteMTG.style.display = "block";
 
-  let inputElementMspPass = document.createElement("input");
-  inputElementMspPass.type = "text";
-  inputElementMspPass.value =
-    "Searched servicing system. Loan is active, Man Code: " + MspManCode.value;
-  document.body.appendChild(inputElementMspPass);
-  inputElementMspPass.select();
-  document.execCommand("copy");
-  document.body.removeChild(inputElementMspPass);
 };
+
+MspPullYes.onclick = function() {
+
+  MspPullUpYes.style.display = "block";
+  MspPullUp.style.display = "none";
+
+};
+
+MspPullNo.onclick = function() {
+
+  MspPullUpYes.style.display = "none";
+  MspPullUp.style.display = "none";
+  MspPullUpNo.style.display = "block";
+
+};
+
+MspServiceNo.onclick = function() {
+
+  MspPullUpYes.style.display = "none";
+  MspPullUp.style.display = "none";
+  MspTransferNo.style.display = "block";
+
+};
+
+
 
 IcmpPass.onclick = function () {
 
@@ -134,6 +161,8 @@ GNMAActivityNotes.onclick = function (){
 DocumentRetrieved.onclick = function () {
 
   GNMAValidationCounty.style.display = "block";
+  CountyTextDocument.style.display = "block";
+  CountyTextNoDocument.style.display = "none";
 
   let inputElementDocRetrieve = document.createElement("input");
   inputElementDocRetrieve.type = "text";
@@ -148,6 +177,10 @@ DocumentRetrieved.onclick = function () {
 };
 
 RecInfo.onclick = function () {
+
+  CountyTextDocument.style.display = "block";
+  CountyTextNoDocument.style.display = "none";
+
   let inputElementRecInfo = document.createElement("input");
   inputElementRecInfo.type = "text";
   inputElementRecInfo.value =
@@ -167,6 +200,10 @@ RecInfo.onclick = function () {
 };
 
 NoDocument.onclick = function () {
+
+  CountyTextDocument.style.display = "none";
+  CountyTextNoDocument.style.display = "block";
+
   let inputElementNoDocument = document.createElement("input");
   inputElementNoDocument.type = "text";
   inputElementNoDocument.value =
@@ -180,6 +217,10 @@ NoDocument.onclick = function () {
 };
 
 NotSearchable.onclick = function () {
+
+  CountyTextDocument.style.display = "none";
+  CountyTextNoDocument.style.display = "block";
+
   let inputElementNotSearchable = document.createElement("input");
   inputElementNotSearchable.type = "text";
   inputElementNotSearchable.value =
@@ -227,6 +268,8 @@ GNMAActivityNotesCounty.onclick = function (){
 DataTreePass.onclick = function () {
 
   GNMAValidationDataTree.style.display = "block";
+  DataTreeTextDocument.style.display = "block";
+  DataTreeTextNoDocument.style.display = "none";
 
   let inputElementDataTreePass = document.createElement("input");
   inputElementDataTreePass.type = "text";
@@ -239,6 +282,10 @@ DataTreePass.onclick = function () {
 };
 
 DataTreeFail.onclick = function () {
+
+  DataTreeTextDocument.style.display = "none";
+  DataTreeTextNoDocument.style.display = "block";
+
   let inputElementDataTreeFail = document.createElement("input");
   inputElementDataTreeFail.type = "text";
   inputElementDataTreeFail.value =
@@ -284,6 +331,8 @@ GNMAActivityNotesDataTree.onclick = function (){
 AuthoCenterPass.onclick = function () {
 
   GNMAValidationOcta.style.display = "block";
+  OctaTextDocument.style.display = "block";
+  OctaTextNoDocument.style.display = "none";
 
   let inputElementAuthoCenterPass = document.createElement("input");
   inputElementAuthoCenterPass.type = "text";
@@ -296,6 +345,10 @@ AuthoCenterPass.onclick = function () {
 };
 
 AuthoCenterFail.onclick = function () {
+
+  OctaTextDocument.style.display = "none";
+  OctaTextNoDocument.style.display = "block";
+
   let inputElementAuthoCenterFail = document.createElement("input");
   inputElementAuthoCenterFail.type = "text";
   inputElementAuthoCenterFail.value =
