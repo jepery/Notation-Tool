@@ -372,10 +372,11 @@ SACallPassInstructedtoEmail1.onclick = function sendMail() {
   const loanAmount = document.getElementById("LoanAmountSA").value;
   const fileNumber = document.getElementById("FileNumberSA").value;
   const emailAddress = document.getElementById("SettlementAgentEmail").value;
+  const external = document.getElementById("SettlementAgent").value;
 
   // Construct the email message
   const subject = encodeURIComponent("Loan Document Request");
-  const body = encodeURIComponent(`Dear Sue,
+  const body = encodeURIComponent(`Dear ${external},
 
 During an internal review for the property listed below, Wells Fargo found that the Loan Policy should have been issued but we have not received a copy. Would you please assist us?
 

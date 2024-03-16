@@ -20,12 +20,12 @@
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button bg-warning" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Show Checklist
+                        <strong>Show Checklist Validation</strong>
                     </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div id="collapseOne" class="accordion-collapse collapse bg-dark text-light" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="CheckallPagesLegible" />
@@ -58,88 +58,136 @@
                             </label>
                         </div>
 
-                        <div>
-                            <p class="fw-bold fs-5">
-                                Non-GNMA guidelines only:
-                            </p>
-                        </div>
-                        <div class="form-check mt-2">
-                            <input class="form-check-input" type="checkbox" value="" id="CheckPolicyNumber" />
-                            <label class="form-check-label" for="CheckPolicyNumber">
-                                Mortgage date must be on or after the Note date on the MSP, MAS1/NOT1 screen.
-                            </label>
-                        </div>
-                        <div class="form-check mt-2">
-                            <input class="form-check-input" type="checkbox" value="" id="CheckDate" />
-                            <label class="form-check-label" for="CheckDate">
-                                Borrower name(s) must match names on the MSP, MAS1/ADD2 screen.<br>
 
-                                <strong>Note:</strong> <i>Additional names on the Mortgage are acceptable, but all borrower names in MSP must be listed on the Mortgage.</i><br>
-                                <strong>Note:</strong> <i>Middle names/initials can be ignored unless the middle name/initial does not agree with MSP.</i>
-                            </label>
-                        </div>
-                        <div class="form-check mt-2">
-                            <input class="form-check-input" type="checkbox" value="" id="CheckPolicyAmount" />
-                            <label class="form-check-label" for="CheckPolicyAmount">
-                                Property address, excluding ZIP code, must match the property address on the MSP, MAS1/ADD2 screen.
-                            </label>
-                        </div>
-                        <div class="form-check mt-2">
-                            <input class="form-check-input" type="checkbox" value="" id="CheckMortgagorName" />
-                            <label class="form-check-label" for="CheckMortgagorName">
-                                If a Legal Description is present, the absence of an address is acceptable; however, any address values that are present must match MSP.
-                            </label>
-                        </div>
-                        <div class="form-check mt-2 mb-2">
-                            <input class="form-check-input" type="checkbox" value="" id="CheckLegal" />
-                            <label class="form-check-label" for="CheckLegal">
-                                Loan amount must match the original Mortgage amount on the MSP, MAS1/NOT1 screen.
-                            </label>
+                        <div class="accordion mt-3" id="accordionExample1">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button bg-warning" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                        <strong>Non-GNMA guidelines only:</strong>
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse bg-dark text-light"
+                                    data-bs-parent="#accordionExample1">
+                                    <div class="accordion-body">
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="CheckPolicyNumber" />
+                                            <label class="form-check-label" for="CheckPolicyNumber">
+                                                Mortgage date must be on or after the Note date on the MSP, MAS1/NOT1
+                                                screen.
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="CheckDate" />
+                                            <label class="form-check-label" for="CheckDate">
+                                                Borrower name(s) must match names on the MSP, MAS1/ADD2 screen.<br>
+
+                                                <strong>Note:</strong> <i>Additional names on the Mortgage are
+                                                    acceptable, but
+                                                    all borrower names in MSP must be listed on the Mortgage.</i><br>
+                                                <strong>Note:</strong> <i>Middle names/initials can be ignored unless
+                                                    the middle
+                                                    name/initial does not agree with MSP.</i>
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="CheckPolicyAmount" />
+                                            <label class="form-check-label" for="CheckPolicyAmount">
+                                                Property address, excluding ZIP code, must match the property address on
+                                                the
+                                                MSP, MAS1/ADD2 screen.
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="CheckMortgagorName" />
+                                            <label class="form-check-label" for="CheckMortgagorName">
+                                                If a Legal Description is present, the absence of an address is
+                                                acceptable;
+                                                however, any address values that are present must match MSP.
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2 mb-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="CheckLegal" />
+                                            <label class="form-check-label" for="CheckLegal">
+                                                Loan amount must match the original Mortgage amount on the MSP,
+                                                MAS1/NOT1
+                                                screen.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div>
-                            <p class="fw-bold fs-5">
-                                GNMA guidelines only:
-                            </p>
-                        </div>
-                        <div class="form-check mt-2">
-                            <input class="form-check-input" type="checkbox" value="" id="CheckPolicyNumber" />
-                            <label class="form-check-label" for="CheckPolicyNumber">
-                                Mortgage date must be on or after the Note date.
-                            </label>
-                        </div>
-                        <div class="form-check mt-2">
-                            <input class="form-check-input" type="checkbox" value="" id="CheckDate" />
-                            <label class="form-check-label" for="CheckDate">
-                                Borrower name(s) must match names on the Note.<br>
+                        <div class="accordion mt-3" id="accordionExample2">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button bg-warning" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                                        <strong>GNMA guidelines only:</strong>
+                                    </button>
+                                </h2>
+                                <div id="collapse3" class="accordion-collapse collapse bg-dark text-light"
+                                    data-bs-parent="#accordionExample2">
+                                    <div class="accordion-body">
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="CheckPolicyNumber" />
+                                            <label class="form-check-label" for="CheckPolicyNumber">
+                                                Mortgage date must be on or after the Note date.
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="CheckDate" />
+                                            <label class="form-check-label" for="CheckDate">
+                                                Borrower name(s) must match names on the Note.<br>
 
-                                <strong>Note:</strong> <i>Additional names on the Mortgage are acceptable, but all borrower names on the Note must be listed on the Mortgage.</i><br>
-                                <strong>Note:</strong> <i>Middle names/initials can be ignored unless middle name/initial does not agree with the Note.</i>
-                            </label>
+                                                <strong>Note:</strong> <i>Additional names on the Mortgage are
+                                                    acceptable, but
+                                                    all borrower names on the Note must be listed on the
+                                                    Mortgage.</i><br>
+                                                <strong>Note:</strong> <i>Middle names/initials can be ignored unless
+                                                    middle
+                                                    name/initial does not agree with the Note.</i>
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="CheckPolicyAmount" />
+                                            <label class="form-check-label" for="CheckPolicyAmount">
+                                                Property address, excluding ZIP code, must match the property address on
+                                                the
+                                                Note.
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="CheckMortgagorName" />
+                                            <label class="form-check-label" for="CheckMortgagorName">
+                                                If a Legal Description is present, the absence of an address is
+                                                acceptable;
+                                                however, any address values that are present must match Note.
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="CheckLegal" />
+                                            <label class="form-check-label" for="CheckLegal">
+                                                Loan amount must match the original Mortgage amount on the Note.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-check mt-2">
-                            <input class="form-check-input" type="checkbox" value="" id="CheckPolicyAmount" />
-                            <label class="form-check-label" for="CheckPolicyAmount">
-                                Property address, excluding ZIP code, must match the property address on the Note.
-                            </label>
-                        </div>
-                        <div class="form-check mt-2">
-                            <input class="form-check-input" type="checkbox" value="" id="CheckMortgagorName" />
-                            <label class="form-check-label" for="CheckMortgagorName">
-                                If a Legal Description is present, the absence of an address is acceptable; however, any address values that are present must match Note.
-                            </label>
-                        </div>
-                        <div class="form-check mt-2">
-                            <input class="form-check-input" type="checkbox" value="" id="CheckLegal" />
-                            <label class="form-check-label" for="CheckLegal">
-                                Loan amount must match the original Mortgage amount on the Note.
-                            </label>
-                        </div>
-                        
                     </div>
                 </div>
             </div>
         </div>
+
+
         <div class="mt-3">
             <button type="button" class="btn btn-success" id="DocumentPassTPOL">
                 Pass / Satisfy
@@ -180,8 +228,10 @@
                     Activity Note
                 </button>
 
-                <p class="fw-bold fs-6 mt-3 collapse" id="RecIntSent1">Next Step: <br>REC - Internal - Sent <br><br>End
-                    of Process</p>
+                <p class="fw-bold fs-6 mt-3 collapse" id="RecIntSent1">Next Step: <br>REC - Internal - Sent
+                    <br><br>End
+                    of Process
+                </p>
             </div>
             <div class="mt-3 collapse" id="TPOLreceivedPass">
                 <p class="fw-bold fs-6">Research - Analyst - Completed</p>
@@ -189,8 +239,10 @@
                     Activity Note
                 </button>
 
-                <p class="fw-bold fs-6 mt-3 collapse" id="RecIntSent2">Next Step: <br>REC - Internal - Sent <br><br>End
-                    of Process</p>
+                <p class="fw-bold fs-6 mt-3 collapse" id="RecIntSent2">Next Step: <br>REC - Internal - Sent
+                    <br><br>End
+                    of Process
+                </p>
 
             </div>
 
@@ -239,8 +291,10 @@
                     Activity Note
                 </button>
 
-                <p class="fw-bold fs-6 mt-3 collapse" id="RecIntSent3">Next Step: <br>REC - Internal - Sent <br><br>End
-                    of Process</p>
+                <p class="fw-bold fs-6 mt-3 collapse" id="RecIntSent3">Next Step: <br>REC - Internal - Sent
+                    <br><br>End
+                    of Process
+                </p>
             </div>
         </div>
 
@@ -274,7 +328,8 @@
                 </button>
             </div>
 
-            <p class="fw-bold fs-6 mt-3 collapse" id="MinorSatisfy">Proceed on Pass / Satisfy part of this tool.</p>
+            <p class="fw-bold fs-6 mt-3 collapse" id="MinorSatisfy">Proceed on Pass / Satisfy part of this tool.
+            </p>
         </div>
 
         <!-- Opeing Fix deficiency -->
@@ -390,7 +445,8 @@
                 </div>
 
                 <div class="collapse text-dark mt-3" id="InstructionFixTPOL1">
-                    <p><small>Open applicable Fix deficiency in ARROW using criteria on the guidelines</small></p>
+                    <p><small>Open applicable Fix deficiency in ARROW using criteria on the guidelines</small>
+                    </p>
                     <p><small>* Follow Up Analyst: [Your Name]</small></p>
                     <p><small>* Follow Up Date: [Current Date]</small></p>
 
@@ -424,7 +480,8 @@
                 </div>
 
                 <div class="collapse text-dark mt-3" id="InstructionFixTPOL2">
-                    <p><small>Open applicable Fix deficiency in ARROW using criteria on the guidelines</small></p>
+                    <p><small>Open applicable Fix deficiency in ARROW using criteria on the guidelines</small>
+                    </p>
                     <p><small>* Follow Up Analyst: [Your Name]</small></p>
                     <p><small>* Follow Up Date: [Current Date]</small></p>
 
@@ -500,7 +557,8 @@
                 </div>
 
                 <div class="collapse text-dark mt-3" id="InstructionFixTPOL3">
-                    <p><small>Open applicable Fix deficiency in ARROW using criteria on the guidelines</small></p>
+                    <p><small>Open applicable Fix deficiency in ARROW using criteria on the guidelines</small>
+                    </p>
                     <p><small>* Follow Up Analyst: [Your Name]</small></p>
                     <p><small>* Follow Up Date: [Current Date]</small></p>
 

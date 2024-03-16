@@ -20,12 +20,12 @@
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button bg-warning" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Show Checklist
+                        <strong>Show Checklist Validation</strong>
                     </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div id="collapseOne" class="accordion-collapse collapse bg-dark text-light" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="CheckallPagesLegible" />
@@ -58,11 +58,16 @@
                             </label>
                         </div>
 
-                        <div>
-                            <p class="fw-bold fs-5">
-                                Non-GNMA guidelines only:
-                            </p>
-                        </div>
+                        <div class="accordion mt-3" id="accordionExample1">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button bg-warning" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                                        <strong>Non-GNMA guidelines only:</strong>
+                                    </button>
+                                </h2>
+                                <div id="collapse2" class="accordion-collapse collapse bg-dark text-light" data-bs-parent="#accordionExample1">
+                                    <div class="accordion-body">
 
                         <div class="form-check mt-2">
                             <input class="form-check-input" type="checkbox" value="" id="CheckPolicyNumber" />
@@ -106,12 +111,21 @@
                                 screen.
                             </label>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                        <div>
-                            <p class="fw-bold fs-5">
-                                GNMA guidelines only:
-                            </p>
-                        </div>
+        <div class="accordion mt-3" id="accordionExample2">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button bg-warning" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                        <strong>GNMA guidelines only:</strong>
+                    </button>
+                </h2>
+                <div id="collapse3" class="accordion-collapse collapse bg-dark text-light" data-bs-parent="#accordionExample2">
+                    <div class="accordion-body">
 
                         <div class="form-check mt-2">
                             <input class="form-check-input" type="checkbox" value="" id="CheckPolicyNumber" />
@@ -174,6 +188,10 @@
                                 Property address, excluding ZIP code, must match the property address on the Security Instrument.(Short Form Only)
                             </label>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
                     </div>
                 </div>
