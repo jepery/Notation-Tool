@@ -526,28 +526,23 @@ EmailFirstAmerican.onclick = function () {
   const loanAmount = document.getElementById("LoanAmountFirstAmerican").value;
   const emailAddress = "FAPostClosing@firstam.com";
 
-  // Unicode characters for bold text
-  const boldStart = "\u{1D400}";
-  const boldEnd = "\u{1D401}";
-
   // Construct the email message
   const subject = encodeURIComponent("Loan Document Request");
-  const body = encodeURIComponent(`Dear First American,
+  const body = encodeURIComponent(`Dear First American,<br><br>
+During an internal review for the property listed below, Wells Fargo found that the Loan Policy should have been issued but we have not received a copy. Would you please assist us?<br><br>
 
-During an internal review for the property listed below, Wells Fargo found that the Loan Policy should have been issued but we have not received a copy. Would you please assist us?
+<b>Customer:</b> ${customer}<br>
+<b>Property Address:</b> ${propertyAddress}<br>
+<b>Closing Date:</b> ${closingDate}<br>
+<b>Loan Amount:</b> ${loanAmount}<br><br>
 
-Customer: ${boldStart}${customer}${boldEnd}
-Property Address: ${boldStart}${propertyAddress}${boldEnd}
-Closing Date: ${boldStart}${closingDate}${boldEnd}
-Loan Amount: ${boldStart}${loanAmount}${boldEnd}
+What we are requesting from you:<br><br>
 
-What we are requesting from you:
+- Reply with a copy of the Lender's Title Policy<br><br>
 
-- Reply with a copy of the Lender's Title Policy
+Thank you for your assistance with resolving this matter.<br><br>
 
-Thank you for your assistance with resolving this matter. 
 
-Sincerely,
 `);
 
   // Construct the mailto link
