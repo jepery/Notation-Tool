@@ -529,7 +529,7 @@ EmailFirstAmerican.onclick = function () {
   // Construct the email message
   const subject = encodeURIComponent("Loan Document Request");
   const body = encodeURIComponent(`Dear First American,
-  
+
 During an internal review for the property listed below, Wells Fargo found that the Loan Policy should have been issued but we have not received a copy. Would you please assist us?<br><br>
 
 Customer:${customer}
@@ -539,7 +539,7 @@ Loan Amount:${loanAmount}
 
 What we are requesting from you:
 
-- Reply with a copy of the Lender's Title Policy
+* Reply with a copy of the Lender's Title Policy
 
 Thank you for your assistance with resolving this matter.
 
