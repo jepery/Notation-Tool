@@ -521,7 +521,6 @@ inlineRadio4OthersTU.onclick = function () {
 EmailFirstAmerican.onclick = function () {
 
   const customer = document.getElementById("BorrowersNameFirstAmerican").value;
-  const boldCustomer = `<strong>${customer}</strong>`;
   const propertyAddress = document.getElementById("BorrowersAddressFirstAmerican").value;
   const closingDate = document.getElementById("ClosingDateFirstAmerican").value;
   const loanAmount = document.getElementById("LoanAmountFirstAmerican").value;
@@ -529,10 +528,11 @@ EmailFirstAmerican.onclick = function () {
 
   // Construct the email message
   const subject = encodeURIComponent("Loan Document Request");
-  const body = encodeURIComponent(`Dear First American,<br><br>
+  const body = encodeURIComponent(`Dear First American,
+  
 During an internal review for the property listed below, Wells Fargo found that the Loan Policy should have been issued but we have not received a copy. Would you please assist us?<br><br>
 
-Customer:${boldCustomer}
+Customer:${customer}
 Property Address:${propertyAddress}
 Closing Date:${closingDate}
 Loan Amount:${loanAmount}
