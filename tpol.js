@@ -521,6 +521,7 @@ inlineRadio4OthersTU.onclick = function () {
 EmailFirstAmerican.onclick = function () {
 
   const customer = document.getElementById("BorrowersNameFirstAmerican").value;
+  const boldCustomer = `<strong>${customer}</strong>`;
   const propertyAddress = document.getElementById("BorrowersAddressFirstAmerican").value;
   const closingDate = document.getElementById("ClosingDateFirstAmerican").value;
   const loanAmount = document.getElementById("LoanAmountFirstAmerican").value;
@@ -531,16 +532,16 @@ EmailFirstAmerican.onclick = function () {
   const body = encodeURIComponent(`Dear First American,<br><br>
 During an internal review for the property listed below, Wells Fargo found that the Loan Policy should have been issued but we have not received a copy. Would you please assist us?<br><br>
 
-<b>Customer:</b> ${customer}<br>
-<b>Property Address:</b> ${propertyAddress}<br>
-<b>Closing Date:</b> ${closingDate}<br>
-<b>Loan Amount:</b> ${loanAmount}<br><br>
+Customer:${boldCustomer}
+Property Address:${propertyAddress}
+Closing Date:${closingDate}
+Loan Amount:${loanAmount}
 
-What we are requesting from you:<br><br>
+What we are requesting from you:
 
-- Reply with a copy of the Lender's Title Policy<br><br>
+- Reply with a copy of the Lender's Title Policy
 
-Thank you for your assistance with resolving this matter.<br><br>
+Thank you for your assistance with resolving this matter.
 
 
 `);
