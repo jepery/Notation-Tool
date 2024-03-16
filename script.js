@@ -90,6 +90,54 @@ MspServiceNo.onclick = function() {
 
 };
 
+MspPullUpNo1.onclick = function(){
+
+  let inputElementMspPullUpNo1 = document.createElement("input");
+  inputElementMspPullUpNo1.type = "text";
+  inputElementMspPullUpNo1.value =
+    "Searched the servicing system. Loan doesn't pull up in MSP.";
+  document.body.appendChild(inputElementMspPullUpNo1);
+  inputElementMspPullUpNo1.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementMspPullUpNo1);
+};
+
+MspPullUpNo3.onclick = function(){
+
+  let inputElementMspPullUpNo3 = document.createElement("input");
+  inputElementMspPullUpNo3.type = "text";
+  inputElementMspPullUpNo3.value =
+    "Not Curable. Loan is not valid in MSP.";
+  document.body.appendChild(inputElementMspPullUpNo3);
+  inputElementMspPullUpNo3.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementMspPullUpNo3);
+};
+
+MspTransferNo1.onclick = function(){
+
+  let inputElementMspTransferNo1 = document.createElement("input");
+  inputElementMspTransferNo1.type = "text";
+  inputElementMspTransferNo1.value =
+    "Searched the servicing system. Loan was paid in full and was not service transferred.";
+  document.body.appendChild(inputElementMspTransferNo1);
+  inputElementMspTransferNo1.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementMspTransferNo1);
+};
+
+MspPullUpNo2.onclick = function(){
+
+  let inputElementMspPullUpNo2 = document.createElement("input");
+  inputElementMspPullUpNo2.type = "text";
+  inputElementMspPullUpNo2.value =
+    "Not Curable. Loan was paid in full and was not service transferred.";
+  document.body.appendChild(inputElementMspPullUpNo2);
+  inputElementMspPullUpNo2.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementMspPullUpNo2);
+};
+
 
 
 IcmpPass.onclick = function () {

@@ -28,6 +28,13 @@ tpolEU.onclick = function () {
 
 MspPassTPOL.onclick = function () {
   mspPassNoteTPOL.style.display = "block";
+  TPOLFailTrigger.style.display = "block";
+  MspPullUp.style.display = "none";
+  MspPullUpYes.style.display = "none";
+  MspTransferNo.style.display = "none";
+  MspPullUpNo.style.display = "none";
+  mspPassNoteMTG.style.display = "none";
+  mspFailNoteMTG.style.display = "none";
 
   let inputElementMspPass = document.createElement("input");
   inputElementMspPass.type = "text";
@@ -38,6 +45,89 @@ MspPassTPOL.onclick = function () {
   inputElementMspPass.select();
   document.execCommand("copy");
   document.body.removeChild(inputElementMspPass);
+};
+
+MspFailTPOL.onclick = function () {
+
+  TPOLFailTrigger.style.display = "none";
+  MspPullUp.style.display = "block";
+  MspPullUpYes.style.display = "none";
+  MspTransferNo.style.display = "none";
+  MspPullUpNo.style.display = "none";
+  mspPassNoteMTG.style.display = "none";
+  mspFailNoteMTG.style.display = "block";
+
+};
+
+MspPullYes.onclick = function() {
+
+  MspPullUpYes.style.display = "block";
+  MspPullUp.style.display = "none";
+
+};
+
+MspPullNo.onclick = function() {
+
+  MspPullUpYes.style.display = "none";
+  MspPullUp.style.display = "none";
+  MspPullUpNo.style.display = "block";
+
+};
+
+MspServiceNo.onclick = function() {
+
+  MspPullUpYes.style.display = "none";
+  MspPullUp.style.display = "none";
+  MspTransferNo.style.display = "block";
+
+};
+
+MspPullUpNo1.onclick = function(){
+
+  let inputElementMspPullUpNo1 = document.createElement("input");
+  inputElementMspPullUpNo1.type = "text";
+  inputElementMspPullUpNo1.value =
+    "Searched the servicing system. Loan doesn't pull up in MSP.";
+  document.body.appendChild(inputElementMspPullUpNo1);
+  inputElementMspPullUpNo1.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementMspPullUpNo1);
+};
+
+MspPullUpNo3.onclick = function(){
+
+  let inputElementMspPullUpNo3 = document.createElement("input");
+  inputElementMspPullUpNo3.type = "text";
+  inputElementMspPullUpNo3.value =
+    "Not Curable. Loan is not valid in MSP.";
+  document.body.appendChild(inputElementMspPullUpNo3);
+  inputElementMspPullUpNo3.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementMspPullUpNo3);
+};
+
+MspTransferNo1.onclick = function(){
+
+  let inputElementMspTransferNo1 = document.createElement("input");
+  inputElementMspTransferNo1.type = "text";
+  inputElementMspTransferNo1.value =
+    "Searched the servicing system. Loan was paid in full and was not service transferred.";
+  document.body.appendChild(inputElementMspTransferNo1);
+  inputElementMspTransferNo1.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementMspTransferNo1);
+};
+
+MspPullUpNo2.onclick = function(){
+
+  let inputElementMspPullUpNo2 = document.createElement("input");
+  inputElementMspPullUpNo2.type = "text";
+  inputElementMspPullUpNo2.value =
+    "Not Curable. Loan was paid in full and was not service transferred.";
+  document.body.appendChild(inputElementMspPullUpNo2);
+  inputElementMspPullUpNo2.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementMspPullUpNo2);
 };
 
 IcmpPassTPOL.onclick = function () {
@@ -297,7 +387,7 @@ File Number: ${fileNumber}
 
 What we are requesting from you:
 
-· Reply with a copy of the Lender's Title Policy
+* Reply with a copy of the Lender's Title Policy
 
 Thank you for your assistance with resolving this matter. 
 
@@ -426,4 +516,43 @@ inlineRadio4OthersTU.onclick = function () {
   FidelityDiv.style.display = "none";
   TUOtherDiv.style.display = "block";
 
+};
+
+EmailFirstAmerican.onclick = function () {
+
+  const customer = document.getElementById("BorrowersNameFirstAmerican").value;
+  const propertyAddress = document.getElementById("BorrowersAddressFirstAmerican").value;
+  const closingDate = document.getElementById("ClosingDateFirstAmerican").value;
+  const loanAmount = document.getElementById("LoanAmountFirstAmerican").value;
+  const emailAddress = "FAPostClosing@firstam.com";
+
+  // Unicode characters for bold text
+  const boldStart = "\u{1D400}";
+  const boldEnd = "\u{1D401}";
+
+  // Construct the email message
+  const subject = encodeURIComponent("Loan Document Request");
+  const body = encodeURIComponent(`Dear First American,
+
+During an internal review for the property listed below, Wells Fargo found that the Loan Policy should have been issued but we have not received a copy. Would you please assist us?
+
+Customer: ${boldStart}${customer}${boldEnd}
+Property Address: ${boldStart}${propertyAddress}${boldEnd}
+Closing Date: ${boldStart}${closingDate}${boldEnd}
+Loan Amount: ${boldStart}${loanAmount}${boldEnd}
+
+What we are requesting from you:
+
+- Reply with a copy of the Lender's Title Policy
+
+Thank you for your assistance with resolving this matter. 
+
+Sincerely,
+`);
+
+  // Construct the mailto link
+  const mailtoLink = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
+
+  // Open the default email client with the pre-filled subject and body
+  window.location.href = mailtoLink;
 };
