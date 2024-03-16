@@ -789,6 +789,183 @@
         <input type="email" class="" id="TitleUnderwriterNumber" />
       </div>
 
+      <div class="accordion accordion-flush mt-3" id="accordionFlushExample3">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-success text-light" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse3" aria-expanded="false" aria-controls="flush-collapse3">
+              More options
+            </button>
+          </h2>
+          <div id="flush-collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample3">
+            <div class="accordion-body">
+
+              <div class="mt-3">
+                <label class="form-label">Spoke to:</label>
+                <input type="text" class="" id="NameTU" />
+              </div>
+              <div class="mt-3">
+                <label class="form-label">Email Address:</label>
+                <input type="text" class="" id="TUEmail" />
+              </div>
+              <div class="mt-3">
+                <label class="form-label">Fax Number:</label>
+                <input type="text" class="" id="TUFax" />
+              </div>
+
+              <!-- Establish -->
+              <div class="establish mt-3" id="EstablishContactTU">
+                <p><small>Where you able to establish contact?</small></p>
+                <button type="button" class="btn btn-success" id="TUEstablishPass">
+                  Yes
+                </button>
+                <button type="button" class="btn btn-danger" id="TUEstablishFail">
+                  No
+                </button>
+              </div>
+
+              <div class="mt-3 collapse" id="EstablishContactTUno">
+                <p><small>Where you able to leave a voicemail?</small></p>
+                <button type="button" class="btn btn-success" id="TUVoicemailPass">
+                  Yes
+                </button>
+                <button type="button" class="btn btn-danger" id="TUVoicemailFail">
+                  No
+                </button>
+              </div>
+
+              <div class="mt-3 collapse" id="TUVoicemailPass1">
+                <p class="fw-bold fs-6">Call Outbound - Settlement Agent - Left Voicemail</p>
+
+                <button type="button" class="btn btn-warning" id="TUVoicemailYes1">
+                  Activity Note
+                </button>
+              </div>
+
+              <div class="mt-3 collapse" id="TUVoicemailFail1">
+                <p class="fw-bold fs-6">Call Outbound - Settlement Agent - Fail</p>
+
+                <button type="button" class="btn btn-danger" id="TUVoicemailNo">
+                  Activity Note
+                </button>
+              </div>
+
+              <div class="mt-3 collapse" id="TUCallPass">
+                <p><small>Choose the outcome of your call</small></p>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosTU1"
+                    value="option1" checked>
+                  <label class="form-check-label" for="exampleRadiosTU1">
+                    Settlement Agent will provide the copy of the TPOL.
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosTU2"
+                    value="option2">
+                  <label class="form-check-label" for="exampleRadiosTU2">
+                    Settlement Agent unable to provide copy of the TPOL.
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosTU3"
+                    value="option3">
+                  <label class="form-check-label" for="exampleRadiosTU3">
+                    Instructed to send an email
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosTU4"
+                    value="option4">
+                  <label class="form-check-label" for="exampleRadiosTU4">
+                    Others
+                  </label>
+                </div>
+              </div>
+
+              <div class="mt-3 collapse" id="TUCallPass1">
+                <p class="fw-bold fs-6">Call Outbound - Settlement Agent - Pass/Completed</p>
+
+                <button type="button" class="btn btn-success" id="TUCallPassProvided">
+                  Activity Note
+                </button>
+              </div>
+
+              <div class="mt-3 collapse" id="TUCallPass2">
+
+                <p class="fw-bold fs-6">Call Outbound - Settlement Agent - Pass/Completed</p>
+
+                <button type="button" class="btn btn-success" id="TUCallPassUnable">
+                  Activity Note
+                </button>
+              </div>
+
+              <div class="mt-3 collapse" id="TUCallPass3">
+
+                <div class="mt-3">
+                  <label class="form-label">File Number/Order Number:</label>
+                  <input type="text" class="" id="FileNumberTU" />
+                </div>
+                <div class="mt-3">
+                  <label class="form-label">Closing Date:</label>
+                  <input type="text" class="" id="ClosingDateTU" />
+                </div>
+                <div class="mt-3">
+                  <label class="form-label">Borrowers Name:</label>
+                  <input type="text" class="" id="BorrowersNameTU" />
+                </div>
+                <div class="mt-3">
+                  <label class="form-label">Loan Amount:</label>
+                  <input type="text" class="" id="LoanAmountTU" />
+                </div>
+                <div class="mt-3">
+                  <label class="form-label">Borrowers Property Address:</label>
+                  <input type="text" class="form-control" id="BorrowersAddressTU" />
+                </div>
+
+                <p class="fw-bold fs-6 mt-3">Call Outbound - Settlement Agent - Pass/Completed</p>
+
+                <button type="button" class="btn btn-success" id="TUCallPassInstructedtoEmail">
+                  Activity Note
+                </button>
+
+                <button type="button" class="btn btn-warning" id="TUCallPassInstructedtoEmail1">
+                  Email Settlement Agent
+                </button>
+
+                <div class="mt-3" id="TUCallPassEmailSent1">
+                  <p class="fw-bold fs-6">Email - Settlement Agent - Sent</p>
+
+                  <button type="button" class="btn btn-success" id="TUCallPassEmailSent">
+                    Activity Note
+                  </button>
+                </div>
+
+
+              </div>
+
+              <div class="mt-3 collapse" id="TUCallPass4">
+                <p class="fw-bold fs-6">Call Outbound - Settlement Agent - Pass/Completed</p>
+
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">Provide the outcome of your call</label>
+                  <textarea class="form-control" id="TUCallOtherTextArea" rows="3"
+                    placeholder="was told that ..."></textarea>
+                </div>
+
+                <button type="button" class="btn btn-success" id="TUCallPassOther">
+                  Activity Note
+                </button>
+              </div>
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
       <!-- <div class="mt-3 pb-3">
         <button type="button" class="btn btn-success" data-toggle="tooltip" title="Research - File-net - Fail"

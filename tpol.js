@@ -469,6 +469,218 @@ NotInBusinessTC.onclick = function () {
 
 // Title Underwriter
 
+TUEstablishPass.onclick = function () {
+  TUCallPass.style.display = "block";
+  EstablishContactTUno.style.display = "none";
+  TUCallPass1.style.display = "block";
+  TUVoicemailPass1.style.display = "none";
+  TUVoicemailFail1.style.display = "none";
+};
+
+exampleRadiosTU1.onclick = function () {
+  EstablishContactTUno.style.display = "none";
+  TUCallPass1.style.display = "block";
+  TUCallPass2.style.display = "none";
+  TUCallPass3.style.display = "none";
+  TUCallPass4.style.display = "none";
+};
+
+TUCallPassProvided.onclick = function () {
+  let inputElementTUCallPassProvided = document.createElement("input");
+  inputElementTUCallPassProvided.type = "text";
+  inputElementTUCallPassProvided.value =
+    "Called " +
+    TitleUnderwriter.value +
+    " at " +
+    TitleUnderwriterNumber.value +
+    " to request for the copy of the TPOL. Spoke to " +
+    NameTU.value +
+    " was told that they will give the copy of the TPOL today, left email address.";
+  document.body.appendChild(inputElementTUCallPassProvided);
+  inputElementTUCallPassProvided.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUCallPassProvided);
+};
+
+exampleRadiosTU2.onclick = function () {
+  EstablishContactTUno.style.display = "none";
+  TUCallPass1.style.display = "none";
+  TUCallPass2.style.display = "block";
+  TUCallPass3.style.display = "none";
+  TUCallPass4.style.display = "none";
+};
+
+TUCallPassUnable.onclick = function () {
+  let inputElementTUCallPassUnable = document.createElement("input");
+  inputElementTUCallPassUnable.type = "text";
+  inputElementTUCallPassUnable.value =
+    "Called " +
+    TitleUnderwriter.value +
+    " at " +
+    TitleUnderwriterNumber.value +
+    " to request for the copy of the TPOL. Spoke to " +
+    NameTU.value +
+    " was told that they are unable to provide the copy of the TPOL. Will proceed to the next contact.";
+  document.body.appendChild(inputElementTUCallPassUnable);
+  inputElementTUCallPassUnable.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUCallPassUnable);
+};
+
+exampleRadiosTU3.onclick = function () {
+  EstablishContactTUno.style.display = "none";
+  TUCallPass1.style.display = "none";
+  TUCallPass2.style.display = "none";
+  TUCallPass3.style.display = "block";
+  TUCallPass4.style.display = "none";
+};
+
+TUCallPassInstructedtoEmail.onclick = function () {
+  let inputElementTUCallEmail = document.createElement("input");
+  inputElementTUCallEmail.type = "text";
+  inputElementTUCallEmail.value =
+    "Called " +
+    TitleUnderwriter.value +
+    " at " +
+    TitleUnderwriterNumber.value +
+    " to request for the copy of the TPOL. Spoke to " +
+    NameTU.value +
+    " was instructed to send an email request to " +
+    TUEmail.value;
+  document.body.appendChild(inputElementTUCallEmail);
+  inputElementTUCallEmail.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUCallEmail);
+};
+
+TUCallPassEmailSent.onclick = function () {
+  let inputElementTUCallEmailSent = document.createElement("input");
+  inputElementTUCallEmailSent.type = "text";
+  inputElementTUCallEmailSent.value =
+    "Emailed " +
+    TitleUnderwriter.value +
+    " at " +
+    TUEmail.value +
+    " to request for the copy of the TPOL.";
+  document.body.appendChild(inputElementTUCallEmailSent);
+  inputElementTUCallEmailSent.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUCallEmailSent);
+};
+
+exampleRadiosTU4.onclick = function () {
+  EstablishContactTUno.style.display = "none";
+  TUCallPass1.style.display = "none";
+  TUCallPass2.style.display = "none";
+  TUCallPass3.style.display = "none";
+  TUCallPass4.style.display = "block";
+};
+
+TUCallPassOther.onclick = function () {
+  let inputElementTUCallPassOther = document.createElement("input");
+  inputElementTUCallPassOther.type = "text";
+  inputElementTUCallPassOther.value =
+    "Called " +
+    TitleUnderwriter.value +
+    " at " +
+    TitleUnderwriterNumber.value +
+    " to request for the copy of the TPOL. Spoke to " +
+    NameTU.value +
+    " was told that " +
+    TUCallOtherTextArea.value;
+  document.body.appendChild(inputElementTUCallPassOther);
+  inputElementTUCallPassOther.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUCallPassOther);
+};
+
+TUEstablishFail.onclick = function () {
+  EstablishContactTUno.style.display = "block";
+  TUCallPass.style.display = "none";
+  TUCallPass1.style.display = "none";
+};
+
+TUVoicemailPass.onclick = function () {
+  TUVoicemailPass1.style.display = "block";
+  EstablishContactTUno.style.display = "none";
+  TUVoicemailFail1.style.display = "none";
+};
+
+TUVoicemailYes1.onclick = function (){
+
+  let inputElementTUVoicemailYes = document.createElement("input");
+  inputElementTUVoicemailYes.type = "text";
+  inputElementTUVoicemailYes.value =
+    "Called " +
+    TitleUnderwriter.value +
+    " at " +
+    TitleUnderwriterNumber.value +
+    " to request for the copy of the TPOL. Left voicemail, Borrowers name and Property address.";
+  document.body.appendChild(inputElementTUVoicemailYes);
+  inputElementTUVoicemailYes.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUVoicemailYes);
+};
+
+TUVoicemailFail.onclick = function () {
+  TUVoicemailFail1.style.display = "block";
+  TUVoicemailPass1.style.display = "none";
+  EstablishContactTUno.style.display = "none";
+};
+
+TUVoicemailNo.onclick = function (){
+
+  let inputElementTUVoicemailNo = document.createElement("input");
+  inputElementTUVoicemailNo.type = "text";
+  inputElementTUVoicemailNo.value =
+    "Called " +
+    TitleUnderwriter.value +
+    " at " +
+    TitleUnderwriterNumber.value +
+    " to request for the copy of the TPOL. No one answers the call, will call again tomorrow.";
+  document.body.appendChild(inputElementTUVoicemailNo);
+  inputElementTUVoicemailNo.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUVoicemailNo);
+};
+
+TUCallPassInstructedtoEmail1.onclick = function sendMail() {
+  const customer = document.getElementById("BorrowersNameTU").value;
+  const propertyAddress = document.getElementById("BorrowersAddressTU").value;
+  const closingDate = document.getElementById("ClosingDateTU").value;
+  const loanAmount = document.getElementById("LoanAmountTU").value;
+  const fileNumber = document.getElementById("FileNumberTU").value;
+  const emailAddress = document.getElementById("TUEmail").value;
+  const external = document.getElementById("TitleUnderwriter").value;
+
+  // Construct the email message
+  const subject = encodeURIComponent("Loan Document Request");
+  const body = encodeURIComponent(`Dear ${external},
+
+During an internal review for the property listed below, Wells Fargo found that the Loan Policy should have been issued but we have not received a copy. Would you please assist us?
+
+Customer: ${customer}
+Property Address: ${propertyAddress}
+Closing Date: ${closingDate}
+Loan Amount: ${loanAmount}
+File Number: ${fileNumber}
+
+What we are requesting from you:
+
+    • Reply with a copy of the Lender's Title Policy
+
+Thank you for your assistance with resolving this matter. 
+
+Sincerely,
+`);
+
+  // Construct the mailto link
+  const mailtoLink = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
+
+  // Open the default email client with the pre-filled subject and body
+  window.location.href = mailtoLink;
+};
+
 inlineRadio1FirstAmerican.onclick = function () {
 
   FirstAmericanDiv.style.display = "block";
