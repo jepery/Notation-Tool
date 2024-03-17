@@ -765,3 +765,38 @@ Thank you for your assistance with resolving this matter.
   // Open the default email client with the pre-filled subject and body
   window.location.href = mailtoLink;
 };
+
+EmailOld.onclick = function () {
+
+  const customer = document.getElementById("BorrowersNameOld").value;
+  const propertyAddress = document.getElementById("BorrowersAddressOld").value;
+  const closingDate = document.getElementById("ClosingDateOld").value;
+  const loanAmount = document.getElementById("LoanAmountOld").value;
+  const emailAddress = "Tpitts@OldRepublicTitle.com";
+
+  // Construct the email message
+  const subject = encodeURIComponent("Loan Document Request");
+  const body = encodeURIComponent(`Hi Old Republic,
+
+During an internal review for the property listed below, Wells Fargo found that the Loan Policy should have been issued but we have not received a copy. Would you please assist us?<br><br>
+
+Borrower: ${customer}
+Property Address: ${propertyAddress}
+Closing Date: ${closingDate}
+Loan Amount: ${loanAmount}
+
+What we are requesting from you:
+
+    • Reply with a copy of the Lender's Title Policy
+
+Thank you for your assistance with resolving this matter.
+
+
+`);
+
+  // Construct the mailto link
+  const mailtoLink = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
+
+  // Open the default email client with the pre-filled subject and body
+  window.location.href = mailtoLink;
+};
