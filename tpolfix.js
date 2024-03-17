@@ -614,23 +614,22 @@ Sincerely,
     const subject = encodeURIComponent("Loan Document Request");
     const body = encodeURIComponent(`Dear ${external},
   
-  During a recent review of the loan for the property listed below, which is currently being serviced by Wells Fargo, we identified errors on the signed Final Lenders Title Policy. The errors that we are looking to have corrected are:
-  
+During a recent review of the loan for the property listed below, which is currently being serviced by Wells Fargo, we identified errors on the signed Final Lenders Title Policy. The errors that we are looking to have corrected are:
         •   ${fixDescription}
 
-  Customer: ${customer}
-  Property Address: ${propertyAddress}
+Customer: ${customer}
+Property Address: ${propertyAddress}
 
-  Attached is the copy of the Title Policy to assist with this request.
+Attached is the copy of the Title Policy to assist with this request.
 
-  What we are requesting from you:
+What we are requesting from you:
 
         •   Send a corrected copy of the signed Final Lenders Title Policy.
         •   Please rush this request due to investor requirements.
   
-  Thank you for your assistance with resolving this matter. 
+Thank you for your assistance with resolving this matter. 
   
-  Sincerely,
+Sincerely,
   `);
   
     // Construct the mailto link
@@ -828,23 +827,22 @@ Sincerely,
     const subject = encodeURIComponent("Loan Document Request");
     const body = encodeURIComponent(`Dear ${external},
   
-  During a recent review of the loan for the property listed below, which is currently being serviced by Wells Fargo, we identified errors on the signed Final Lenders Title Policy. The errors that we are looking to have corrected are:
-  
+During a recent review of the loan for the property listed below, which is currently being serviced by Wells Fargo, we identified errors on the signed Final Lenders Title Policy. The errors that we are looking to have corrected are:
       •   ${fixDescription}
 
-  Customer: ${customer}
-  Property Address: ${propertyAddress}
+Customer: ${customer}
+Property Address: ${propertyAddress}
 
-  Attached is the copy of the Title Policy to assist with this request.
+Attached is the copy of the Title Policy to assist with this request.
 
-  What we are requesting from you:
+What we are requesting from you:
   
       •   Send a corrected copy of the signed Final Lenders Title Policy.
       •   Please rush this request due to investor requirements.
   
-  Thank you for your assistance with resolving this matter. 
+Thank you for your assistance with resolving this matter. 
   
-  Sincerely,
+Sincerely,
   `);
   
     // Construct the mailto link
@@ -915,23 +913,22 @@ Sincerely,
     const subject = encodeURIComponent("Loan Document Request");
     const body = encodeURIComponent(`Hi First American,
   
-  During a recent review of the loan for the property listed below, which is currently being serviced by Wells Fargo, we identified errors on the signed Final Lenders Title Policy. The errors that we are looking to have corrected are:
-  
+During a recent review of the loan for the property listed below, which is currently being serviced by Wells Fargo, we identified errors on the signed Final Lenders Title Policy. The errors that we are looking to have corrected are:
       •   ${fixDescription}
 
-  Customer: ${customer}
-  Property Address: ${propertyAddress}
+Customer: ${customer}
+Property Address: ${propertyAddress}
 
-  Attached is the copy of the Title Policy to assist with this request.
+Attached is the copy of the Title Policy to assist with this request.
 
-  What we are requesting from you:
+What we are requesting from you:
 
       •   Send a corrected copy of the signed Final Lenders Title Policy.
       •   Please rush this request due to investor requirements.
   
-  Thank you for your assistance with resolving this matter.
+Thank you for your assistance with resolving this matter.
   
-  Sincerely,
+Sincerely,
   `);
   
     // Construct the mailto link
@@ -952,23 +949,22 @@ Sincerely,
     const subject = encodeURIComponent("Loan Document Request");
     const body = encodeURIComponent(`Hi Old Republic,
   
-  During a recent review of the loan for the property listed below, which is currently being serviced by Wells Fargo, we identified errors on the signed Final Lenders Title Policy. The errors that we are looking to have corrected are:
-  
+During a recent review of the loan for the property listed below, which is currently being serviced by Wells Fargo, we identified errors on the signed Final Lenders Title Policy. The errors that we are looking to have corrected are: 
       •   ${fixDescription}
 
-  Customer: ${customer}
-  Property Address: ${propertyAddress}
+Customer: ${customer}
+Property Address: ${propertyAddress}
 
-  Attached is the copy of the Title Policy to assist with this request.
+Attached is the copy of the Title Policy to assist with this request.
 
-  What we are requesting from you:
+What we are requesting from you:
 
       •   Send a corrected copy of the signed Final Lenders Title Policy.
       •   Please rush this request due to investor requirements.
   
-  Thank you for your assistance with resolving this matter.
+Thank you for your assistance with resolving this matter.
   
-  Sincerely,
+Sincerely,
   `);
   
     // Construct the mailto link
@@ -989,23 +985,22 @@ Sincerely,
     const subject = encodeURIComponent("Loan Document Request");
     const body = encodeURIComponent(`Hi Stewart Title,
   
-  During a recent review of the loan for the property listed below, which is currently being serviced by Wells Fargo, we identified errors on the signed Final Lenders Title Policy. The errors that we are looking to have corrected are:
-  
+During a recent review of the loan for the property listed below, which is currently being serviced by Wells Fargo, we identified errors on the signed Final Lenders Title Policy. The errors that we are looking to have corrected are:
       •   ${fixDescription}
 
-  Customer: ${customer}
-  Property Address: ${propertyAddress}
+Customer: ${customer}
+Property Address: ${propertyAddress}
 
-  Attached is the copy of the Title Policy to assist with this request.
+Attached is the copy of the Title Policy to assist with this request.
 
-  What we are requesting from you:
+What we are requesting from you:
 
       •   Send a corrected copy of the signed Final Lenders Title Policy.
       •   Please rush this request due to investor requirements.
   
-  Thank you for your assistance with resolving this matter.
+Thank you for your assistance with resolving this matter.
   
-  Sincerely,
+Sincerely,
   `);
   
     // Construct the mailto link
@@ -1013,4 +1008,102 @@ Sincerely,
   
     // Open the default email client with the pre-filled subject and body
     window.location.href = mailtoLink;
+  };
+
+  // Fidelity
+
+  TUFidelity2.onclick = function () {
+
+    let inputElementTUFidelity2 = document.createElement("input");
+    inputElementTUFidelity2.type = "text";
+    inputElementTUFidelity2.value =
+      "Engagement with Fidelity is not required due to the loan origination date being older than 2 years.";
+    document.body.appendChild(inputElementTUFidelity2);
+    inputElementTUFidelity2.select();
+    document.execCommand("copy");
+    document.body.removeChild(inputElementTUFidelity2);
+  };
+  
+  TUFidelity3.onclick = function () {
+  
+    let inputElementTUFidelity3 = document.createElement("input");
+    inputElementTUFidelity3.type = "text";
+    inputElementTUFidelity3.value =
+      "Research for local office was completed. No offices were found with current search.";
+    document.body.appendChild(inputElementTUFidelity3);
+    inputElementTUFidelity3.select();
+    document.execCommand("copy");
+    document.body.removeChild(inputElementTUFidelity3);
+  };
+  
+  TUFidelity4.onclick = function () {
+  
+    let inputElementTUFidelity4 = document.createElement("input");
+    inputElementTUFidelity4.type = "text";
+    inputElementTUFidelity4.value =
+      "Title Policy is not curable, requesting new title policy to be issued from vendor.";
+    document.body.appendChild(inputElementTUFidelity4);
+    inputElementTUFidelity4.select();
+    document.execCommand("copy");
+    document.body.removeChild(inputElementTUFidelity4);
+  };
+  
+  OtherFidelityYes.onclick = function () {
+  
+    FidelityAcquired.style.display = "block";
+    accordionFlushExample3.style.display = "none";
+  };
+  
+  OtherFidelityNo.onclick = function () {
+  
+    FidelityAcquired.style.display = "none";
+    accordionFlushExample3.style.display = "block";
+  };
+  
+  TUFidelity1.onclick = function () {
+  
+    let inputElementTUFidelity1 = document.createElement("input");
+    inputElementTUFidelity1.type = "text";
+    inputElementTUFidelity1.value =
+      TitleUnderwriter.value + " is acquired by Fidelity National Financial (FNF) Family of Companies.";
+    document.body.appendChild(inputElementTUFidelity1);
+    inputElementTUFidelity1.select();
+    document.execCommand("copy");
+    document.body.removeChild(inputElementTUFidelity1);
+  };
+  
+  TUFidelity5.onclick = function () {
+  
+    let inputElementTUFidelity5 = document.createElement("input");
+    inputElementTUFidelity5.type = "text";
+    inputElementTUFidelity5.value =
+      "Engagement with Fidelity is not required due to the loan origination date being older than 2 years.";
+    document.body.appendChild(inputElementTUFidelity5);
+    inputElementTUFidelity5.select();
+    document.execCommand("copy");
+    document.body.removeChild(inputElementTUFidelity5);
+  };
+  
+  TUFidelity6.onclick = function () {
+  
+    let inputElementTUFidelity6 = document.createElement("input");
+    inputElementTUFidelity6.type = "text";
+    inputElementTUFidelity6.value =
+      "Research for local office was completed. No offices were found with current search.";
+    document.body.appendChild(inputElementTUFidelity6);
+    inputElementTUFidelity6.select();
+    document.execCommand("copy");
+    document.body.removeChild(inputElementTUFidelity6);
+  };
+  
+  TUFidelity7.onclick = function () {
+  
+    let inputElementTUFidelity7 = document.createElement("input");
+    inputElementTUFidelity7.type = "text";
+    inputElementTUFidelity7.value =
+      "Title Policy is not curable, requesting new title policy to be issued from vendor.";
+    document.body.appendChild(inputElementTUFidelity7);
+    inputElementTUFidelity7.select();
+    document.execCommand("copy");
+    document.body.removeChild(inputElementTUFidelity7);
   };

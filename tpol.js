@@ -404,6 +404,9 @@ let SettlementAgentNumber = document.getElementById("SettlementAgentNumber");
 
 
 SameSA.onclick = function () {
+
+  SameSAText.style.display = "block";
+
   let inputElementSameSA = document.createElement("input");
   inputElementSameSA.type = "text";
   inputElementSameSA.value =
@@ -417,6 +420,9 @@ SameSA.onclick = function () {
 };
 
 NotInBusinessSA.onclick = function () {
+
+  SameSAText.style.display = "block";
+
   let inputElementNotInBusinessSA = document.createElement("input");
   inputElementNotInBusinessSA.type = "text";
   inputElementNotInBusinessSA.value =
@@ -428,7 +434,24 @@ NotInBusinessSA.onclick = function () {
   document.body.removeChild(inputElementNotInBusinessSA);
 };
 
+LocateSA.onclick = function () {
+
+  SameSAText.style.display = "block";
+
+  let inputElementLocateSA = document.createElement("input");
+  inputElementLocateSA.type = "text";
+  inputElementLocateSA.value =
+    "Unable to determine the Settlement Agent for this loan.";
+  document.body.appendChild(inputElementLocateSA);
+  inputElementLocateSA.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementLocateSA);
+};
+
 SameTC.onclick = function () {
+
+  SameTCText.style.display = "block";
+
   let inputElementSameTC = document.createElement("input");
   inputElementSameTC.type = "text";
   inputElementSameTC.value =
@@ -442,6 +465,9 @@ SameTC.onclick = function () {
 };
 
 NotInBusinessTC.onclick = function () {
+
+  SameTCText.style.display = "block";
+
   let inputElementNotInBusinessTC = document.createElement("input");
   inputElementNotInBusinessTC.type = "text";
   inputElementNotInBusinessTC.value =
@@ -451,6 +477,20 @@ NotInBusinessTC.onclick = function () {
   inputElementNotInBusinessTC.select();
   document.execCommand("copy");
   document.body.removeChild(inputElementNotInBusinessTC);
+};
+
+LocateTC.onclick = function () {
+
+  SameTCText.style.display = "block";
+
+  let inputElementLocateTC = document.createElement("input");
+  inputElementLocateTC.type = "text";
+  inputElementLocateTC.value =
+    "Unable to determine the Title Company for this loan.";
+  document.body.appendChild(inputElementLocateTC);
+  inputElementLocateTC.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementLocateTC);
 };
 
 // Title Company
@@ -1030,4 +1070,102 @@ Sincerely,
 
   // Open the default email client with the pre-filled subject and body
   window.location.href = mailtoLink;
+};
+
+// Fidelity
+
+TUFidelity2.onclick = function () {
+
+  let inputElementTUFidelity2 = document.createElement("input");
+  inputElementTUFidelity2.type = "text";
+  inputElementTUFidelity2.value =
+    "Engagement with Fidelity is not required due to the loan origination date being older than 2 years.";
+  document.body.appendChild(inputElementTUFidelity2);
+  inputElementTUFidelity2.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUFidelity2);
+};
+
+TUFidelity3.onclick = function () {
+
+  let inputElementTUFidelity3 = document.createElement("input");
+  inputElementTUFidelity3.type = "text";
+  inputElementTUFidelity3.value =
+    "Research for local office was completed. No offices were found with current search.";
+  document.body.appendChild(inputElementTUFidelity3);
+  inputElementTUFidelity3.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUFidelity3);
+};
+
+TUFidelity4.onclick = function () {
+
+  let inputElementTUFidelity4 = document.createElement("input");
+  inputElementTUFidelity4.type = "text";
+  inputElementTUFidelity4.value =
+    "Title Policy is not curable, requesting new title policy to be issued from vendor.";
+  document.body.appendChild(inputElementTUFidelity4);
+  inputElementTUFidelity4.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUFidelity4);
+};
+
+OtherFidelityYes.onclick = function () {
+
+  FidelityAcquired.style.display = "block";
+  accordionFlushExample3.style.display = "none";
+};
+
+OtherFidelityNo.onclick = function () {
+
+  FidelityAcquired.style.display = "none";
+  accordionFlushExample3.style.display = "block";
+};
+
+TUFidelity1.onclick = function () {
+
+  let inputElementTUFidelity1 = document.createElement("input");
+  inputElementTUFidelity1.type = "text";
+  inputElementTUFidelity1.value =
+    TitleUnderwriter.value + " is acquired by Fidelity National Financial (FNF) Family of Companies.";
+  document.body.appendChild(inputElementTUFidelity1);
+  inputElementTUFidelity1.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUFidelity1);
+};
+
+TUFidelity5.onclick = function () {
+
+  let inputElementTUFidelity5 = document.createElement("input");
+  inputElementTUFidelity5.type = "text";
+  inputElementTUFidelity5.value =
+    "Engagement with Fidelity is not required due to the loan origination date being older than 2 years.";
+  document.body.appendChild(inputElementTUFidelity5);
+  inputElementTUFidelity5.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUFidelity5);
+};
+
+TUFidelity6.onclick = function () {
+
+  let inputElementTUFidelity6 = document.createElement("input");
+  inputElementTUFidelity6.type = "text";
+  inputElementTUFidelity6.value =
+    "Research for local office was completed. No offices were found with current search.";
+  document.body.appendChild(inputElementTUFidelity6);
+  inputElementTUFidelity6.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUFidelity6);
+};
+
+TUFidelity7.onclick = function () {
+
+  let inputElementTUFidelity7 = document.createElement("input");
+  inputElementTUFidelity7.type = "text";
+  inputElementTUFidelity7.value =
+    "Title Policy is not curable, requesting new title policy to be issued from vendor.";
+  document.body.appendChild(inputElementTUFidelity7);
+  inputElementTUFidelity7.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUFidelity7);
 };
