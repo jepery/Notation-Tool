@@ -12,23 +12,21 @@
 </head>
 
 <body class="bg-dark text-light">
-  <section class="bg-dark text-light">
-    <div class="main text-center mt-3 bg-dark text-light">
-      <h1 class="">Title Policy Fix</h1>
+  <section class="p-3 bg-dark text-light">
+    <div class="main text-center mt-3">
+      <h1 class="bs-light">Title Policy Notation Tool</h1 >
     </div>
-  </section>
 
-
-  <section class="bg-dark text-light">
-    <div class="p-3">
-
-      <div class="" id="MspDiv">
+      <div class="mt-4" id="MspDiv">
         <p>
           MSP Validation MAN:
           <input type="text" class="ManCode" id="MspManCodeTPOL" />
         </p>
         <p class="fw-bold fs-6 collapse" id="mspPassNoteTPOL">
           Research - Data System - Pass/Completed
+        </p>
+        <p class="fw-bold fs-6 collapse" id="mspFailNoteTPOL">
+          Research - Data System - Fail
         </p>
         <button type="button" class="btn btn-success" data-toggle="tooltip"
           title="Research - Data/System - Pass/Completed" id="MspPassTPOL">
@@ -39,207 +37,468 @@
           Fail
         </button>
       </div>
-      <div class="mt-3" id="IcmpDivTPOL">
-        <p>ICMP Search</p>
-        <p class="fw-bold fs-6 collapse" id="icmpTPOLpass">
-          Research - File-net - Pass/Completed
-        </p>
-        <p class="fw-bold fs-6 collapse" id="icmpTPOLfail">Research - File-net - Fail</p>
-        <button type="button" class="btn btn-success" data-toggle="tooltip" title="Research - File-net - Pass/Completed"
-          id="IcmpPassTPOL">
-          Pass
-        </button>
-        <button type="button" class="btn btn-danger" id="IcmpFailTPOL">
-          Fail
-        </button>
-      </div>
 
-      <div class="mt-3 collapse" id="GNMAValidation">
-
-        <p class="">Are you working on a GNMA Loan?</p>
-        <button type="button" class="btn btn-success" id="GNMAYes">
+      <div class="mt-3 collapse" id="MspPullUp">
+        <p class="fw-bold fs-6">Can you pull up the Loan number in MSP?</p>
+        <button type="button" class="btn btn-success" id="MspPullYes">
           Yes
         </button>
-
-        <button type="button" class="btn btn-danger" id="GNMANo">
+        <button type="button" class="btn btn-danger" id="MspPullNo">
           No
         </button>
       </div>
 
-      <div class="mt-3 collapse" id="GNMANotes">
-
-        <p class="fw-bold fs-6">Research - File-net - Passed/Completed</p>
-        <div class="mt-3">
-          <label class="form-label">Mortgage DocID:</label>
-          <input type="text" class="form-control" id="GNMAMortgage" />
-        </div>
-        <button type="button" class="mt-3 btn btn-success" id="GNMAActivityNotes">
-          Activity Note
+      <div class="mt-3 collapse" id="MspPullUpYes">
+        <p class="fw-bold fs-6">Is the Loan Service Transferred?</p>
+        <button type="button" class="btn btn-success" id="MspServiceYes">
+          Yes
+        </button>
+        <button type="button" class="btn btn-danger" id="MspServiceNo">
+          No
         </button>
       </div>
 
-      <div class="mt-3 collapse" id="ValdationInstruction">
-        <p class="fw-bold fs-6">- Go to Validation section of the Tool</p>
+      <div class="mt-3 collapse" id="MspPullUpNo">
+        <p class="fs-6"><i>For those loans that does not pull up in MSP, regardless of the status in ARROW. Please use
+            the following notation.</i></p>
+
+        <p class="fw-bold fs-6">Research - Data/System - Fail</p>
+        <button type="button" class="btn btn-danger" id="MspPullUpNo1">
+          Activity Note
+        </button>
+
+        <div class="mt-3" id="MspPullUpNotCurable">
+          <p class="fs-6"><i>Not Curable. Loan is not valid in MSP.</i></p>
+
+          <p class="fw-bold fs-6">Research - Document - Exhausted Resources</p>
+          <button type="button" class="btn btn-danger" id="MspPullUpNo3">
+            Activity Note
+          </button>
+
+          <p class="fs-6 mt-3">• Update the deficiency status to <strong>Override</strong>. <br>
+            • Update the Follow Up Analyst ID to <strong>LSOEXHST</strong>.</p>
+
+        </div>
+
       </div>
 
-      <!-- Settlement Agent -->
-      <form id="form">
+      <div class="mt-3 collapse" id="MspTransferNo">
+        <p class="fs-6"><i>For those loans that CAN be pulled up in MSP with zero balance and NOT service transferred,
+            please use the notation below.</i></p>
+
+        <p class="fw-bold fs-6">Research - Data/System - Fail</p>
+        <button type="button" class="btn btn-danger" id="MspTransferNo1">
+          Activity Note
+        </button>
+
+        <div class="mt-3" id="MspTransferNoNotCurable">
+          <p class="fs-6"><i>Not Curable. Loan was paid in full and was not service transferred.</i></p>
+
+          <p class="fw-bold fs-6">Research - Document - Exhausted Resources</p>
+          <button type="button" class="btn btn-danger" id="MspPullUpNo2">
+            Activity Note
+          </button>
+
+          <p class="fs-6 mt-3">• Update the deficiency status to <strong>Override</strong>. <br>
+            • Update the Follow Up Analyst ID to <strong>LSOEXHST</strong>.</p>
+
+        </div>
+
+      </div>
+
+      <div id="TPOLFailTrigger">
+
+        <div class="mt-3" id="IcmpDivTPOL">
+          <p>ICMP Search</p>
+          <p class="fw-bold fs-6 collapse" id="icmpTPOLpass">
+            Research - File-net - Pass/Completed
+          </p>
+          <p class="fw-bold fs-6 collapse" id="icmpTPOLfail">Research - File-net - Fail</p>
+          <button type="button" class="btn btn-success" data-toggle="tooltip"
+            title="Research - File-net - Pass/Completed" id="IcmpPassTPOL">
+            Pass
+          </button>
+          <button type="button" class="btn btn-danger" id="IcmpFailTPOL">
+            Fail
+          </button>
+        </div>
+
+        <div class="mt-3 collapse" id="GNMAValidation">
+
+          <p class="">Are you working on a GNMA Loan?</p>
+          <button type="button" class="btn btn-success" id="GNMAYes">
+            Yes
+          </button>
+
+          <button type="button" class="btn btn-danger" id="GNMANo">
+            No
+          </button>
+        </div>
+
+        <div class="mt-3 collapse" id="GNMANotes">
+
+          <p class="fw-bold fs-6">Research - File-net - Passed/Completed</p>
+          <div class="mt-3">
+            <label class="form-label">Mortgage DocID:</label>
+            <input type="text" class="form-control" id="GNMAMortgage" />
+          </div>
+          <button type="button" class="mt-3 btn btn-success" id="GNMAActivityNotes">
+            Activity Note
+          </button>
+        </div>
+
+        <div class="mt-3 collapse" id="ValdationInstruction">
+          <a href="validationtpol.html"><button type="button" class="btn btn-dark" id="">
+              Proceed to Validation
+            </button></a>
+        </div>
+
+        <!-- Settlement Agent -->
+        <form id="form">
+          <div class="mt-3">
+            <label class="form-label fw-bold fs-5">Settlement Agent:</label>
+            <input type="text" class="form-control" id="SettlementAgent" />
+          </div>
+          <div class="mt-3 col-auto">
+            <label class="form-label">Contact Number:</label>
+            <input type="text" class="" id="SettlementAgentNumber" />
+          </div>
+          <div class="accordion accordion-flush mt-3" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-success text-light" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  More options
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+
+                  <div class="mt-3">
+                    <label class="form-label">Spoke to:</label>
+                    <input type="text" class="form-control" id="NameSA" />
+                  </div>
+                  <div class="mt-3">
+                    <label class="form-label">Email Address:</label>
+                    <input type="text" class="form-control" id="SettlementAgentEmail" />
+                  </div>
+                  <div class="mt-3">
+                    <label class="form-label">Fax Number:</label>
+                    <input type="text" class="form-control" id="SettlementAgentFax" />
+                  </div>
+
+                  <!-- Establish -->
+                  <div class="establish mt-3" id="EstablishContactSA">
+                    <p><small>Where you able to establish contact?</small></p>
+                    <button type="button" class="btn btn-success" id="SAEstablishPass">
+                      Yes
+                    </button>
+                    <button type="button" class="btn btn-danger" id="SAEstablishFail">
+                      No
+                    </button>
+                  </div>
+
+                  <div class="mt-3 collapse" id="EstablishContactSAno">
+                    <p><small>Where you able to leave a voicemail?</small></p>
+                    <button type="button" class="btn btn-success" id="SAVoicemailPass">
+                      Yes
+                    </button>
+                    <button type="button" class="btn btn-danger" id="SAVoicemailFail">
+                      No
+                    </button>
+                  </div>
+
+                  <div class="mt-3 collapse" id="SAVoicemailPass1">
+                    <p class="fw-bold fs-6">Call Outbound - Settlement Agent - Left Voicemail</p>
+
+                    <button type="button" class="btn btn-warning" id="SAVoicemailYes1">
+                      Activity Note
+                    </button>
+                  </div>
+
+                  <div class="mt-3 collapse" id="SAVoicemailFail1">
+                    <p class="fw-bold fs-6">Call Outbound - Settlement Agent - Fail</p>
+
+                    <button type="button" class="btn btn-danger" id="SAVoicemailNo">
+                      Activity Note
+                    </button>
+                  </div>
+
+                  <div class="mt-3 collapse" id="SACallPass">
+                    <p><small>Choose the outcome of your call</small></p>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosSA1"
+                        value="option1" checked>
+                      <label class="form-check-label" for="exampleRadiosSA1">
+                        Settlement Agent will provide the copy of the TPOL.
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosSA2"
+                        value="option2">
+                      <label class="form-check-label" for="exampleRadiosSA2">
+                        Settlement Agent unable to provide copy of the TPOL.
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosSA3"
+                        value="option3">
+                      <label class="form-check-label" for="exampleRadiosSA3">
+                        Instructed to send an email
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosSA4"
+                        value="option4">
+                      <label class="form-check-label" for="exampleRadiosSA4">
+                        Others
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="mt-3 collapse" id="SACallPass1">
+                    <p class="fw-bold fs-6">Call Outbound - Settlement Agent - Pass/Completed</p>
+
+                    <button type="button" class="btn btn-success" id="SACallPassProvided">
+                      Activity Note
+                    </button>
+                  </div>
+
+                  <div class="mt-3 collapse" id="SACallPass2">
+
+                    <p class="fw-bold fs-6">Call Outbound - Settlement Agent - Pass/Completed</p>
+
+                    <button type="button" class="btn btn-success" id="SACallPassUnable">
+                      Activity Note
+                    </button>
+                  </div>
+
+                  <div class="mt-3 collapse" id="SACallPass3">
+
+                    <div class="mt-3">
+                      <label class="form-label">State the Fix you want to be corrected</label>
+                      <input type="text" class="form-control" id="FixDescriptSA" />
+                    </div>
+                    <div class="mt-3">
+                      <label class="form-label">Borrowers Name:</label>
+                      <input type="text" class="" id="BorrowersNameSA" />
+                    </div>
+                    <div class="mt-3">
+                      <label class="form-label">Borrowers Property Address:</label>
+                      <input type="text" class="form-control" id="BorrowersAddressSA" />
+                    </div>
+
+                    <p class="fw-bold fs-6 mt-3">Call Outbound - Settlement Agent - Pass/Completed</p>
+
+                    <button type="button" class="btn btn-success" id="SACallPassInstructedtoEmail">
+                      Activity Note
+                    </button>
+
+                    <button type="button" class="btn btn-warning" id="SACallPassInstructedtoEmail1">
+                      Email Settlement Agent
+                    </button>
+
+                    <div class="mt-3" id="SACallPassEmailSent1">
+                      <p class="fw-bold fs-6">Email - Settlement Agent - Sent</p>
+
+                      <button type="button" class="btn btn-success" id="SACallPassEmailSent">
+                        Activity Note
+                      </button>
+                    </div>
+
+
+                  </div>
+
+                  <div class="mt-3 collapse" id="SACallPass4">
+                    <p class="fw-bold fs-6">Call Outbound - Settlement Agent - Pass/Completed</p>
+
+                    <div class="mb-3">
+                      <label for="exampleFormControlTextarea1" class="form-label">Provide the outcome of your
+                        call</label>
+                      <textarea class="form-control" id="SACallOtherTextArea" rows="3"
+                        placeholder="was told that ..."></textarea>
+                    </div>
+
+                    <button type="button" class="btn btn-success" id="SACallPassOther">
+                      Activity Note
+                    </button>
+                  </div>
+
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-3">
+
+            <button type="button" class="btn btn-warning" data-toggle="tooltip" title="Research - File-net - Fail"
+              id="SameSA">
+              Same as TC
+            </button>
+
+            <button type="button" class="btn btn-danger" data-toggle="tooltip" title="Research - File-net - Fail"
+              id="NotInBusinessSA">
+              Not in business
+            </button>
+          </div>
+        </form>
+        <!-- Title Company -->
+
         <div class="mt-3">
-          <label class="form-label">Settlement Agent:</label>
-          <input type="text" class="form-control" id="SettlementAgent" />
+          <label class="form-label fw-bold fs-5">Title Company:</label>
+          <input type="email" class="form-control" id="TitleCompany" />
         </div>
         <div class="mt-3 col-auto">
           <label class="form-label">Contact Number:</label>
-          <input type="text" class="" id="SettlementAgentNumber" />
+          <input type="email" class="" id="TitleCompanyNumber" />
         </div>
-        <div class="accordion accordion-flush mt-3" id="accordionFlushExample">
+
+        <div class="accordion accordion-flush mt-3" id="accordionFlushExample1">
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed bg-success text-light" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                 More options
               </button>
             </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample1">
               <div class="accordion-body">
 
                 <div class="mt-3">
                   <label class="form-label">Spoke to:</label>
-                  <input type="text" class="" id="NameSA" />
+                  <input type="text" class="form-control" id="NameTC" />
                 </div>
                 <div class="mt-3">
                   <label class="form-label">Email Address:</label>
-                  <input type="text" class="" id="SettlementAgentEmail" />
+                  <input type="text" class="form-control" id="TCEmail" />
                 </div>
                 <div class="mt-3">
                   <label class="form-label">Fax Number:</label>
-                  <input type="text" class="" id="SettlementAgentFax" />
+                  <input type="text" class="form-control" id="TCFax" />
                 </div>
 
                 <!-- Establish -->
-                <div class="establish mt-3" id="EstablishContactSA">
+                <div class="establish mt-3" id="EstablishContactTC">
                   <p><small>Where you able to establish contact?</small></p>
-                  <button type="button" class="btn btn-success" id="SAEstablishPass">
+                  <button type="button" class="btn btn-success" id="TCEstablishPass">
                     Yes
                   </button>
-                  <button type="button" class="btn btn-danger" id="SAEstablishFail">
+                  <button type="button" class="btn btn-danger" id="TCEstablishFail">
                     No
                   </button>
                 </div>
 
-                <div class="mt-3 collapse" id="EstablishContactSAno">
+                <div class="mt-3 collapse" id="EstablishContactTCno">
                   <p><small>Where you able to leave a voicemail?</small></p>
-                  <button type="button" class="btn btn-success" id="SAVoicemailPass">
+                  <button type="button" class="btn btn-success" id="TCVoicemailPass">
                     Yes
                   </button>
-                  <button type="button" class="btn btn-danger" id="SAVoicemailFail">
+                  <button type="button" class="btn btn-danger" id="TCVoicemailFail">
                     No
                   </button>
                 </div>
 
-                <div class="mt-3 collapse" id="SAVoicemailPass1">
-                  <p class="fw-bold fs-6">Call Outbound - Settlement Agent - Left Voicemail</p>
+                <div class="mt-3 collapse" id="TCVoicemailPass1">
+                  <p class="fw-bold fs-6">Call Outbound - Title Company - Left Voicemail</p>
 
-                  <button type="button" class="btn btn-warning" id="SAVoicemailYes">
+                  <button type="button" class="btn btn-warning" id="TCVoicemailYes1">
                     Activity Note
                   </button>
                 </div>
 
-                <div class="mt-3 collapse" id="SAVoicemailFail1">
-                  <p class="fw-bold fs-6">Call Outbound - Settlement Agent - Fail</p>
+                <div class="mt-3 collapse" id="TCVoicemailFail1">
+                  <p class="fw-bold fs-6">Call Outbound - Title Company - Fail</p>
 
-                  <button type="button" class="btn btn-danger" id="SAVoicemailNo">
+                  <button type="button" class="btn btn-danger" id="TCVoicemailNo">
                     Activity Note
                   </button>
                 </div>
 
-                <div class="mt-3 collapse" id="SACallPass">
+                <div class="mt-3 collapse" id="TCCallPass">
                   <p><small>Choose the outcome of your call</small></p>
 
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosSA1"
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosTC1"
                       value="option1" checked>
-                    <label class="form-check-label" for="exampleRadiosSA1">
-                      Settlement Agent will provide the copy of the TPOL.
+                    <label class="form-check-label" for="exampleRadiosTC1">
+                      Title Company will provide the copy of the TPOL.
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosSA2"
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosTC2"
                       value="option2">
-                    <label class="form-check-label" for="exampleRadiosSA2">
-                      Settlement Agent unable to provide copy of the TPOL.
+                    <label class="form-check-label" for="exampleRadiosTC2">
+                      Title Company unable to provide copy of the TPOL.
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosSA3"
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosTC3"
                       value="option3">
-                    <label class="form-check-label" for="exampleRadiosSA3">
+                    <label class="form-check-label" for="exampleRadiosTC3">
                       Instructed to send an email
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosSA4"
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosTC4"
                       value="option4">
-                    <label class="form-check-label" for="exampleRadiosSA4">
+                    <label class="form-check-label" for="exampleRadiosTC4">
                       Others
                     </label>
                   </div>
                 </div>
 
-                <div class="mt-3 collapse" id="SACallPass1">
-                  <p class="fw-bold fs-6">Call Outbound - Settlement Agent - Pass/Completed</p>
+                <div class="mt-3 collapse" id="TCCallPass1">
+                  <p class="fw-bold fs-6">Call Outbound - Title Company - Pass/Completed</p>
 
-                  <button type="button" class="btn btn-success" id="SACallPassProvided">
+                  <button type="button" class="btn btn-success" id="TCCallPassProvided">
                     Activity Note
                   </button>
                 </div>
 
-                <div class="mt-3 collapse" id="SACallPass2">
+                <div class="mt-3 collapse" id="TCCallPass2">
 
-                  <p class="fw-bold fs-6">Call Outbound - Settlement Agent - Pass/Completed</p>
+                  <p class="fw-bold fs-6">Call Outbound - Title Company - Pass/Completed</p>
 
-                  <button type="button" class="btn btn-success" id="SACallPassUnable">
+                  <button type="button" class="btn btn-success" id="TCCallPassUnable">
                     Activity Note
                   </button>
                 </div>
 
-                <div class="mt-3 collapse" id="SACallPass3">
+                <div class="mt-3 collapse" id="TCCallPass3">
 
                   <div class="mt-3">
-                    <label class="form-label">File Number/Order Number:</label>
-                    <input type="text" class="" id="FileNumberSA" />
+                    <label class="form-label">State the Fix you want to be corrected</label>
+                    <input type="text" class="form-control" id="FixDescriptTC" />
                   </div>
-                  <div class="mt-3">
-                    <label class="form-label">Closing Date:</label>
-                    <input type="text" class="" id="ClosingDateSA" />
-                  </div>
+
                   <div class="mt-3">
                     <label class="form-label">Borrowers Name:</label>
-                    <input type="text" class="" id="BorrowersNameSA" />
-                  </div>
-                  <div class="mt-3">
-                    <label class="form-label">Loan Amount:</label>
-                    <input type="text" class="" id="LoanAmountSA" />
+                    <input type="text" class="" id="BorrowersNameTC" />
                   </div>
                   <div class="mt-3">
                     <label class="form-label">Borrowers Property Address:</label>
-                    <input type="text" class="form-control" id="BorrowersAddressSA" />
+                    <input type="text" class="form-control" id="BorrowersAddressTC" />
                   </div>
 
-                  <p class="fw-bold fs-6 mt-3">Call Outbound - Settlement Agent - Pass/Completed</p>
+                  <p class="fw-bold fs-6 mt-3">Call Outbound - Title Company - Pass/Completed</p>
 
-                  <button type="button" class="btn btn-success" id="SACallPassInstructedtoEmail">
+                  <button type="button" class="btn btn-success" id="TCCallPassInstructedtoEmail">
                     Activity Note
                   </button>
 
-                  <button type="button" class="btn btn-warning" id="SACallPassInstructedtoEmail1">
-                    Email Settlement Agent
+                  <button type="button" class="btn btn-warning" id="TCCallPassInstructedtoEmail1">
+                    Email Title Company
                   </button>
 
-                  <div class="mt-3" id="SACallPassEmailSent1">
-                    <p class="fw-bold fs-6">Email - Settlement Agent - Sent</p>
+                  <div class="mt-3" id="TCCallPassEmailSent1">
+                    <p class="fw-bold fs-6">Email - Title Company - Sent</p>
 
-                    <button type="button" class="btn btn-success" id="SACallPassEmailSent">
+                    <button type="button" class="btn btn-success" id="TCCallPassEmailSent">
                       Activity Note
                     </button>
                   </div>
@@ -247,16 +506,16 @@
 
                 </div>
 
-                <div class="mt-3 collapse" id="SACallPass4">
-                  <p class="fw-bold fs-6">Call Outbound - Settlement Agent - Pass/Completed</p>
+                <div class="mt-3 collapse" id="TCCallPass4">
+                  <p class="fw-bold fs-6">Call Outbound - Title Company - Pass/Completed</p>
 
                   <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Provide the outcome of your call</label>
-                    <textarea class="form-control" id="SACallOtherTextArea" rows="3"
+                    <textarea class="form-control" id="TCCallOtherTextArea" rows="3"
                       placeholder="was told that ..."></textarea>
                   </div>
 
-                  <button type="button" class="btn btn-success" id="SACallPassOther">
+                  <button type="button" class="btn btn-success" id="TCCallPassOther">
                     Activity Note
                   </button>
                 </div>
@@ -271,247 +530,386 @@
         </div>
 
         <div class="mt-3">
-
           <button type="button" class="btn btn-warning" data-toggle="tooltip" title="Research - File-net - Fail"
-            id="SameSA">
-            Same as TC
+            id="SameTC">
+            Same as TU
           </button>
 
           <button type="button" class="btn btn-danger" data-toggle="tooltip" title="Research - File-net - Fail"
-            id="NotInBusinessSA">
+            id="NotInBusinessTC">
             Not in business
           </button>
         </div>
-      </form>
-      <!-- Title Company -->
 
-      <div class="mt-3">
-        <label class="form-label">Title Company:</label>
-        <input type="email" class="form-control" id="TitleCompany" />
-      </div>
-      <div class="mt-3 col-auto">
-        <label class="form-label">Contact Number:</label>
-        <input type="email" class="" id="TitleCompanyNumber" />
-      </div>
+        <!-- Title Underwriter -->
 
-      <div class="accordion accordion-flush mt-3" id="accordionFlushExample1">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed bg-success text-light" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseOne">
-              More options
-            </button>
-          </h2>
-          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample1">
-            <div class="accordion-body">
+        <div class="mt-3">
 
-              <div class="mt-3">
-                <label class="form-label">Spoke to:</label>
-                <input type="text" class="" id="NameTC" />
-              </div>
-              <div class="mt-3">
-                <label class="form-label">Email Address:</label>
-                <input type="text" class="" id="TCEmail" />
-              </div>
-              <div class="mt-3">
-                <label class="form-label">Fax Number:</label>
-                <input type="text" class="" id="TCFax" />
-              </div>
+          <label class="form-label fw-bold fs-5">Title Underwriter:</label>
+          <div class="mt-2">
+            <div class="form-check form-check">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1FirstAmerican"
+                value="option1" checked>
+              <label class="form-check-label" for="inlineRadio1FirstAmerican">First American: <a
+                  href="https://www.firstam.com/title/find-an-office/" target="_blank">Office Locator</a></label>
+            </div>
 
-              <!-- Establish -->
-              <div class="establish mt-3" id="EstablishContactTC">
-                <p><small>Where you able to establish contact?</small></p>
-                <button type="button" class="btn btn-success" id="TCEstablishPass">
-                  Yes
-                </button>
-                <button type="button" class="btn btn-danger" id="TCEstablishFail">
-                  No
-                </button>
-              </div>
+            <div class="form-check form-check">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2OldRepublic"
+                value="option2">
+              <label class="form-check-label" for="inlineRadio2OldRepublic">Old Republic Title</label>
+            </div>
 
-              <div class="mt-3 collapse" id="EstablishContactTCno">
-                <p><small>Where you able to leave a voicemail?</small></p>
-                <button type="button" class="btn btn-success" id="TCVoicemailPass">
-                  Yes
-                </button>
-                <button type="button" class="btn btn-danger" id="TCVoicemailFail">
-                  No
-                </button>
-              </div>
+            <div class="form-check form-check">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3StewartTitle"
+                value="option3">
+              <label class="form-check-label" for="inlineRadio3StewartTitle">Stewart Title: <a
+                  href="https://www.stewart.com/en/locate-an-office" target="_blank">Office Locator</a></label>
+            </div>
 
-              <div class="mt-3 collapse" id="TCVoicemailPass1">
-                <p class="fw-bold fs-6">Call Outbound - Title Company - Left Voicemail</p>
+            <div class="form-check form-check">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4Fidelity"
+                value="option4">
+              <label class="form-check-label" for="inlineRadio4Fidelity">Fidelity: <a
+                  href="https://location.fntic.com/Default.aspx" target="_blank">Office Locator</a></label>
+            </div>
 
-                <button type="button" class="btn btn-warning" id="SAVoicemailYes">
-                  Activity Note
-                </button>
-              </div>
-
-              <div class="mt-3 collapse" id="TCVoicemailFail1">
-                <p class="fw-bold fs-6">Call Outbound - Title Company - Fail</p>
-
-                <button type="button" class="btn btn-danger" id="TCVoicemailNo">
-                  Activity Note
-                </button>
-              </div>
-
-              <div class="mt-3 collapse" id="TCCallPass">
-                <p><small>Choose the outcome of your call</small></p>
-
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosTC1"
-                    value="option1" checked>
-                  <label class="form-check-label" for="exampleRadiosTC1">
-                    Title Company will provide the copy of the TPOL.
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosTC2"
-                    value="option2">
-                  <label class="form-check-label" for="exampleRadiosTC2">
-                    Title Company unable to provide copy of the TPOL.
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosTC3"
-                    value="option3">
-                  <label class="form-check-label" for="exampleRadiosTC3">
-                    Instructed to send an email
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosTC4"
-                    value="option4">
-                  <label class="form-check-label" for="exampleRadiosTC4">
-                    Others
-                  </label>
-                </div>
-              </div>
-
-              <div class="mt-3 collapse" id="TCCallPass1">
-                <p class="fw-bold fs-6">Call Outbound - Title Company - Pass/Completed</p>
-
-                <button type="button" class="btn btn-success" id="TCCallPassProvided">
-                  Activity Note
-                </button>
-              </div>
-
-              <div class="mt-3 collapse" id="TCCallPass2">
-
-                <p class="fw-bold fs-6">Call Outbound - Title Company - Pass/Completed</p>
-
-                <button type="button" class="btn btn-success" id="TCCallPassUnable">
-                  Activity Note
-                </button>
-              </div>
-
-              <div class="mt-3 collapse" id="TCCallPass3">
-
-                <div class="mt-3">
-                  <label class="form-label">File Number/Order Number:</label>
-                  <input type="text" class="" id="FileNumberTC" />
-                </div>
-                <div class="mt-3">
-                  <label class="form-label">Closing Date:</label>
-                  <input type="text" class="" id="ClosingDateTC" />
-                </div>
-                <div class="mt-3">
-                  <label class="form-label">Borrowers Name:</label>
-                  <input type="text" class="" id="BorrowersNameTC" />
-                </div>
-                <div class="mt-3">
-                  <label class="form-label">Loan Amount:</label>
-                  <input type="text" class="" id="LoanAmountTC" />
-                </div>
-                <div class="mt-3">
-                  <label class="form-label">Borrowers Property Address:</label>
-                  <input type="text" class="form-control" id="BorrowersAddressTC" />
-                </div>
-
-                <p class="fw-bold fs-6 mt-3">Call Outbound - Title Company - Pass/Completed</p>
-
-                <button type="button" class="btn btn-success" id="TCCallPassInstructedtoEmail">
-                  Activity Note
-                </button>
-
-                <button type="button" class="btn btn-warning" id="TCCallPassInstructedtoEmail1">
-                  Email Title Company
-                </button>
-
-                <div class="mt-3" id="TCCallPassEmailSent1">
-                  <p class="fw-bold fs-6">Email - Title Company - Sent</p>
-
-                  <button type="button" class="btn btn-success" id="TCCallPassEmailSent">
-                    Activity Note
-                  </button>
-                </div>
-
-
-              </div>
-
-              <div class="mt-3 collapse" id="TCCallPass4">
-                <p class="fw-bold fs-6">Call Outbound - Title Company - Pass/Completed</p>
-
-                <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label">Provide the outcome of your call</label>
-                  <textarea class="form-control" id="TCCallOtherTextArea" rows="3"
-                    placeholder="was told that ..."></textarea>
-                </div>
-
-                <button type="button" class="btn btn-success" id="TCCallPassOther">
-                  Activity Note
-                </button>
-              </div>
-
-
-
-
-
+            <div class="form-check form-check">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4OthersTU"
+                value="option5" checked>
+              <label class="form-check-label" for="inlineRadio4OthersTU">Others</label>
             </div>
           </div>
+          <!-- First American -->
+          <div class="mt-3 collapse" id="FirstAmericanDiv">
+            <input class="form-control" type="text" value="First American" disabled readonly>
+
+            <div class="mt-3">
+              <label class="form-label">State the Fix you want to be corrected</label>
+              <input type="text" class="form-control" id="FixDescriptFirstAmerican" />
+            </div>
+            <div class="mt-3">
+              <label class="form-label">Borrowers Name:</label>
+              <input type="text" class="" id="BorrowersNameFirstAmerican" />
+            </div>
+            <div class="mt-3">
+              <label class="form-label">Borrowers Property Address:</label>
+              <input type="text" class="form-control" id="BorrowersAddressFirstAmerican" />
+            </div>
+
+            <button type="button" class="btn btn-warning mt-3" id="EmailFirstAmerican">
+              Send Email
+            </button>
+
+            <div id="EmailFirstAmerican1">
+
+              <p class="fw-bold fs-6 mt-3">Email - Title Underwriter - Sent</p>
+              <button type="button" class="btn btn-success" id="EmailFirstAmericanSent">
+                Activity Note
+              </button>
+            </div>
+          </div>
+
+          <!-- Old Republic -->
+          <div class="mt-3 collapse" id="OldDiv">
+            <input class="form-control" type="text" value="Old Republic Title" disabled readonly>
+
+            <div class="mt-3">
+              <label class="form-label">State the Fix you want to be corrected</label>
+              <input type="text" class="form-control" id="FixDescriptOld" />
+            </div>
+            <div class="mt-3">
+              <label class="form-label">Borrowers Name:</label>
+              <input type="text" class="" id="BorrowersNameOld" />
+            </div>
+            <div class="mt-3">
+              <label class="form-label">Borrowers Property Address:</label>
+              <input type="text" class="form-control" id="BorrowersAddressOld" />
+            </div>
+
+            <button
+                type="button" class="btn btn-warning mt-3" id="EmailOld">
+                Send Email
+            </button>
+
+            <div id="EmaiOld1">
+
+              <p class="fw-bold fs-6 mt-3">Email - Title Underwriter - Sent</p>
+              <button type="button" class="btn btn-success" id="EmailOldSent">
+                Activity Note
+              </button>
+            </div>
+          </div>
+
+          <!-- Stewart Title -->
+          <div class="mt-3 collapse" id="StewartDiv">
+            <input class="form-control" type="text" value="Stewart Title" disabled readonly>
+
+            <div class="mt-3">
+              <label class="form-label">State the Fix you want to be corrected</label>
+              <input type="text" class="form-control" id="FixDescriptStewart" />
+            </div>
+            <div class="mt-3">
+              <label class="form-label">Borrowers Name:</label>
+              <input type="text" class="" id="BorrowersNameStewart" />
+            </div>
+            <div class="mt-3">
+              <label class="form-label">Borrowers Property Address:</label>
+              <input type="text" class="form-control" id="BorrowersAddressStewart" />
+            </div>
+
+            <button type="button" class="btn btn-warning mt-3" id="EmailStewart">
+              Send Email
+            </button>
+
+            <div id="EmaiStewart1">
+
+              <p class="fw-bold fs-6 mt-3">Email - Title Underwriter - Sent</p>
+              <button type="button" class="btn btn-success" id="EmailStewartSent">
+                Activity Note
+              </button>
+            </div>
+          </div>
+
+          <!-- Fidelity -->
+          <div class="mt-3 collapse" id="FidelityDiv">
+            <input class="form-control" type="text" value="Fidelity National" disabled readonly>
+
+            <p class="fw-bold fs-6 mt-3">Research - Title Underwriter - Fail</p>
+            <button type="button" class="btn btn-danger" id="TUFidelity1">
+              Activity Note
+            </button>
+
+            <div>
+              <p class="fw-bold fs-6 mt-3">Comment - Internal - Other</p>
+              <label class="fs-6"><i>Engagement with Fidelity is not required due to the loan origination date being
+                  older than 2 years.</i></label>
+              <button type="button" class="btn btn-danger mt-3" id="TUFidelity2">
+                Activity Note
+              </button>
+            </div>
+
+            <div>
+              <p class="fw-bold fs-6 mt-3">Comment - Internal - Other</p>
+              <label class="fs-6"><i>Research for local office was completed. No offices were found with current
+                  search.</i></label>
+              <button type="button" class="btn btn-danger mt-3" id="TUFidelity3">
+                Activity Note
+              </button>
+            </div>
+
+            <div>
+              <p class="fw-bold fs-6 mt-3">Request - Document - Pending</p>
+              <button type="button" class="btn btn-danger" id="TUFidelity4">
+                New Document Request
+              </button>
+            </div>
+
+            <div>
+              <p class="mt-3">
+
+                <strong>Next Step:</strong> Opening NDR in Arrow Loan <br><br>
+                <strong>Source:</strong> Loan Sales Support. <br>
+                <strong>Category:</strong> Title Policy (Final Docs). <br>
+                <strong>Description:</strong> New Document Request. <br>
+                <strong>Status:</strong> Open. <br>
+                <strong>Report Group:</strong> Internal. <br>
+                <Strong>Follow Up Analyst:</Strong> LSTPNEW. <br>
+                <strong>Follow Up Date:</strong> Next business day. <br>
+                <strong>Deficiency Clarification:</strong> (Pending Sale:)
+              </p>
+            </div>
+
+          </div>
+
+          <div class="mt-3" id="TUOtherDiv">
+            <input type="email" class="form-control" id="TitleUnderwriter" />
+            <div class="mt-3 col-auto">
+              <label class="form-label">Contact Number:</label>
+              <input type="email" class="" id="TitleUnderwriterNumber" />
+            </div>
+
+            <div class="accordion accordion-flush mt-3" id="accordionFlushExample3">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed bg-success text-light" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#flush-collapse3" aria-expanded="false"
+                    aria-controls="flush-collapse3">
+                    More options
+                  </button>
+                </h2>
+                <div id="flush-collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample3">
+                  <div class="accordion-body">
+
+                    <div class="mt-3">
+                      <label class="form-label">Spoke to:</label>
+                      <input type="text" class="form-control" id="NameTU" />
+                    </div>
+                    <div class="mt-3">
+                      <label class="form-label">Email Address:</label>
+                      <input type="text" class="form-control" id="TUEmail" />
+                    </div>
+                    <div class="mt-3">
+                      <label class="form-label">Fax Number:</label>
+                      <input type="text" class="form-control" id="TUFax" />
+                    </div>
+
+                    <!-- Establish -->
+                    <div class="establish mt-3" id="EstablishContactTU">
+                      <p><small>Where you able to establish contact?</small></p>
+                      <button type="button" class="btn btn-success" id="TUEstablishPass">
+                        Yes
+                      </button>
+                      <button type="button" class="btn btn-danger" id="TUEstablishFail">
+                        No
+                      </button>
+                    </div>
+
+                    <div class="mt-3 collapse" id="EstablishContactTUno">
+                      <p><small>Where you able to leave a voicemail?</small></p>
+                      <button type="button" class="btn btn-success" id="TUVoicemailPass">
+                        Yes
+                      </button>
+                      <button type="button" class="btn btn-danger" id="TUVoicemailFail">
+                        No
+                      </button>
+                    </div>
+
+                    <div class="mt-3 collapse" id="TUVoicemailPass1">
+                      <p class="fw-bold fs-6">Call Outbound - Title Underwriter - Left Voicemail</p>
+
+                      <button type="button" class="btn btn-warning" id="TUVoicemailYes1">
+                        Activity Note
+                      </button>
+                    </div>
+
+                    <div class="mt-3 collapse" id="TUVoicemailFail1">
+                      <p class="fw-bold fs-6">Call Outbound - Title Underwriter - Fail</p>
+
+                      <button type="button" class="btn btn-danger" id="TUVoicemailNo">
+                        Activity Note
+                      </button>
+                    </div>
+
+                    <div class="mt-3 collapse" id="TUCallPass">
+                      <p><small>Choose the outcome of your call</small></p>
+
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosTU1"
+                          value="option1" checked>
+                        <label class="form-check-label" for="exampleRadiosTU1">
+                          Title Underwriter will provide the copy of the TPOL.
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosTU2"
+                          value="option2">
+                        <label class="form-check-label" for="exampleRadiosTU2">
+                          Title Underwriter unable to provide copy of the TPOL.
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosTU3"
+                          value="option3">
+                        <label class="form-check-label" for="exampleRadiosTU3">
+                          Instructed to send an email
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosTU4"
+                          value="option4">
+                        <label class="form-check-label" for="exampleRadiosTU4">
+                          Others
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="mt-3 collapse" id="TUCallPass1">
+                      <p class="fw-bold fs-6">Call Outbound - Title Underwriter - Pass/Completed</p>
+
+                      <button type="button" class="btn btn-success" id="TUCallPassProvided">
+                        Activity Note
+                      </button>
+                    </div>
+
+                    <div class="mt-3 collapse" id="TUCallPass2">
+
+                      <p class="fw-bold fs-6">Call Outbound - Title Underwriter - Pass/Completed</p>
+
+                      <button type="button" class="btn btn-success" id="TUCallPassUnable">
+                        Activity Note
+                      </button>
+                    </div>
+
+                    <div class="mt-3 collapse" id="TUCallPass3">
+
+                      <div class="mt-3">
+                        <label class="form-label">State the Fix you want to be corrected</label>
+                        <input type="text" class="form-control" id="FixDescriptTU" />
+                      </div>
+                      <div class="mt-3">
+                        <label class="form-label">Borrowers Name:</label>
+                        <input type="text" class="" id="BorrowersNameTU" />
+                      </div>
+                      <div class="mt-3">
+                        <label class="form-label">Borrowers Property Address:</label>
+                        <input type="text" class="form-control" id="BorrowersAddressTU" />
+                      </div>
+
+                      <p class="fw-bold fs-6 mt-3">Call Outbound - Title Underwriter - Pass/Completed</p>
+
+                      <button type="button" class="btn btn-success" id="TUCallPassInstructedtoEmail">
+                        Activity Note
+                      </button>
+
+                      <button type="button" class="btn btn-warning" id="TUCallPassInstructedtoEmail1">
+                        Email Title Underwriter
+                      </button>
+
+                      <div class="mt-3" id="TUCallPassEmailSent1">
+                        <p class="fw-bold fs-6">Email - Title Underwriter - Sent</p>
+
+                        <button type="button" class="btn btn-success" id="TUCallPassEmailSent">
+                          Activity Note
+                        </button>
+                      </div>
+
+
+                    </div>
+
+                    <div class="mt-3 collapse" id="TUCallPass4">
+                      <p class="fw-bold fs-6">Call Outbound - Title Underwriter - Pass/Completed</p>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Provide the outcome of your
+                          call</label>
+                        <textarea class="form-control" id="TUCallOtherTextArea" rows="3"
+                          placeholder="was told that ..."></textarea>
+                      </div>
+
+                      <button type="button" class="btn btn-success" id="TUCallPassOther">
+                        Activity Note
+                      </button>
+                    </div>
+
+
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
         </div>
-      </div>
-
-      <div class="mt-3">
-        <button type="button" class="btn btn-warning" data-toggle="tooltip" title="Research - File-net - Fail"
-          id="SameTC">
-          Same as TU
-        </button>
-
-        <button type="button" class="btn btn-danger" data-toggle="tooltip" title="Research - File-net - Fail"
-          id="NotInBusinessTC">
-          Not in business
-        </button>
-      </div>
-
-      <!-- Title Underwriter -->
-
-    <div class="mt-3">
-        <label class="form-label">Title Underwriter:</label>
-        <input type="email" class="form-control" id="TitleUnderwriter" />
-      </div>
-      <div class="mt-3 col-auto">
-        <label class="form-label">Contact Number:</label>
-        <input type="email" class="" id="TitleUnderwriterNumber" />
-      </div>
-      <!-- <div class="mt-3 pb-3">
-        <button type="button" class="btn btn-success" data-toggle="tooltip" title="Research - File-net - Fail"
-          id="ProceedTU">
-          Proceed
-        </button>
-
-        <button type="button" class="btn btn-danger" data-toggle="tooltip" title="Research - File-net - Fail"
-          id="NotInBusinessTU">
-          Not in business
-        </button>
-      </div>  -->
-
-
-    </div>
+       </div>
   </section>
 </body>
 
-<script src="tpol.js"></script>
+<script src="tpolfix.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

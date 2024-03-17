@@ -33,8 +33,7 @@ MspPassTPOL.onclick = function () {
   MspPullUpYes.style.display = "none";
   MspTransferNo.style.display = "none";
   MspPullUpNo.style.display = "none";
-  mspPassNoteMTG.style.display = "none";
-  mspFailNoteMTG.style.display = "none";
+  mspFailNoteTPOL.style.display = "none";
 
   let inputElementMspPass = document.createElement("input");
   inputElementMspPass.type = "text";
@@ -54,8 +53,8 @@ MspFailTPOL.onclick = function () {
   MspPullUpYes.style.display = "none";
   MspTransferNo.style.display = "none";
   MspPullUpNo.style.display = "none";
-  mspPassNoteMTG.style.display = "none";
-  mspFailNoteMTG.style.display = "block";
+  mspPassNoteTPOL.style.display = "none";
+  mspFailNoteTPOL.style.display = "block";
 
 };
 
@@ -370,7 +369,6 @@ SACallPassInstructedtoEmail1.onclick = function sendMail() {
   const propertyAddress = document.getElementById("BorrowersAddressSA").value;
   const closingDate = document.getElementById("ClosingDateSA").value;
   const loanAmount = document.getElementById("LoanAmountSA").value;
-  const fileNumber = document.getElementById("FileNumberSA").value;
   const emailAddress = document.getElementById("SettlementAgentEmail").value;
   const external = document.getElementById("SettlementAgent").value;
 
@@ -384,11 +382,10 @@ Customer: ${customer}
 Property Address: ${propertyAddress}
 Closing Date: ${closingDate}
 Loan Amount: ${loanAmount}
-File Number: ${fileNumber}
 
 What we are requesting from you:
 
-* Reply with a copy of the Lender's Title Policy
+    •   Reply with a copy of the Lender's Title Policy
 
 Thank you for your assistance with resolving this matter. 
 
@@ -405,17 +402,6 @@ Sincerely,
 let SettlementAgent = document.getElementById("SettlementAgent");
 let SettlementAgentNumber = document.getElementById("SettlementAgentNumber");
 
-// ProceedSA.onclick = function () {
-
-//   let SettlementAgentValue = SettlementAgent.value;
-//   let SettlementAgentNumbervalue = SettlementAgentNumber.value;
-
-//   localStorage.setItem('settlement-agent', SettlementAgentValue);
-//   localStorage.setItem('settlementagent-number', SettlementAgentNumbervalue);
-
-//   window.location.href = "settlementagent.html";
-
-// };
 
 SameSA.onclick = function () {
   let inputElementSameSA = document.createElement("input");
@@ -465,6 +451,218 @@ NotInBusinessTC.onclick = function () {
   inputElementNotInBusinessTC.select();
   document.execCommand("copy");
   document.body.removeChild(inputElementNotInBusinessTC);
+};
+
+// Title Company
+
+TCEstablishPass.onclick = function () {
+  TCCallPass.style.display = "block";
+  EstablishContactTCno.style.display = "none";
+  TCCallPass1.style.display = "block";
+  TCVoicemailPass1.style.display = "none";
+  TCVoicemailFail1.style.display = "none";
+};
+
+exampleRadiosTC1.onclick = function () {
+  EstablishContactTCno.style.display = "none";
+  TCCallPass1.style.display = "block";
+  TCCallPass2.style.display = "none";
+  TCCallPass3.style.display = "none";
+  TCCallPass4.style.display = "none";
+};
+
+TCCallPassProvided.onclick = function () {
+  let inputElementTCCallPassProvided = document.createElement("input");
+  inputElementTCCallPassProvided.type = "text";
+  inputElementTCCallPassProvided.value =
+    "Called " +
+    TitleCompany.value +
+    " at " +
+    TitleCompanyNumber.value +
+    " to request for the copy of the TPOL. Spoke to " +
+    NameTC.value +
+    " was told that they will give the copy of the TPOL today, left email address.";
+  document.body.appendChild(inputElementTCCallPassProvided);
+  inputElementTCCallPassProvided.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTCCallPassProvided);
+};
+
+exampleRadiosTC2.onclick = function () {
+  EstablishContactTCno.style.display = "none";
+  TCCallPass1.style.display = "none";
+  TCCallPass2.style.display = "block";
+  TCCallPass3.style.display = "none";
+  TCCallPass4.style.display = "none";
+};
+
+TCCallPassUnable.onclick = function () {
+  let inputElementTUCallPassUnable = document.createElement("input");
+  inputElementTUCallPassUnable.type = "text";
+  inputElementTUCallPassUnable.value =
+    "Called " +
+    TitleCompany.value +
+    " at " +
+    TitleCompanyNumber.value +
+    " to request for the copy of the TPOL. Spoke to " +
+    NameTC.value +
+    " was told that they are unable to provide the copy of the TPOL. Will proceed to the next contact.";
+  document.body.appendChild(inputElementTUCallPassUnable);
+  inputElementTUCallPassUnable.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUCallPassUnable);
+};
+
+exampleRadiosTC3.onclick = function () {
+  EstablishContactTCno.style.display = "none";
+  TCCallPass1.style.display = "none";
+  TCCallPass2.style.display = "none";
+  TCCallPass3.style.display = "block";
+  TCCallPass4.style.display = "none";
+};
+
+TCCallPassInstructedtoEmail.onclick = function () {
+  let inputElementTUCallEmail = document.createElement("input");
+  inputElementTUCallEmail.type = "text";
+  inputElementTUCallEmail.value =
+    "Called " +
+    TitleCompany.value +
+    " at " +
+    TitleCompanyNumber.value +
+    " to request for the copy of the TPOL. Spoke to " +
+    NameTC.value +
+    " was instructed to send an email request to " +
+    TCEmail.value;
+  document.body.appendChild(inputElementTUCallEmail);
+  inputElementTUCallEmail.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUCallEmail);
+};
+
+TCCallPassEmailSent.onclick = function () {
+  let inputElementTUCallEmailSent = document.createElement("input");
+  inputElementTUCallEmailSent.type = "text";
+  inputElementTUCallEmailSent.value =
+    "Emailed " +
+    TitleCompany.value +
+    " at " +
+    TCEmail.value +
+    " to request for the copy of the TPOL.";
+  document.body.appendChild(inputElementTUCallEmailSent);
+  inputElementTUCallEmailSent.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUCallEmailSent);
+};
+
+exampleRadiosTC4.onclick = function () {
+  EstablishContactTCno.style.display = "none";
+  TCCallPass1.style.display = "none";
+  TCCallPass2.style.display = "none";
+  TCCallPass3.style.display = "none";
+  TCCallPass4.style.display = "block";
+};
+
+TCCallPassOther.onclick = function () {
+  let inputElementTUCallPassOther = document.createElement("input");
+  inputElementTUCallPassOther.type = "text";
+  inputElementTUCallPassOther.value =
+    "Called " +
+    TitleCompany.value +
+    " at " +
+    TitleCompanyNumber.value +
+    " to request for the copy of the TPOL. Spoke to " +
+    NameTC.value +
+    " was told that " +
+    TCCallOtherTextArea.value;
+  document.body.appendChild(inputElementTUCallPassOther);
+  inputElementTUCallPassOther.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUCallPassOther);
+};
+
+TCEstablishFail.onclick = function () {
+  EstablishContactTCno.style.display = "block";
+  TCCallPass.style.display = "none";
+  TCCallPass1.style.display = "none";
+};
+
+TCVoicemailPass.onclick = function () {
+  TCVoicemailPass1.style.display = "block";
+  EstablishContactTCno.style.display = "none";
+  TCVoicemailFail1.style.display = "none";
+};
+
+TCVoicemailYes1.onclick = function (){
+
+  let inputElementTUVoicemailYes = document.createElement("input");
+  inputElementTUVoicemailYes.type = "text";
+  inputElementTUVoicemailYes.value =
+    "Called " +
+    TitleCompany.value +
+    " at " +
+    TitleCompanyNumber.value +
+    " to request for the copy of the TPOL. Left voicemail, Borrowers name and Property address.";
+  document.body.appendChild(inputElementTUVoicemailYes);
+  inputElementTUVoicemailYes.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUVoicemailYes);
+};
+
+TCVoicemailFail.onclick = function () {
+  TCVoicemailFail1.style.display = "block";
+  TCVoicemailPass1.style.display = "none";
+  EstablishContactTCno.style.display = "none";
+};
+
+TCVoicemailNo.onclick = function (){
+
+  let inputElementTUVoicemailNo = document.createElement("input");
+  inputElementTUVoicemailNo.type = "text";
+  inputElementTUVoicemailNo.value =
+    "Called " +
+    TitleCompany.value +
+    " at " +
+    TitleCompanyNumber.value +
+    " to request for the copy of the TPOL. No one answers the call, will call again tomorrow.";
+  document.body.appendChild(inputElementTUVoicemailNo);
+  inputElementTUVoicemailNo.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementTUVoicemailNo);
+};
+
+TCCallPassInstructedtoEmail1.onclick = function sendMail() {
+  const customer = document.getElementById("BorrowersNameTU").value;
+  const propertyAddress = document.getElementById("BorrowersAddressTU").value;
+  const closingDate = document.getElementById("ClosingDateTU").value;
+  const loanAmount = document.getElementById("LoanAmountTU").value;
+  const emailAddress = document.getElementById("TUEmail").value;
+  const external = document.getElementById("TitleUnderwriter").value;
+
+  // Construct the email message
+  const subject = encodeURIComponent("Loan Document Request");
+  const body = encodeURIComponent(`Dear ${external},
+
+During an internal review for the property listed below, Wells Fargo found that the Loan Policy should have been issued but we have not received a copy. Would you please assist us?
+
+Customer: ${customer}
+Property Address: ${propertyAddress}
+Closing Date: ${closingDate}
+Loan Amount: ${loanAmount}
+
+What we are requesting from you:
+
+    •   Reply with a copy of the Lender's Title Policy
+
+Thank you for your assistance with resolving this matter. 
+
+Sincerely,
+`);
+
+  // Construct the mailto link
+  const mailtoLink = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
+
+  // Open the default email client with the pre-filled subject and body
+  window.location.href = mailtoLink;
 };
 
 // Title Underwriter
@@ -649,7 +847,6 @@ TUCallPassInstructedtoEmail1.onclick = function sendMail() {
   const propertyAddress = document.getElementById("BorrowersAddressTU").value;
   const closingDate = document.getElementById("ClosingDateTU").value;
   const loanAmount = document.getElementById("LoanAmountTU").value;
-  const fileNumber = document.getElementById("FileNumberTU").value;
   const emailAddress = document.getElementById("TUEmail").value;
   const external = document.getElementById("TitleUnderwriter").value;
 
@@ -663,11 +860,10 @@ Customer: ${customer}
 Property Address: ${propertyAddress}
 Closing Date: ${closingDate}
 Loan Amount: ${loanAmount}
-File Number: ${fileNumber}
 
 What we are requesting from you:
 
-    • Reply with a copy of the Lender's Title Policy
+    •   Reply with a copy of the Lender's Title Policy
 
 Thank you for your assistance with resolving this matter. 
 
@@ -741,7 +937,7 @@ EmailFirstAmerican.onclick = function () {
 
   // Construct the email message
   const subject = encodeURIComponent("Loan Document Request");
-  const body = encodeURIComponent(`Dear First American,
+  const body = encodeURIComponent(`Hi First American,
 
 During an internal review for the property listed below, Wells Fargo found that the Loan Policy should have been issued but we have not received a copy. Would you please assist us?<br><br>
 
@@ -752,11 +948,11 @@ Loan Amount:${loanAmount}
 
 What we are requesting from you:
 
-* Reply with a copy of the Lender's Title Policy
+    •   Reply with a copy of the Lender's Title Policy
 
 Thank you for your assistance with resolving this matter.
 
-
+Sincerely,
 `);
 
   // Construct the mailto link
@@ -787,11 +983,46 @@ Loan Amount: ${loanAmount}
 
 What we are requesting from you:
 
-    • Reply with a copy of the Lender's Title Policy
+    •   Reply with a copy of the Lender's Title Policy
 
 Thank you for your assistance with resolving this matter.
 
+Sincerely,
+`);
 
+  // Construct the mailto link
+  const mailtoLink = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
+
+  // Open the default email client with the pre-filled subject and body
+  window.location.href = mailtoLink;
+};
+
+EmailStewart.onclick = function () {
+
+  const customer = document.getElementById("BorrowersNameStewart").value;
+  const propertyAddress = document.getElementById("BorrowersAddressStewart").value;
+  const closingDate = document.getElementById("ClosingDateStewart").value;
+  const loanAmount = document.getElementById("LoanAmountStewart").value;
+  const emailAddress = "agencypolicysupport@stewart.com";
+
+  // Construct the email message
+  const subject = encodeURIComponent("Loan Document Request");
+  const body = encodeURIComponent(`Hi Stewart Title,
+
+During an internal review for the property listed below, Wells Fargo found that the Loan Policy should have been issued but we have not received a copy. Would you please assist us?<br><br>
+
+Borrower: ${customer}
+Property Address: ${propertyAddress}
+Closing Date: ${closingDate}
+Loan Amount: ${loanAmount}
+
+What we are requesting from you:
+
+    •   Reply with a copy of the Lender's Title Policy
+
+Thank you for your assistance with resolving this matter.
+
+Sincerely,
 `);
 
   // Construct the mailto link
