@@ -347,23 +347,22 @@ MspPassTPOL.onclick = function () {
     const subject = encodeURIComponent("Loan Document Request");
     const body = encodeURIComponent(`Dear ${external},
   
-  During a recent review of the loan for the property listed below, which is currently being serviced by Wells Fargo, we identified errors on the signed Final Lenders Title Policy. The errors that we are looking to have corrected are:
-  
+During a recent review of the loan for the property listed below, which is currently being serviced by Wells Fargo, we identified errors on the signed Final Lenders Title Policy. The errors that we are looking to have corrected are:
       •   ${fixDescription}
 
-  Customer: ${customer}
-  Property Address: ${propertyAddress}
+Customer: ${customer}
+Property Address: ${propertyAddress}
 
-  Attached is the copy of the Title Policy to assist with this request.
+Attached is the copy of the Title Policy to assist with this request.
 
-  What we are requesting from you:
+What we are requesting from you:
   
       •   Send a corrected copy of the signed Final Lenders Title Policy.
       •   Please rush this request due to investor requirements.
   
-  Thank you for your assistance with resolving this matter. 
+Thank you for your assistance with resolving this matter. 
   
-  Sincerely,
+Sincerely,
   `);
   
     // Construct the mailto link
