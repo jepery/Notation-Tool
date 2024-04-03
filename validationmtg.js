@@ -93,6 +93,18 @@ DocumentMinor.onclick = function () {
   MinorSatisfy.style.display = "block";
 };
 
+DocumentMinorNoDoc.onclick = function () {
+
+  let inputElementDocumentMinorNoDoc = document.createElement("input");
+  inputElementDocumentMinorNoDoc.type = "text";
+  inputElementDocumentMinorNoDoc.value =
+    "Searched Imaging System. Unable to locate a supporting document that accounts for " + TPOLminorValidateIssue.value + " discrepancy  on the Recorded Mortgage."
+  document.body.appendChild(inputElementDocumentMinorNoDoc);
+  inputElementDocumentMinorNoDoc.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementDocumentMinorNoDoc);
+};
+
 //////////////////////////////// Open Fix ////////////////////////////////////
 
 OpenFixTPOL.onclick = function () {

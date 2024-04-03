@@ -93,6 +93,19 @@ DocumentMinor.onclick = function () {
     MinorSatisfy.style.display = "block";
 };
 
+
+DocumentMinorNoDoc.onclick = function () {
+
+  let inputElementDocumentMinorNoDoc = document.createElement("input");
+  inputElementDocumentMinorNoDoc.type = "text";
+  inputElementDocumentMinorNoDoc.value =
+    "Searched Imaging System. Unable to locate a supporting document that accounts for " + TPOLminorValidateIssue.value + " discrepancy  on the Title Policy."
+  document.body.appendChild(inputElementDocumentMinorNoDoc);
+  inputElementDocumentMinorNoDoc.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementDocumentMinorNoDoc);
+};
+
 //////////////////////////////// Open Fix ////////////////////////////////////
 
 OpenFixTPOL.onclick = function () {
@@ -242,4 +255,16 @@ OpenFixTPOL3b.onclick = function () {
     inputElementOpenFix3b.select();
     document.execCommand("copy");
     document.body.removeChild(inputElementOpenFix3b);
+};
+
+GAPButton.onclick = function () {
+
+  let inputElementGAPButton = document.createElement("input");
+  inputElementGAPButton.type = "text";
+  inputElementGAPButton.value =
+    "Date of Policy is acceptable due to presence of gap coverage."
+  document.body.appendChild(inputElementGAPButton);
+  inputElementGAPButton.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputElementGAPButton);
 };

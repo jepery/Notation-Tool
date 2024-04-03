@@ -604,11 +604,11 @@ Sincerely,
   };
   
   TCCallPassInstructedtoEmail1.onclick = function sendMail() {
-    const customer = document.getElementById("BorrowersNameTU").value;
-    const propertyAddress = document.getElementById("BorrowersAddressTU").value;
+    const customer = document.getElementById("BorrowersNameTC").value;
+    const propertyAddress = document.getElementById("BorrowersAddressTC").value;
     const fixDescription = document.getElementById("FixDescriptTC").value;
-    const emailAddress = document.getElementById("TUEmail").value;
-    const external = document.getElementById("TitleUnderwriter").value;
+    const emailAddress = document.getElementById("TCEmail").value;
+    const external = document.getElementById("TitleCompany").value;
   
     // Construct the email message
     const subject = encodeURIComponent("Loan Document Request");

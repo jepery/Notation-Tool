@@ -1,7 +1,3 @@
-// $('a[data-toggle="tooltip"]').tooltip({
-//   animated: 'fade',
-//   placement: 'bottom',
-// });
 
 const floatingInputLoanNumber = document.getElementById(
   "floatingInputLoanNumber"
@@ -451,6 +447,7 @@ CallCountyTrigger.onclick = function () {
   CountySearchDivButton.style.display = 'none';
   CountyCallText.style.display = 'block';
   CallCountyDiv.style.display = "block";
+  CallTriggerCountyFail.style.display = "none";
 };
 
 CountyEsablishPass.onclick = function () {
